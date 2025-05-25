@@ -62,9 +62,9 @@ const CaseStudyDownloadModal: React.FC<CaseStudyDownloadModalProps> = ({ open, o
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 w-full max-w-md relative">
-        <button onClick={onClose} className="absolute top-3 right-3 text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl">&times;</button>
-        <h2 className="text-xl font-bold mb-4 text-brand-primary">Download Case Study</h2>
+      <div className="bg-card rounded-lg shadow-lg p-8 w-full max-w-md relative">
+        <button onClick={onClose} className="absolute top-3 right-3 text-muted-foreground hover:text-foreground text-2xl">&times;</button>
+        <h2 className="text-xl font-bold mb-4 text-primary">Download Case Study</h2>
         {submitted ? (
           <div className="text-green-600 font-semibold text-center py-8">Thank you! Your download will begin shortly.</div>
         ) : (
@@ -83,7 +83,7 @@ const CaseStudyDownloadModal: React.FC<CaseStudyDownloadModalProps> = ({ open, o
               />
             </div>
             {error && <div className="text-red-600 text-sm">{error}</div>}
-            <button type="submit" className="w-full rounded bg-brand-primary text-white py-2 font-semibold hover:bg-brand-primary/90 transition" disabled={loading}>
+            <button type="submit" className="w-full rounded bg-primary text-primary-foreground py-2 font-semibold hover:bg-primary/90 transition" disabled={loading}>
               {loading ? "Submitting..." : "Download PDF"}
             </button>
           </form>

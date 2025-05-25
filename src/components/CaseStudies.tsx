@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CaseStudyDownloadModal from "./CaseStudyDownloadModal";
+import { SEO } from "./SEO";
 
 const CASE_STUDIES = [
 	{
@@ -91,13 +92,20 @@ export default function CaseStudies() {
 	};
 
 	return (
-		<section className="bg-white dark:bg-gray-950 py-16 min-h-[70vh]">
+		<>
+			<SEO 
+				title="Case Studies - Client Success Stories"
+				description="Explore our client success stories and case studies. See how we've helped organizations like JFFLabs, EQOS, and ASA achieve measurable outcomes through strategic technology advisory and AI-driven solutions."
+				keywords="case studies, client success stories, JFFLabs, EQOS, ASA, technology consulting results, AI implementation, digital transformation outcomes"
+				url="/case-studies"
+			/>
+			<section className="bg-background py-16 min-h-[70vh]">
 			<div className="container mx-auto max-w-5xl px-4">
 				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold tracking-tight text-brand-primary mb-4">
+					<h1 className="text-4xl font-bold tracking-tight text-primary mb-4">
 						Client Success Stories
 					</h1>
-					<p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+					<p className="mt-4 text-lg text-muted-foreground">
 						Explore how we've helped leading organizations transform their operations
 						and achieve breakthrough results.
 					</p>
@@ -106,26 +114,26 @@ export default function CaseStudies() {
 					{CASE_STUDIES.map((cs) => (
 						<div
 							key={cs.title}
-							className="rounded-lg border bg-white dark:bg-gray-900 p-8 flex flex-col h-full"
+							className="rounded-lg border bg-card p-8 flex flex-col h-full"
 						>
-							<h2 className="text-2xl font-bold text-brand-primary">
+							<h2 className="text-2xl font-bold text-primary">
 								{cs.title}
 							</h2>
-							<p className="mt-2 text-sm font-medium text-gray-500">
+							<p className="mt-2 text-sm font-medium text-muted-foreground">
 								{cs.subtitle}
 							</p>
 							<div className="mt-6 flex flex-col flex-grow space-y-6">
 								<div>
 									<h3 className="font-semibold">Challenge</h3>
-									<p className="mt-2 text-gray-500">{cs.challenge}</p>
+									<p className="mt-2 text-muted-foreground">{cs.challenge}</p>
 								</div>
 								<div>
 									<h3 className="font-semibold">Solution</h3>
-									<p className="mt-2 text-gray-500">{cs.solution}</p>
+									<p className="mt-2 text-muted-foreground">{cs.solution}</p>
 								</div>
 								<div>
 									<h3 className="font-semibold">Results</h3>
-									<ul className="mt-2 space-y-2 text-gray-500">
+									<ul className="mt-2 space-y-2 text-muted-foreground">
 										{cs.results.map((result) => (
 											<li key={result}>• {result}</li>
 										))}
@@ -134,7 +142,7 @@ export default function CaseStudies() {
 							</div>
 							<div className="mt-6">
 								<button
-									className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium border bg-white dark:bg-gray-900 h-10 px-4 py-2 w-full border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white transition"
+									className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium border bg-card h-10 px-4 py-2 w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition"
 									onClick={() => openModal(cs.pdfUrl, cs.title)}
 								>
 									Download Case Study
@@ -144,9 +152,9 @@ export default function CaseStudies() {
 					))}
 				</div>
 				{/* Trusted By Section */}
-				<section className="py-12 border-t border-b bg-gray-50 dark:bg-gray-900/50 backdrop-blur-sm mt-12">
+				<section className="py-12 border-t border-b bg-muted/50 backdrop-blur-sm mt-12">
 					<div className="container max-w-4xl mx-auto">
-						<p className="text-center text-sm font-medium text-gray-500 mb-8">
+						<p className="text-center text-sm font-medium text-muted-foreground mb-8">
 							Trusted by Leading Innovation, Edtech, and Nonprofit Organizations
 						</p>
 						<div className="flex flex-wrap items-center justify-center gap-12">
@@ -190,5 +198,6 @@ export default function CaseStudies() {
 				)}
 			</div>
 		</section>
+		</>
 	);
 }

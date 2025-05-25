@@ -3,6 +3,11 @@
 ## Overview
 Convert a Next.js application to a React SPA while preserving existing functionality and assets. Source materials are available in the `/.old-app/html/` directory.
 
+See docs/implementation-plan.md for the full implementation plan.
+See docs/prd.md for the full product requirements document.
+See docs/frd.md for the full functional requirements document.
+See docs/ui-guidelines.md for the UI guidelines.
+
 ## Source Structure
 - HTML templates: `/.old-app/html/`
 - Styling: `/.old-app/html/styles/`

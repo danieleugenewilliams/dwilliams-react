@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { SEO } from "./SEO";
 
 const HUBSPOT_PORTAL_ID = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
 const HUBSPOT_FORM_ID = import.meta.env.VITE_HUBSPOT_CONTACT_FORM_ID;
@@ -59,7 +60,14 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-12 md:py-12">
+    <>
+      <SEO 
+        title="Contact Us - Get in Touch"
+        description="Ready to transform your organization? Contact D. E. Williams & Company for strategic technology advisory services. Expert consultation for AI, cloud transformation, and digital innovation."
+        keywords="contact, get in touch, strategic technology consulting, AI consultation, digital transformation inquiry, technology advisory contact"
+        url="/contact"
+      />
+      <section id="contact" className="py-12 md:py-12">
       <div className="container">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-brand-primary">Contact Us</h2>
@@ -102,7 +110,7 @@ const Contact: React.FC = () => {
                   <textarea id="message" name="message" rows={4} required className="mt-1 w-full rounded border px-3 py-2 text-base bg-background" value={form.message} onChange={handleChange} />
                 </div>
                 {error && <div className="text-red-600 text-sm">{error}</div>}
-                <button type="submit" className="w-full rounded bg-brand-primary text-white py-2 font-semibold hover:bg-brand-primary/90 transition" disabled={loading}>
+                <button type="submit" className="w-full rounded bg-primary text-primary-foreground py-2 font-semibold hover:bg-primary/90 transition" disabled={loading}>
                   {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
@@ -110,34 +118,35 @@ const Contact: React.FC = () => {
           </div>
           <div className="flex flex-col justify-center space-y-8">
             <div>
-              <h3 className="text-xl font-bold text-brand-primary">Contact Information</h3>
+              <h3 className="text-xl font-bold text-primary">Contact Information</h3>
               <div className="mt-4 space-y-4">
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail mr-3 h-5 w-5 text-muted-foreground"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                  <a href="mailto:info@dewilliamsco.com" className="text-brand-primary hover:underline">info@dewilliamsco.com</a>
+                  <a href="mailto:info@dewilliamsco.com" className="text-primary hover:underline">info@dewilliamsco.com</a>
                 </div>
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin mr-3 h-5 w-5 text-muted-foreground"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                  <a href="https://linkedin.com/in/dewilliamsco" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">@dewilliamsco</a>
+                  <a href="https://linkedin.com/in/dewilliamsco" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@dewilliamsco</a>
                 </div>
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-twitter mr-3 h-5 w-5 text-muted-foreground"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
-                  <a href="https://twitter.com/dewilliamsco" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">@dewilliamsco</a>
+                  <a href="https://twitter.com/dewilliamsco" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@dewilliamsco</a>
                 </div>
               </div>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-brand-primary">Our Approach</h3>
+              <h3 className="text-xl font-bold text-primary">Our Approach</h3>
               <p className="mt-2 text-muted-foreground">We believe in delivering high-value, results-oriented solutions that drive real transformation. Our approach combines deep industry expertise with cutting-edge technology to help you achieve your goals.</p>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-brand-primary">Response Time</h3>
+              <h3 className="text-xl font-bold text-primary">Response Time</h3>
               <p className="mt-2 text-muted-foreground">We typically respond to all inquiries within 1-2 business days. For urgent matters, please indicate so in your message.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
+    </>
   );
 };
 

@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ThemeToggle } from "./ThemeToggle";
+import { MobileMenu } from "./MobileMenu";
 
 // Minimal header for navigation
 function Header() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-gray-200 dark:border-gray-800 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-sm" role="banner" aria-label="Site Header">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link to="/" className="font-bold text-2xl tracking-tight text-brand-primary dark:text-brand-primary-dark transition-colors">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-sm shadow-sm transition-colors duration-300" role="banner" aria-label="Site Header">
+      <div className="container flex h-16 items-center justify-between">
+        <Link to="/" className="font-bold text-2xl tracking-tight text-primary font-sans" aria-label="D. E. Williams & Co. Logo">
           D. E. Williams + Co.
         </Link>
         <nav className="hidden md:flex gap-8" role="navigation" aria-label="Main Navigation">
@@ -24,15 +26,9 @@ function Header() {
             Insights
           </a>
         </nav>
-        {/* Mobile menu button (hamburger) */}
-        <div className="md:hidden">
-          <button
-            type="button"
-            className="inline-flex items-center justify-center p-2 rounded-md text-brand-primary dark:text-brand-primary-dark hover:bg-brand-primary/10 dark:hover:bg-brand-primary-dark/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary"
-            aria-label="Open main menu"
-          >
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
-          </button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <MobileMenu />
         </div>
       </div>
     </header>
@@ -42,13 +38,13 @@ function Header() {
 // Minimal footer
 function Footer() {
   return (
-    <footer className="mt-auto bg-gray-900 text-white">
-      <div className="container mx-auto py-8 px-4 flex flex-col md:flex-row justify-between items-center">
-        <p className="text-sm text-gray-400">© {new Date().getFullYear()} D. E. Williams and Company. All rights reserved.</p>
+    <footer className="mt-auto bg-muted text-muted-foreground">
+      <div className="container py-8 flex flex-col md:flex-row justify-between items-center">
+        <p className="text-sm">© {new Date().getFullYear()} D. E. Williams and Company. All rights reserved.</p>
         <div className="flex space-x-4 mt-4 md:mt-0">
-          <a href="https://www.linkedin.com/in/danieleugenewilliams/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
-          <a href="https://twitter.com/dewilliamsco" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">Twitter</a>
-          <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link>
+          <a href="https://www.linkedin.com/in/danieleugenewilliams/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
+          <a href="https://twitter.com/dewilliamsco" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">Twitter</a>
+          <Link to="/terms" className="text-muted-foreground hover:text-foreground transition-colors">Terms</Link>
         </div>
       </div>
     </footer>
@@ -58,9 +54,9 @@ function Footer() {
 // Layout component
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col bg-white dark:bg-gray-950 font-sans">
+    <div className="flex min-h-screen flex-col bg-white dark:bg-brand-bg-dark text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 fade-in">
         {children}
       </main>
       <Footer />

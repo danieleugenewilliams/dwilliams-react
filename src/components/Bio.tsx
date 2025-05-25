@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { SEO } from "./SEO";
 
 const TABS = [
   { label: "Background", value: "background" },
@@ -266,7 +267,7 @@ const tabContent: Record<string, React.ReactNode> = {
             href="https://readwrite.com/the-impact-of-ai-as-companies-address-the-skilled-labor-shortage/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-700"
+            className="text-primary hover:text-primary/80"
           >
             The Impact of AI as Companies Address the Skilled Labor Shortage
           </a>{" "}
@@ -277,7 +278,7 @@ const tabContent: Record<string, React.ReactNode> = {
             href="https://www.techrepublic.com/article/how-cios-approach-digital-transformation-investments/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-700"
+            className="text-primary hover:text-primary/80"
           >
             How CIOs can approach digital transformation investments to increase
             value
@@ -289,7 +290,7 @@ const tabContent: Record<string, React.ReactNode> = {
             href="https://readwrite.com/create-symbiotic-relationships-with-ai-in-business/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-700"
+            className="text-primary hover:text-primary/80"
           >
             Create Symbiotic Relationships with AI in Business
           </a>{" "}
@@ -300,7 +301,7 @@ const tabContent: Record<string, React.ReactNode> = {
             href="https://drive.google.com/file/d/0B1nMNCwNPLJfZVFILUxqMWF2TTRYOURvVkJNOGJfYkZhSGNJ/view?resourcekey=0-AU2iRA7pulweIICe4huS1g"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-700"
+            className="text-primary hover:text-primary/80"
           >
             Meeting the Challenges of the Modern CIO
           </a>{" "}
@@ -311,7 +312,7 @@ const tabContent: Record<string, React.ReactNode> = {
             href="https://drive.google.com/file/d/0B1nMNCwNPLJfa2pqcWxEU0dJUy1kYng5UG9uZlc0X0pjN01Z/view?resourcekey=0-CmNwBJd9s_viG_29ppsB2Q"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-700"
+            className="text-primary hover:text-primary/80"
           >
             People Process Technology Strategy for Enterprise 2.0
           </a>{" "}
@@ -326,55 +327,63 @@ const Bio: React.FC = () => {
   const [tab, setTab] = useState<string>(TABS[0].value);
 
   return (
-    <section
-      id="bio"
-      className="bg-white dark:bg-gray-950 py-12 md:py-16 min-h-[70vh]"
-    >
-      <div className="container mx-auto max-w-3xl px-4">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-brand-primary mb-8 text-center">
-          Daniel E. Williams – Professional Bio
-        </h1>
-        <div className="flex justify-center mb-8">
-          <nav
-            className="flex flex-wrap gap-2 bg-gray-100 dark:bg-gray-800 rounded-lg p-2"
-            aria-label="Bio Tabs"
+    <>
+      <SEO 
+        title="Professional Bio - Daniel E. Williams"
+        description="Learn about Daniel E. Williams, strategic technology leader with over two decades of experience in edtech, public sector, and nonprofit technology consulting. Expert in AI, cloud transformation, and data strategy."
+        keywords="Daniel E. Williams bio, technology leader, strategic advisory, edtech consultant, AI expert, cloud transformation specialist, nonprofit technology"
+        url="/bio"
+      />
+      <section
+        id="bio"
+        className="bg-background py-12 md:py-16 min-h-[70vh]"
+      >
+        <div className="container mx-auto max-w-3xl px-4">
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary mb-8 text-center">
+            Daniel E. Williams – Professional Bio
+          </h1>
+          <div className="flex justify-center mb-8">
+            <nav
+              className="flex flex-wrap gap-2 bg-muted rounded-lg p-2"
+              aria-label="Bio Tabs"
+            >
+              {TABS.map(({ label, value }) => (
+                <button
+                  key={value}
+                  className={`px-4 py-2 rounded font-medium focus:outline-none transition-colors ${
+                    tab === value
+                      ? "bg-brand-primary text-white dark:bg-brand-primary-dark"
+                      : "text-brand-primary dark:text-brand-primary-dark hover:bg-brand-primary/10 dark:hover:bg-brand-primary-dark/10"
+                  }`}
+                  onClick={() => setTab(value)}
+                  aria-selected={tab === value}
+                  aria-controls={`tab-panel-${value}`}
+                  role="tab"
+                  tabIndex={tab === value ? 0 : -1}
+                >
+                  {label}
+                </button>
+              ))}
+            </nav>
+          </div>
+          <div
+            id={`tab-panel-${tab}`}
+            role="tabpanel"
+            aria-labelledby={tab}
           >
-            {TABS.map(({ label, value }) => (
-              <button
-                key={value}
-                className={`px-4 py-2 rounded font-medium focus:outline-none transition-colors ${
-                  tab === value
-                    ? "bg-brand-primary text-white dark:bg-brand-primary-dark"
-                    : "text-brand-primary dark:text-brand-primary-dark hover:bg-brand-primary/10 dark:hover:bg-brand-primary-dark/10"
-                }`}
-                onClick={() => setTab(value)}
-                aria-selected={tab === value}
-                aria-controls={`tab-panel-${value}`}
-                role="tab"
-                tabIndex={tab === value ? 0 : -1}
-              >
-                {label}
-              </button>
-            ))}
-          </nav>
+            {tabContent[tab]}
+          </div>
+          <div className="mt-12 text-center">
+            <a
+              href="/contact"
+              className="inline-block bg-brand-primary text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-brand-primary/90 transition-colors"
+            >
+              Contact Daniel
+            </a>
+          </div>
         </div>
-        <div
-          id={`tab-panel-${tab}`}
-          role="tabpanel"
-          aria-labelledby={tab}
-        >
-          {tabContent[tab]}
-        </div>
-        <div className="mt-12 text-center">
-          <a
-            href="/contact"
-            className="inline-block bg-brand-primary text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-brand-primary/90 transition-colors"
-          >
-            Contact Daniel
-          </a>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

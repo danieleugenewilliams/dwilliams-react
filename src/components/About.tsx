@@ -4,7 +4,7 @@ import headshot from '../assets/headshot.jpg';
 // About page content migrated from Next.js AboutClient
 const About: React.FC = () => {
   return (
-    <section id="about" className="bg-brand-secondary/5 py-12 md:py-12">
+    <section id="about" className="bg-muted/20 py-12 md:py-12">
       <div className="container">
         <div className="mx-auto max-w-5xl">
           {/* Profile section with photo at the top */}
@@ -22,7 +22,7 @@ const About: React.FC = () => {
               </div>
             </div>
             <div className="w-full md:w-2/3">
-              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-brand-primary mb-4">
+              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary mb-4">
                 About D. E. Williams & Company
               </h1>
               <p className="text-lg text-muted-foreground mb-4">
@@ -30,7 +30,7 @@ const About: React.FC = () => {
               </p>
               <a 
                 href="/bio" 
-                className="inline-flex items-center text-brand-primary hover:underline transition-all duration-200"
+                className="inline-flex items-center text-primary hover:underline transition-all duration-200"
               >
                 Read Daniel's full bio →
               </a>
@@ -38,7 +38,7 @@ const About: React.FC = () => {
           </div>
           <div className="grid gap-12 md:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-brand-primary">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary">
                 Why We're Built Different
               </h2>
               <div className="mt-6 space-y-6 text-lg text-muted-foreground">
@@ -54,7 +54,7 @@ const About: React.FC = () => {
                   firepower to execute at scale. We combine bold tech, deep connections, and ironclad strategy to make
                   you a market leader.
                 </p>
-                <div className="rounded-lg bg-background p-4 border border-brand-silver/30 italic hover:border-brand-silver/50 transition-colors duration-200">
+                <div className="rounded-lg bg-card p-4 border border-border hover:border-muted-foreground/50 transition-colors duration-200">
                   <p className="text-base">
                     "D. E. Williams advised on our digital transformation audit, delivering over 20% in cost savings and
                     ROI." – Regional GM
@@ -63,7 +63,7 @@ const About: React.FC = () => {
               </div>
             </div>
             <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-brand-primary">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary">
                 Our Vision
               </h2>
               <div className="mt-6 space-y-6 text-lg text-muted-foreground">
@@ -80,10 +80,10 @@ const About: React.FC = () => {
                   <li>Build a team of elite consultants who share our mission</li>
                   <li>Create transformative fellowship programs that reach thousands</li>
                 </ul>
-                <div className="rounded-lg bg-background p-4 border border-brand-silver/30 hover:border-brand-silver/50 transition-colors duration-200">
+                <div className="rounded-lg bg-card p-4 border border-border hover:border-muted-foreground/50 transition-colors duration-200">
                   <p className="text-base font-medium">
                     Ready to transform your organization? 
-                    <a href="/contact" className="text-brand-primary hover:underline ml-2 transition-colors duration-200">
+                    <a href="/contact" className="text-primary hover:underline ml-2 transition-colors duration-200">
                       Schedule a consultation →
                     </a>
                   </p>
