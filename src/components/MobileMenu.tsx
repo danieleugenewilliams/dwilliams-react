@@ -41,7 +41,7 @@ export function MobileMenu() {
                   </svg>
                 </button>
               </div>
-              <nav className="space-y-4">
+              <nav className="space-y-4 bg-background p-4 rounded-lg">
                 <Link 
                   to="/" 
                   className="block nav-link text-lg py-2" 

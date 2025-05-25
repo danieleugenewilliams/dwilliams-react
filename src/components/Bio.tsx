@@ -340,7 +340,7 @@ const Bio: React.FC = () => {
       >
         <div className="container mx-auto max-w-3xl px-4">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary mb-8 text-center">
-            Daniel E. Williams – Professional Bio
+            Daniel E. Williams
           </h1>
           <div className="flex justify-center mb-8">
             <nav
