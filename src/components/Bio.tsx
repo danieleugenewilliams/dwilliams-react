@@ -378,7 +378,7 @@ const Bio: React.FC = () => {
               href="/contact"
               className="inline-block bg-brand-primary text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-brand-primary/90 transition-colors"
             >
-              Contact Daniel
+              Contact Us
             </a>
           </div>
         </div>

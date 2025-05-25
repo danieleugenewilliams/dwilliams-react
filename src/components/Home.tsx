@@ -13,7 +13,7 @@ export default function Home() {
         description="Premium strategic advisory for leaders seeking to transform their organization through cloud, AI, and data. Expert consulting services for education technology, public sector, and nonprofit organizations."
         url="/"
       />
-      <main className="fade-in bg-background text-foreground font-sans">
+      <main className="fade-in bg-background text-foreground font-sans w-full overflow-x-hidden">
         <HeroSection />
         <ClientLogoCloud />
         <ServiceOverview />

@@ -7,29 +7,41 @@ import { MobileMenu } from "./MobileMenu";
 function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-sm shadow-sm transition-colors duration-300" role="banner" aria-label="Site Header">
-      <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="font-bold text-2xl tracking-tight text-primary font-sans" aria-label="D. E. Williams & Co. Logo">
-          D. E. Williams + Co.
-        </Link>
-        <nav className="hidden md:flex gap-8" role="navigation" aria-label="Main Navigation">
-          <Link to="/" className="nav-link">Home</Link>
-          <Link to="/services" className="nav-link">Services</Link>
-          <Link to="/case-studies" className="nav-link">Case Studies</Link>
-          <Link to="/bio" className="nav-link">Bio</Link>
-          <Link to="/contact" className="nav-link">Contact</Link>
-          <a
-            href="https://dewilliamsco.substack.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-link"
-          >
-            Insights
-          </a>
-        </nav>
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
+      <div className="container mx-auto px-4 flex h-16 items-center">
+        {/* Logo on the left */}
+        <div className="flex-shrink-0 mr-auto md:mr-0 md:w-1/4">
+          <Link to="/" className="font-bold text-2xl tracking-tight text-primary font-sans" aria-label="D. E. Williams & Co. Logo">
+            D. E. Williams + Co.
+          </Link>
+        </div>
+        
+        {/* Centered navigation with theme toggle */}
+        <div className="hidden md:flex flex-grow items-center justify-center">
+          <nav className="flex items-center gap-8" role="navigation" aria-label="Main Navigation">
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/services" className="nav-link">Services</Link>
+            <Link to="/case-studies" className="nav-link">Case Studies</Link>
+            <Link to="/bio" className="nav-link">Bio</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
+            <a
+              href="https://dewilliamsco.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link"
+            >
+              Insights
+            </a>
+            <ThemeToggle />
+          </nav>
+        </div>
+        
+        {/* Mobile menu on the right */}
+        <div className="md:hidden flex items-center ml-auto">
           <MobileMenu />
         </div>
+        
+        {/* Balancing space on the right for desktop */}
+        <div className="hidden md:block md:w-1/4"></div>
       </div>
     </header>
   );
@@ -38,10 +50,10 @@ function Header() {
 // Minimal footer
 function Footer() {
   return (
-    <footer className="mt-auto bg-muted text-muted-foreground">
-      <div className="container py-8 flex flex-col md:flex-row justify-between items-center">
+    <footer className="mt-auto bg-muted text-muted-foreground w-full">
+      <div className="container py-10 flex flex-col md:flex-row justify-between items-center">
         <p className="text-sm">© {new Date().getFullYear()} D. E. Williams and Company. All rights reserved.</p>
-        <div className="flex space-x-4 mt-4 md:mt-0">
+        <div className="flex space-x-6 mt-4 md:mt-0">
           <a href="https://www.linkedin.com/in/danieleugenewilliams/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
           <a href="https://twitter.com/dewilliamsco" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">Twitter</a>
           <Link to="/terms" className="text-muted-foreground hover:text-foreground transition-colors">Terms</Link>
@@ -54,9 +66,9 @@ function Footer() {
 // Layout component
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col bg-white dark:bg-brand-bg-dark text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+    <div className="flex min-h-screen flex-col bg-background text-foreground font-sans transition-colors duration-300 w-full overflow-x-hidden">
       <Header />
-      <main className="flex-1 fade-in">
+      <main className="flex-1 fade-in w-full overflow-x-hidden">
         {children}
       </main>
       <Footer />

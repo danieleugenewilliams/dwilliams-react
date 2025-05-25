@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ThemeToggle } from './ThemeToggle';
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ export function MobileMenu() {
       {/* Mobile menu button */}
       <button
         type="button"
-        className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-primary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ring"
+        className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ring"
         aria-label="Open main menu"
         onClick={toggleMenu}
       >
@@ -85,6 +86,10 @@ export function MobileMenu() {
                 >
                   Insights
                 </a>
+                <div className="mt-4 pt-4 border-t border-border flex items-center">
+                  <span className="text-muted-foreground mr-3">Theme:</span>
+                  <ThemeToggle />
+                </div>
               </nav>
             </div>
           </div>
