@@ -12,7 +12,7 @@ export default function HeroSection() {
           D. E. Williams + Co.
         </h1>
         <p className="text-lg md:text-2xl mb-8 text-white font-medium drop-shadow-lg animate-fade-in-up animation-delay-300">
-          Premium strategic advisory for leaders seeking to transform their
+          Premium strategic advisory and solutions for leaders seeking to transform their
           organization through cloud, AI, and data. From innovation incubation
           programs to digital transformation, we deliver solutions that scale.
         </p>

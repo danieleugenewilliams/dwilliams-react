@@ -174,6 +174,124 @@ While the comprehensive polyfill solution fixed the "self is not defined" error,
 
 ---
 
+## [May 25, 2025] Next.js to React (Vite) Migration & AWS Amplify Deployment
+
+### Migration Success Factors
+- **Clean Architecture:** Original Next.js codebase's modular design made migration easier. Components were well-isolated with clear responsibilities.
+- **Static-First Approach:** Site was already designed for static generation, making the move to a Vite-based SPA straightforward.
+- **TypeScript Benefits:** Strong typing caught integration issues early during the migration process.
+- **Tailwind CSS Portability:** UI styling remained consistent as Tailwind classes worked seamlessly across frameworks.
+
+### Key Migration Steps
+1. **Initial Setup**
+   - Created new Vite + React + TypeScript project
+   - Migrated npm dependencies, ensuring version compatibility
+   - Ported Tailwind CSS configuration and theme settings
+
+2. **Component Migration**
+   - Moved components from pages to React Router routes
+   - Updated imports to use new project structure
+   - Converted any Next.js-specific features (Image, Link) to standard React equivalents
+
+3. **Routing Updates**
+   - Replaced Next.js file-based routing with React Router
+   - Implemented client-side routing patterns
+   - Added proper fallback for 404 handling via redirects.json
+
+4. **Asset Management**
+   - Reorganized static assets under `public/` directory
+   - Updated image references to use proper public paths
+   - Implemented proper lazy loading for images
+
+### AWS Amplify Deployment Lessons
+1. **Configuration Best Practices**
+   - Created minimal `amplify.yml` focusing on build essentials
+   - Used `--legacy-peer-deps` to resolve React 19 dependency conflicts
+   - Properly configured build output directory (`dist`)
+
+2. **Environment Variables**
+   - Maintained clear separation between development and production variables
+   - Used Amplify's environment variable system effectively
+   - Protected sensitive data (API keys, credentials) appropriately
+
+3. **Build Performance**
+   - Implemented efficient node_modules caching
+   - Optimized build commands for faster deployment
+   - Used proper dependency installation flags
+
+4. **Common Issues Solved**
+   - Resolved ERESOLVE npm errors using `--legacy-peer-deps`
+   - Fixed TypeScript configuration for proper React types
+   - Addressed mobile menu visibility issues through iterative UI improvements
+
+### Key Learnings
+1. **Framework Migration**
+   - Start with routing: it's the foundation of the application structure
+   - Test component rendering early and often during migration
+   - Keep environmental configurations (development/production) separate
+   - Document breaking changes and required updates
+
+2. **Amplify Deployment**
+   - Begin with a minimal working configuration
+   - Test builds locally before pushing to Amplify
+   - Use Amplify's preview environments for testing
+   - Implement proper error handling for build failures
+
+3. **UI/UX Considerations**
+   - Maintain consistent theming across the migration
+   - Test responsive design thoroughly
+   - Verify accessibility features remain intact
+   - Address mobile-specific issues promptly
+
+### Best Practices Established
+1. **Development Workflow**
+   - Use TypeScript consistently for type safety
+   - Maintain clear component boundaries
+   - Keep build configurations simple and documented
+   - Regular testing across devices and browsers
+
+2. **Deployment Process**
+   - Verify environment variables before each deployment
+   - Test builds locally using `npm run build`
+   - Monitor build logs for potential issues
+   - Maintain backup deployment options
+
+3. **Documentation**
+   - Keep track of breaking changes
+   - Document configuration updates
+   - Maintain clear deployment instructions
+   - Record solutions to common issues
+
+### Future Recommendations
+1. **Project Structure**
+   - Consider micro-frontend architecture for larger applications
+   - Implement proper code splitting from the start
+   - Use proper asset optimization techniques
+   - Plan for scalability in routing and state management
+
+2. **Build/Deploy Pipeline**
+   - Implement automated testing in CI/CD
+   - Use proper caching strategies
+   - Monitor build performance
+   - Regular dependency updates
+
+3. **Maintenance**
+   - Regular security audits
+   - Performance monitoring
+   - Dependency updates
+   - Documentation reviews
+
+This migration and deployment experience has demonstrated the importance of:
+- Clean, modular architecture
+- Strong typing with TypeScript
+- Proper build configuration
+- Thorough testing across environments
+- Clear documentation of processes and solutions
+
+These lessons will inform future projects and migrations, particularly in maintaining clean architecture and ensuring smooth deployment processes.
+
+---
+
 # Lessons Learned: API Security Endpoint Testing with Next.js, Jest, and Playwright
 
 ## Challenges with Jest and Next.js API Route Testing
