@@ -8,7 +8,7 @@
 
 ## 1. Overview
 
-This plan outlines the migration of the D. E. Williams & Company website from a Next.js codebase to a modern Vite + React (TypeScript) single-page application. The new app will use React Router for all routing, Tailwind CSS for styling, and pnpm for dependency management. The migration will ensure all business goals, features, and design standards are preserved or improved, while removing all SSR and API route dependencies.
+This plan outlines the migration of the D. E. Williams & Company website from a Next.js codebase to a modern Vite + React (TypeScript) single-page application. The new app will use React Router for all routing, Tailwind CSS for styling, and npm for dependency management. The migration will ensure all business goals, features, and design standards are preserved or improved, while removing all SSR and API route dependencies.
 
 ### Migration Objectives
 - **Migrate all pages and logic** from the old Next.js app to React functional components and React Router routes.
@@ -25,7 +25,7 @@ This plan outlines the migration of the D. E. Williams & Company website from a 
 - [x] Initialize Vite + React (TypeScript) project
 - [x] Integrate Tailwind CSS
 - [x] Set up React Router for SPA routing
-- [x] Configure pnpm for dependency management
+- [x] Configure npm for dependency management
 - [x] Establish folder structure: `src/assets/`, `src/components/`, etc.
 
 ### Phase 2: Component & Page Migration
@@ -67,7 +67,7 @@ This plan outlines the migration of the D. E. Williams & Company website from a 
 - Use Tailwind CSS utility classes for all styling
 - All new code must be TypeScript
 - Place assets in `src/assets/` and components in `src/components/`
-- Use pnpm for all scripts and dependency management
+- Use npm for all scripts and dependency management
 - Remove all SSR, API routes, and Next.js-specific files/config
 - Document any changes or issues in `docs/agent-work.md`
 

@@ -6,21 +6,21 @@ This project is a Vite + React (TypeScript) app, set up for migration from a Nex
 
 1. **Install dependencies:**
    ```sh
-   pnpm install
+   npm install
    ```
 2. **Start the dev server:**
    ```sh
-   pnpm run dev
+   npm run dev
    ```
    The app will be available at http://localhost:5173/
 
 3. **Build for production:**
    ```sh
-   pnpm run build
+   npm run build
    ```
 4. **Preview production build:**
    ```sh
-   pnpm run preview
+   npm run preview
    ```
 
 ## Tailwind CSS Setup
@@ -38,7 +38,7 @@ This project is a Vite + React (TypeScript) app, set up for migration from a Nex
 ## Contributing
 - Use TypeScript for all code.
 - Use Tailwind CSS for styling.
-- Use `pnpm` for dependency management.
+- Use `npm` for dependency management.
 
 ---
 

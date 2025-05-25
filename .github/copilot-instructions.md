@@ -9,7 +9,7 @@ This project is a Vite + React (TypeScript) app, set up for migration from a Nex
 - Use Tailwind CSS utility classes for styling.
 - All new code should be TypeScript.
 - Place assets in `src/assets/` and components in `src/components/`.
-- Use `pnpm` for all dependency management and scripts.
+- Use `npm` for all dependency management and scripts.
 
 ## Migration Notes
 - Pages and logic from the old Next.js app should be migrated as React components and routes.
@@ -17,9 +17,9 @@ This project is a Vite + React (TypeScript) app, set up for migration from a Nex
 - Update README.md with any new migration steps or conventions.
 
 ## Useful Scripts
-- `pnpm run dev` — Start local dev server
-- `pnpm run build` — Build for production
-- `pnpm run preview` — Preview production build
+- `npm run dev` — Start local dev server
+- `npm run build` — Build for production
+- `npm run preview` — Preview production build
 
 ---
 
