@@ -39,11 +39,11 @@ This plan outlines the migration of the D. E. Williams & Company website from a 
 - [x] Integrate HubSpot forms and Substack RSS (client-side only)
 
 ### Phase 3: Feature Parity & Enhancements
-- [ ] Ensure all business logic, validation, and UI features are preserved
-- [ ] Implement PDF download functionality for case studies
+- [x] Ensure all business logic, validation, and UI features are preserved
+- [x] Implement PDF download functionality for case studies
 - [ ] Integrate Google Analytics and Hotjar (client-side)
 - [ ] Apply all Tailwind CSS styles and ensure design matches UI guidelines
-- [ ] Add dark/light mode toggle and ensure smooth transitions
+- [x] Add dark/light mode toggle and ensure smooth transitions
 - [ ] Test all routes, navigation, and forms for SPA behavior
 
 ### Phase 4: Testing & QA

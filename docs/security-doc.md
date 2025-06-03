@@ -32,6 +32,17 @@ This document summarizes the security architecture, controls, and compliance fea
 - Security audit completed (May 2025).
 - Ongoing monitoring and regular security patching are part of the maintenance plan.
 
+### Vulnerability Investigations
+#### tar-fs Vulnerability (GHSA-8cj5-5rvv-wf4v) - June 2025
+- **Status**: Not Affected
+- **Investigation Date**: June 3, 2025
+- **Findings**: 
+  - tar-fs package is not used directly or indirectly in the project
+  - npm audit shows 0 vulnerabilities
+  - All dependencies are secure and up to date
+- **Action**: No action required - project is not vulnerable to this issue
+- **Reference**: CVE-2025-48387, affects tar-fs versions < 1.16.5, >= 2.0.0 < 2.1.3, >= 3.0.0 < 3.0.9
+
 ## 7. Additional Notes
 - All security features are described and tested in the implementation plan and supporting documentation.
 - Security documentation will be updated as new features or compliance requirements are added.
