@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D. E. Williams & Company - Logo Preview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f3f4f6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2563eb;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .logo-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+        }
+        .logo-card h3 {
+            color: #111827;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .logo-preview {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-preview img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .usage {
+            font-size: 14px;
+            color: #6b7280;
+            font-style: italic;
+        }
+        .download-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .download-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .download-btn {
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .download-btn:hover {
+            background: #1d4ed8;
+        }
+        .specs {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .specs h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+        .specs ul {
+            color: #374151;
+            margin: 0;
+            padding-left: 20px;
+        }
+        .specs li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>D. E. Williams & Company - Logo Collection (Updated Design)</h1>
+        
+        <div class="logo-grid">
+            <div class="logo-card">
+                <h3>Social Media - Light Theme</h3>
+                <div class="logo-preview" style="background: #ffffff;">
+                    <img src="logo-social-light.svg" alt="Social Media Logo Light">
+                </div>
+                <p class="usage">Perfect for: LinkedIn posts, Twitter headers, general social media</p>
+            </div>
+            
+            <div class="logo-card">
+                <h3>Social Media - Dark Theme</h3>
+                <div class="logo-preview" style="background: #111827;">
+                    <img src="logo-social-dark.svg" alt="Social Media Logo Dark">
+                </div>
+                <p class="usage">Perfect for: Dark mode posts, night mode themes</p>
+            </div>
+            
+            <div class="logo-card">
+                <h3>LinkedIn Profile - Light</h3>
+                <div class="logo-preview" style="background: #ffffff;">
+                    <img src="logo-linkedin-light.svg" alt="LinkedIn Profile Logo Light">
+                </div>
+                <p class="usage">Perfect for: LinkedIn profile picture, professional headshots</p>
+            </div>
+            
+            <div class="logo-card">
+                <h3>LinkedIn Profile - Dark</h3>
+                <div class="logo-preview" style="background: #111827;">
+                    <img src="logo-linkedin-dark.svg" alt="LinkedIn Profile Logo Dark">
+                </div>
+                <p class="usage">Perfect for: Dark-themed profile pictures, modern look</p>
+            </div>
+            
+            <div class="logo-card">
+                <h3>Favicon (Browser Tab)</h3>
+                <div class="logo-preview" style="background: #f3f4f6; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: center;">
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <img src="favicon-48.svg" alt="Favicon 48px" style="width: 48px; height: 48px;">
+                        <small>48px</small>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <img src="favicon-32.svg" alt="Favicon 32px" style="width: 32px; height: 32px;">
+                        <small>32px</small>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <img src="favicon-16.svg" alt="Favicon 16px" style="width: 16px; height: 16px;">
+                        <small>16px</small>
+                    </div>
+                </div>
+                <p class="usage">Perfect for: Browser tabs, bookmark icons, app icons</p>
+            </div>
+        </div>
+        
+        <div class="download-section">
+            <h3 style="text-align: center; color: #2563eb; margin-bottom: 20px;">Download Files</h3>
+            <div class="download-links">
+                <a href="logo-social-light.svg" download class="download-btn">Social Light (SVG)</a>
+                <a href="logo-social-dark.svg" download class="download-btn">Social Dark (SVG)</a>
+                <a href="logo-linkedin-light.svg" download class="download-btn">LinkedIn Light (SVG)</a>
+                <a href="logo-linkedin-dark.svg" download class="download-btn">LinkedIn Dark (SVG)</a>
+                <a href="favicon.svg" download class="download-btn">Favicon (SVG)</a>
+                <a href="favicon-48.svg" download class="download-btn">Favicon 48px (SVG)</a>
+                <a href="favicon-32.svg" download class="download-btn">Favicon 32px (SVG)</a>
+                <a href="favicon-16.svg" download class="download-btn">Favicon 16px (SVG)</a>
+            </div>
+        </div>
+        
+        <div class="specs">
+            <h3>Logo Specifications</h3>
+            <ul>
+                <li><strong>Design:</strong> "DEW + Co." - Clean, modern initials format</li>
+                <li><strong>Layout:</strong> Two-line, center-aligned, square format</li>
+                <li><strong>Dimensions:</strong> 400x400px (social media), multiple favicon sizes</li>
+                <li><strong>Font:</strong> Inter (weights: 600, 700)</li>
+                <li><strong>Primary Color:</strong> #2563eb (brand blue)</li>
+                <li><strong>Dark Mode:</strong> #ffffff (white) on #111827 (dark gray)</li>
+                <li><strong>Typography:</strong> DEW (56px, weight 700), + Co. (32px, weight 600)</li>
+                <li><strong>File Format:</strong> SVG (scalable vector graphics)</li>
+                <li><strong>Usage:</strong> LinkedIn profiles, social media posts, favicons, marketing</li>
+                <li><strong>Brand Compliance:</strong> Follows your UI Guidelines specifications</li>
+            </ul>
+        </div>
+        
+        <div class="specs">
+            <h3>Converting to PNG (Optional)</h3>
+            <ul>
+                <li>Open the SVG file in any graphics editor (Adobe Illustrator, Inkscape, Figma)</li>
+                <li>Export as PNG at 400x400px or higher resolution (800x800px for retina displays)</li>
+                <li>Alternatively, use online converters like CloudConvert or SVG2PNG</li>
+                <li>For LinkedIn: 400x400px PNG is recommended</li>
+                <li>For high-resolution displays: Export at 800x800px or 1200x1200px</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

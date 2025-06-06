@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
   <rect width="32" height="32" fill="#2563eb"/>
   
-  <!-- Main Logo Text - DEW -->
+  <!-- Main Logo Text - DEW (optimized for small size) -->
   <text x="16" y="14" font-family="Inter, sans-serif" font-weight="700" font-size="7" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">DEW</text>
   
-  <!-- Plus and Co. -->
+  <!-- Plus and Co. (smaller, condensed) -->
   <text x="16" y="22" font-family="Inter, sans-serif" font-weight="600" font-size="4" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">+ Co.</text>
 </svg>

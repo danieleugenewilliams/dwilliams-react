@@ -1,0 +1,10 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#111827"/>
+  
+  <!-- Main Logo Text - DEW -->
+  <text x="200" y="170" font-family="Inter, sans-serif" font-weight="700" font-size="56" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">DEW</text>
+  
+  <!-- Plus symbol and Co. on same line -->
+  <text x="200" y="230" font-family="Inter, sans-serif" font-weight="600" font-size="32" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">+ Co.</text>
+</svg>

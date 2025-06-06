@@ -1,0 +1,7 @@
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="16" height="16" fill="#2563eb"/>
+  
+  <!-- Just DEW for very small favicon -->
+  <text x="8" y="10" font-family="Inter, sans-serif" font-weight="700" font-size="4" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">DEW</text>
+</svg>
