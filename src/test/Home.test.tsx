@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { describe, it, expect } from 'vitest'
@@ -18,10 +18,16 @@ const renderWithProviders = (component: React.ReactNode) => {
 }
 
 describe('Home Component', () => {
-  it('renders the home page', () => {
+  it('renders the home page', async () => {
     renderWithProviders(<Home />)
     
-    // Check if key elements are present
-    expect(document.title).toContain('D. E. Williams & Company')
+    // Wait for the component to render and check for content that exists
+    await waitFor(() => {
+      expect(screen.getByText(/D. E. Williams \+ Co./i)).toBeInTheDocument()
+    })
+    
+    // Check for other content that should be present
+    expect(screen.getByText(/Premium strategic advisory/i)).toBeInTheDocument()
+    expect(screen.getByText(/Our Services/i)).toBeInTheDocument()
   })
 })

@@ -53,7 +53,7 @@ const CaseStudyDownloadModal: React.FC<CaseStudyDownloadModalProps> = ({ open, o
       } else {
         setError("There was a problem submitting the form. Please try again later.");
       }
-    } catch (err) {
+    } catch {
       setError("There was a problem submitting the form. Please try again later.");
     } finally {
       setLoading(false);

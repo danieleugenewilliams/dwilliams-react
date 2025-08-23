@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
       } else {
         setError("There was a problem submitting the form. Please try again later.");
       }
-    } catch (err) {
+    } catch {
       setError("There was a problem submitting the form. Please try again later.");
     } finally {
       setLoading(false);

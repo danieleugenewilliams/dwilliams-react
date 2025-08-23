@@ -1,12 +1,25 @@
 import { useEffect } from 'react';
 
+// Google Analytics types
+type GtagFunction = (...args: unknown[]) => void;
+
+interface HotjarFunction {
+  (...args: unknown[]): void;
+  q?: unknown[];
+}
+
+interface HotjarSettings {
+  hjid: number;
+  hjsv: number;
+}
+
 // Extend Window interface for Google Analytics
 declare global {
   interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
-    hj: any;
-    _hjSettings: any;
+    dataLayer: unknown[];
+    gtag: GtagFunction;
+    hj: HotjarFunction;
+    _hjSettings: HotjarSettings;
   }
 }
 
@@ -25,7 +38,7 @@ export function GoogleAnalytics() {
 
     // Initialize GA
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
+    function gtag(...args: unknown[]) {
       window.dataLayer.push(args);
     }
     
@@ -49,14 +62,14 @@ export function Hotjar() {
     if (!HOTJAR_ID) return;
 
     // Hotjar tracking code
-    (function(h: any, o: any, t: any, j: any, a?: any, r?: any) {
-      h.hj = h.hj || function() {
-        (h.hj.q = h.hj.q || []).push(arguments);
+    (function(h: Window, o: Document, t: string, j: string, a?: HTMLElement, r?: HTMLScriptElement) {
+      h.hj = h.hj || function(...args: unknown[]) {
+        (h.hj.q = h.hj.q || []).push(args);
       };
-      h._hjSettings = { hjid: HOTJAR_ID, hjsv: 6 };
+      h._hjSettings = { hjid: parseInt(HOTJAR_ID), hjsv: 6 };
       a = o.getElementsByTagName('head')[0];
       r = o.createElement('script');
-      r.async = 1;
+      r.async = true;
       r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
       a.appendChild(r);
     })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
@@ -73,7 +86,7 @@ export function WebVitals() {
         const webVitals = await import('web-vitals');
         const { onCLS, onINP, onFCP, onLCP, onTTFB } = webVitals;
 
-        const handleMetric = (name: string) => (metric: any) => {
+        const handleMetric = (name: string) => (metric: { value: number }) => {
           if (window.gtag) {
             window.gtag('event', 'web_vitals', {
               event_category: 'Web Vitals',
