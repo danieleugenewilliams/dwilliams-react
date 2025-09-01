@@ -8,6 +8,7 @@ import Services from './components/ServicesUpdated';
 import Bio from './components/Bio';
 import CaseStudies from './components/CaseStudies';
 import Contact from './components/Contact';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import { ThemeProvider } from './components/ThemeProvider';
 import { Analytics } from './components/Analytics';
 
@@ -25,6 +26,7 @@ function App() {
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/bio" element={<Bio />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
               {/* Add Insights, Terms, etc. as needed */}
             </Routes>
           </Layout>

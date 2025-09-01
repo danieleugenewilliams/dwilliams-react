@@ -20,7 +20,7 @@ function Header() {
           <nav className="flex items-center gap-8" role="navigation" aria-label="Main Navigation">
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/services" className="nav-link">Services</Link>
-            <Link to="/case-studies" className="nav-link">Case Studies</Link>
+            <Link to="/case-studies" className="nav-link">Work</Link>
             <Link to="/bio" className="nav-link">Bio</Link>
             <Link to="/contact" className="nav-link">Contact</Link>
             <a
@@ -56,6 +56,7 @@ function Footer() {
         <div className="flex space-x-6 mt-4 md:mt-0">
           <a href="https://www.linkedin.com/in/danieleugenewilliams/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
           <a href="https://twitter.com/dewilliamsco" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">Twitter</a>
+          <Link to="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy</Link>
           <Link to="/terms" className="text-muted-foreground hover:text-foreground transition-colors">Terms</Link>
         </div>
       </div>
