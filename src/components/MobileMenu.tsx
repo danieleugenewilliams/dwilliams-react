@@ -61,7 +61,7 @@ export function MobileMenu() {
                   className="block nav-link text-lg py-2" 
                   onClick={closeMenu}
                 >
-                  Case Studies
+                  Work
                 </Link>
                 <Link 
                   to="/bio" 
