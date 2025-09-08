@@ -4,6 +4,23 @@ import { SEO } from "./SEO";
 
 const CASE_STUDIES = [
 	{
+		title: "Solving AI Context Amnesia for Development Teams",
+		subtitle: "LocalMemory.co Product Development & Launch",
+		pdfUrl: "https://localmemory.co",
+		challenge:
+			"Developers face a critical productivity problem: AI assistants have no memory between sessions. Every day, teams waste hours re-explaining codebases, architectural decisions, and debugging solutions. It's like hiring a developer who forgets everything overnight, forcing constant context rebuilding and repeated explanations.",
+		solution:
+			"Built LocalMemory.co from concept to production launch - an AI-powered memory system that gives developers persistent, searchable knowledge across all AI interactions. Features 26 MCP tools, 34,466 memories/second processing, semantic search, and vector search (Qdrant) that transforms context amnesia into cumulative intelligence.",
+		results: [
+			"Launched production-ready AI memory system with 26 MCP tools and semantic search",
+			"Achieved 34,466 memories/second processing speed with 11ms vector search performance", 
+			"Validated core problem of 'context amnesia' affecting developer productivity",
+			"Successfully positioned product launch with Context Engineering value proposition",
+		],
+		featured: true,
+		isExternalLink: true,
+	},
+	{
 		title: "Standardizing Innovation for Long-Term Impact",
 		subtitle: "JFFLabs Impact Incubation Model",
 		pdfUrl: "/case-studies/jfflabs-impact-incubation-model-case-study.pdf",
@@ -110,8 +127,77 @@ export default function CaseStudies() {
 						and achieve breakthrough results.
 					</p>
 				</div>
+				{/* Featured Case Study */}
+				{CASE_STUDIES.find(cs => cs.featured) && (
+					<div className="mb-16 rounded-lg border-2 border-primary bg-card/50 p-8 backdrop-blur-sm">
+						<div className="text-center mb-6">
+							<span className="inline-block px-3 py-1 rounded-full bg-primary text-primary-foreground text-sm font-medium">
+								Featured Case Study
+							</span>
+						</div>
+						{(() => {
+							const featuredStudy = CASE_STUDIES.find(cs => cs.featured);
+							return (
+								<div className="flex flex-col lg:flex-row gap-8">
+									<div className="lg:w-2/3">
+										<h2 className="text-3xl font-bold text-primary mb-2">
+											{featuredStudy?.title}
+										</h2>
+										<p className="text-lg font-medium text-muted-foreground mb-6">
+											{featuredStudy?.subtitle}
+										</p>
+										<div className="space-y-6">
+											<div>
+												<h3 className="text-lg font-semibold mb-3">Challenge</h3>
+												<p className="text-muted-foreground">{featuredStudy?.challenge}</p>
+											</div>
+											<div>
+												<h3 className="text-lg font-semibold mb-3">Solution</h3>
+												<p className="text-muted-foreground">{featuredStudy?.solution}</p>
+											</div>
+										</div>
+									</div>
+									<div className="lg:w-1/3">
+										<div className="bg-primary/10 rounded-lg p-6">
+											<h3 className="text-lg font-semibold mb-4">Key Results</h3>
+											<ul className="space-y-3 text-muted-foreground">
+												{featuredStudy?.results.map((result) => (
+													<li key={result} className="flex items-start">
+														<span className="text-primary mr-2 mt-1">✓</span>
+														{result}
+													</li>
+												))}
+											</ul>
+											<div className="mt-6">
+												{featuredStudy?.isExternalLink ? (
+													<a
+														href={featuredStudy.pdfUrl}
+														target="_blank"
+														rel="noopener noreferrer"
+														className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 transition"
+													>
+														Visit LocalMemory.co →
+													</a>
+												) : (
+													<button
+														className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 transition"
+														onClick={() => featuredStudy && openModal(featuredStudy.pdfUrl, featuredStudy.title)}
+													>
+														Download Case Study
+													</button>
+												)}
+											</div>
+										</div>
+									</div>
+								</div>
+							);
+						})()}
+					</div>
+				)}
+				
+				{/* Other Case Studies */}
 				<div className="grid gap-8 md:grid-cols-2">
-					{CASE_STUDIES.map((cs) => (
+					{CASE_STUDIES.filter(cs => !cs.featured).map((cs) => (
 						<div
 							key={cs.title}
 							className="rounded-lg border bg-card p-8 flex flex-col h-full"

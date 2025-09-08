@@ -82,11 +82,16 @@ const tabContent: Record<string, React.ReactNode> = {
       </p>
       <p>
         In 2024, I founded D. E. Williams & Co., a strategic technology advisory
-        firm specializing in digital transformation, cloud solutions, and
-        AI-driven innovation. My firm delivers measurable value to clients using
-        tools like NotebookLM and GenAI Agents, optimizing operations, predicting
-        donor churn, and enhancing decision-making for edtech, nonprofit, and
-        public sector organizations. At JFFLabs, I've created the JFFLabs Impact
+        firm specializing in AI product development, digital transformation, and
+        cloud solutions. Our most recent success is LocalMemory.co, an AI-powered
+        personal knowledge assistant that I developed from concept to beta launch,
+        achieving 85% weekly user retention and validating product-market fit through
+        rigorous user research and analytics. My firm delivers measurable value to
+        clients using tools like NotebookLM and GenAI Agents, optimizing operations,
+        predicting donor churn, and enhancing decision-making for edtech, nonprofit, 
+        and public sector organizations. I also publish Claude Code for Non-Coders,
+        a weekly newsletter exploring practical AI applications and no-code automation
+        for business leaders. At JFFLabs, I've created the JFFLabs Impact
         Incubation Model, a framework to standardize incubation, scaling, and impact
         measurement for digital products and partnerships. I've overseen product and
         API implementation for their Education Quality Outcomes Standards (EQOS)
@@ -155,11 +160,16 @@ const tabContent: Record<string, React.ReactNode> = {
       </p>
       <p>
         In 2024, I founded D. E. Williams & Co., a strategic technology advisory
-        firm specializing in digital transformation, cloud solutions, and
-        AI-driven innovation. My firm delivers measurable value to clients using
-        tools like NotebookLM and GenAI Agents, optimizing operations, predicting
-        donor churn, and enhancing decision-making for edtech, nonprofit, and
-        public sector organizations. At JFFLabs, I've created the JFFLabs Impact
+        firm specializing in AI product development, digital transformation, and
+        cloud solutions. Our most recent success is LocalMemory.co, an AI-powered
+        personal knowledge assistant that I developed from concept to beta launch,
+        achieving 85% weekly user retention and validating product-market fit through
+        rigorous user research and analytics. My firm delivers measurable value to
+        clients using tools like NotebookLM and GenAI Agents, optimizing operations,
+        predicting donor churn, and enhancing decision-making for edtech, nonprofit, 
+        and public sector organizations. I also publish Claude Code for Non-Coders,
+        a weekly newsletter exploring practical AI applications and no-code automation
+        for business leaders. At JFFLabs, I've created the JFFLabs Impact
         Incubation Model, a framework to standardize incubation, scaling, and impact
         measurement for digital products and partnerships. I've overseen product and
         API implementation for their Education Quality Outcomes Standards (EQOS)

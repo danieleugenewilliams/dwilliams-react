@@ -134,6 +134,22 @@ const Contact: React.FC = () => {
               <h3 className="text-xl font-bold text-primary">Our Approach</h3>
               <p className="mt-2 text-muted-foreground">We believe in delivering high-value, results-oriented solutions that drive real transformation. Our approach combines deep industry expertise with cutting-edge technology to help you achieve your goals.</p>
             </div>
+            <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
+              <h3 className="text-xl font-bold text-primary mb-2">Claude Code for Non-Coders</h3>
+              <p className="text-muted-foreground mb-4 text-sm">
+                Join our weekly newsletter exploring practical AI applications, no-code automation, 
+                and productivity insights for business leaders. Get actionable strategies to leverage 
+                AI tools like Claude Code without needing technical expertise.
+              </p>
+              <a 
+                href="https://newsletter.dewilliamsco.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-3 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition text-sm font-medium"
+              >
+                Subscribe to Newsletter →
+              </a>
+            </div>
             <div>
               <h3 className="text-xl font-bold text-primary">Response Time</h3>
               <p className="mt-2 text-muted-foreground">We typically respond to all inquiries within 1-2 business days. For urgent matters, please indicate so in your message.</p>

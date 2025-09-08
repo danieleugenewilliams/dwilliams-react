@@ -5,8 +5,8 @@ export default function Services() {
     <>
       <SEO 
         title="Services - D. E. Williams & Company"
-        description="Strategic consulting services in cloud transformation, AI strategy, and data analytics for enterprise leaders."
-        keywords="consulting, strategy, AI, cloud, data analytics, digital transformation"
+        description="AI Product Development and strategic consulting services. From LocalMemory.co to enterprise solutions - we build intelligent products that drive growth, efficiency, and lasting value."
+        keywords="AI product development, consulting, strategy, LocalMemory, AI products, LLM integration, semantic search, digital transformation"
       />
       <section className="bg-background py-16 min-h-[70vh]">
         <div className="container mx-auto max-w-5xl px-4">
@@ -35,21 +35,26 @@ export default function Services() {
                 <li>Enhanced operational efficiency by standardizing processes and developing a new innovation incubation model.</li>
               </ul>
             </div>
-            {/* Service 2 */}
+            {/* Service 2 - Featured */}
             <div className="rounded-3xl p-8 xl:p-10 bg-primary/10 ring-2 ring-primary flex flex-col">
-              <h3 className="text-lg font-semibold leading-8 text-foreground mb-2">GenAI Impact Studio</h3>
+              <div className="mb-4">
+                <span className="inline-block px-2 py-1 rounded-full bg-primary text-primary-foreground text-xs font-medium mb-2">
+                  Featured
+                </span>
+              </div>
+              <h3 className="text-lg font-semibold leading-8 text-foreground mb-2">AI Product Development</h3>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                Harness generative AI to unlock your team's creative and analytical potential. Our GenAI Impact Studio crafts rapid, responsible AI solutions that transform data into actionable strategies, from stakeholder engagement to predictive analytics. Built on our expertise with JFFLabs' veteran mobility initiatives (resulting in a 6-week GenAI prototype) and the EQOS funding success with the GitLab Foundation, we prototype tools like NotebookLM-powered analytics to amplify customer insights and drive mission-critical outcomes. Ideal for leaders aiming to innovate swiftly and ethically.
+                Transform your AI vision into market-ready products with our end-to-end development approach. From concept validation and technical architecture to launch and growth optimization, we specialize in LLM integration, semantic search, and intelligent automation. Built on our success with LocalMemory.co's AI-powered knowledge management platform, we deliver rapid, scalable AI products that users love. Perfect for leaders ready to turn AI innovation into market advantage.
               </p>
               <div className="mt-6 flex items-baseline gap-x-2">
-                <span className="text-3xl font-bold tracking-tight text-foreground">$50k</span>
-                <span className="text-sm font-semibold leading-6 text-muted-foreground">6 Weeks</span>
+                <span className="text-3xl font-bold tracking-tight text-foreground">$125k</span>
+                <span className="text-sm font-semibold leading-6 text-muted-foreground">20 Weeks</span>
               </div>
               <a href="/contact" className="mt-6 block rounded-md px-3 py-2 text-center text-sm font-semibold bg-primary text-primary-foreground hover:bg-primary/90 transition">Get Started</a>
               <ul className="mt-8 space-y-3 text-sm leading-6 text-muted-foreground xl:mt-10">
-                <li>Secure additional funding through AI-driven insights, as demonstrated by EQOS for GitLab Foundation.</li>
-                <li>Prototype GenAI tools in 6 weeks, validated through veteran mobility studies with 300+ participants.</li>
-                <li>Drive stakeholder engagement and customer discovery through responsible AI applications.</li>
+                <li>Launched LocalMemory.co from concept to beta with 85% weekly user retention.</li>
+                <li>Implemented semantic search and AI relationship mapping reducing retrieval time by 60%.</li>
+                <li>Delivered MVP with 100+ active users and validated product-market fit in 20 weeks.</li>
               </ul>
             </div>
             {/* Service 3 */}

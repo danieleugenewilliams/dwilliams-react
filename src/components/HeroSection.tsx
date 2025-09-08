@@ -12,9 +12,11 @@ export default function HeroSection() {
           D. E. Williams + Co.
         </h1>
         <p className="text-lg md:text-2xl mb-8 text-white font-medium drop-shadow-lg animate-fade-in-up animation-delay-300">
-          Premium strategic advisory and solutions for leaders seeking to transform their
-          organization through cloud, AI, and data. From innovation incubation
-          programs to digital transformation, we deliver solutions that scale.
+          Premium strategic advisory and AI product development for leaders seeking to transform their
+          organization. From LocalMemory.co to innovation incubation programs, we deliver solutions that scale.
+          <span className="block mt-3 text-base opacity-90">
+            Subscribe to our Claude Code for Non-Coders newsletter for weekly AI insights.
+          </span>
         </p>
         <a
           href="/contact"

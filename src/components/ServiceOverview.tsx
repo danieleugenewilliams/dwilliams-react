@@ -5,12 +5,12 @@ export default function ServiceOverview() {
         <h2 className="text-2xl font-bold text-center mb-8 text-primary">Our Services</h2>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="card">
-            <h3 className="font-semibold text-lg mb-2 text-foreground">Cloud Transformation</h3>
-            <p className="text-muted-foreground">Modernize your infrastructure and operations for agility, scale, and security in the cloud.</p>
+            <h3 className="font-semibold text-lg mb-2 text-foreground">AI Product Development</h3>
+            <p className="text-muted-foreground">End-to-end AI product development from concept to launch. Specializing in LLM integration, semantic search, and intelligent automation.</p>
           </div>
           <div className="card">
-            <h3 className="font-semibold text-lg mb-2 text-foreground">AI & Data Strategy</h3>
-            <p className="text-muted-foreground">Unlock insights and drive innovation with AI, analytics, and data-driven decision making.</p>
+            <h3 className="font-semibold text-lg mb-2 text-foreground">Strategic Advisory</h3>
+            <p className="text-muted-foreground">Premium strategic consulting for cloud transformation, AI strategy, and digital transformation initiatives that scale.</p>
           </div>
           <div className="card">
             <h3 className="font-semibold text-lg mb-2 text-foreground">Innovation Incubation</h3>
