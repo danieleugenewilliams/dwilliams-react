@@ -1,7 +1,8 @@
-<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="16" height="16" fill="#2563eb"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- Background - near black -->
+  <rect width="16" height="16" fill="#0a0a0a"/>
   
-  <!-- Just DEW for very small favicon -->
-  <text x="8" y="10" font-family="Inter, sans-serif" font-weight="700" font-size="4" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">DEW</text>
+  <!-- Terminal prompt style -->
+  <text x="2" y="11" font-family="monospace" font-weight="400" font-size="7" fill="#22d3ee">></text>
+  <text x="14" y="11" font-family="monospace" font-weight="700" font-size="6" fill="#e0e0e0" text-anchor="end">_</text>
 </svg>

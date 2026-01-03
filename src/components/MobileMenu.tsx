@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeToggle } from './ThemeToggle';
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,11 +12,11 @@ export function MobileMenu() {
       {/* Mobile menu button */}
       <button
         type="button"
-        className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ring"
+        className="inline-flex items-center justify-center p-2 text-foreground hover:text-terminal-cyan focus:outline-none focus:ring-2 focus:ring-terminal-cyan"
         aria-label="Open main menu"
         onClick={toggleMenu}
       >
-        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
@@ -25,72 +24,94 @@ export function MobileMenu() {
       {/* Mobile menu overlay */}
       {isOpen && (
         <div className="md:hidden fixed inset-0 z-50">
-          <div className="fixed inset-0 bg-black bg-opacity-25" onClick={closeMenu} />
-          <div className="fixed top-0 right-0 w-64 h-full bg-card shadow-lg">
-            <div className="p-4">
-              <div className="flex justify-between items-center mb-6">
-                <span className="font-bold text-xl text-primary">Menu</span>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-background/80 backdrop-blur-sm" 
+            onClick={closeMenu} 
+          />
+          
+          {/* Menu panel */}
+          <div className="fixed top-0 right-0 w-64 h-full bg-card border-l border-border">
+            <div className="p-6">
+              {/* Header */}
+              <div className="flex justify-between items-center mb-8">
+                <span className="font-mono text-sm text-muted-foreground">// MENU</span>
                 <button
                   type="button"
-                  className="p-2 rounded-md text-primary hover:bg-accent"
+                  className="p-1 text-muted-foreground hover:text-foreground"
                   onClick={closeMenu}
                   aria-label="Close menu"
                 >
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
-              <nav className="space-y-4 bg-background p-4 rounded-lg">
+              
+              {/* Navigation */}
+              <nav className="space-y-1">
                 <Link 
                   to="/" 
-                  className="block nav-link text-lg py-2" 
+                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors" 
                   onClick={closeMenu}
                 >
-                  Home
+                  [home]
                 </Link>
                 <Link 
-                  to="/services" 
-                  className="block nav-link text-lg py-2" 
+                  to="/lab" 
+                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors" 
                   onClick={closeMenu}
                 >
-                  Services
-                </Link>
-                <Link 
-                  to="/case-studies" 
-                  className="block nav-link text-lg py-2" 
-                  onClick={closeMenu}
-                >
-                  Work
-                </Link>
-                <Link 
-                  to="/bio" 
-                  className="block nav-link text-lg py-2" 
-                  onClick={closeMenu}
-                >
-                  Bio
-                </Link>
-                <Link 
-                  to="/contact" 
-                  className="block nav-link text-lg py-2" 
-                  onClick={closeMenu}
-                >
-                  Contact
+                  [lab]
                 </Link>
                 <a
                   href="https://dewilliamsco.substack.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block nav-link text-lg py-2"
+                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
                   onClick={closeMenu}
                 >
-                  Insights
+                  [newsletter]
                 </a>
-                <div className="mt-4 pt-4 border-t border-border flex items-center">
-                  <span className="text-muted-foreground mr-3">Theme:</span>
-                  <ThemeToggle />
-                </div>
+                <Link 
+                  to="/contact" 
+                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors" 
+                  onClick={closeMenu}
+                >
+                  [contact]
+                </Link>
               </nav>
+              
+              {/* Divider */}
+              <div className="my-8 border-t border-border"></div>
+              
+              {/* Social links */}
+              <div className="space-y-2">
+                <a
+                  href="https://www.linkedin.com/in/danieleugenewilliams/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block font-mono text-xs text-muted-foreground hover:text-terminal-cyan transition-colors"
+                >
+                  LinkedIn →
+                </a>
+                <a
+                  href="https://twitter.com/dewilliamsco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block font-mono text-xs text-muted-foreground hover:text-terminal-cyan transition-colors"
+                >
+                  Twitter →
+                </a>
+                <a
+                  href="https://github.com/danieleugenewilliams"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block font-mono text-xs text-muted-foreground hover:text-terminal-cyan transition-colors"
+                >
+                  GitHub →
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -18,15 +18,24 @@ Proactively use local-memory MCP to store, retrieve, update, and analyze memorie
 
 ## Architecture Overview
 
-This is a Vite + React (TypeScript) single-page application migrated from Next.js. Key architectural decisions:
+This is a Vite + React (TypeScript) single-page application. The site serves as the umbrella brand for D. E. Williams + Co., a product lab building AI-native tools.
 
 ### Tech Stack
 - **React 19** with functional components and hooks
 - **TypeScript** for all code
 - **Vite** for build tooling and dev server
 - **React Router** for client-side routing (no SSR)
-- **Tailwind CSS** with Typography plugin for styling
+- **Tailwind CSS** for styling
 - **Vitest** with jsdom and React Testing Library for testing
+
+### Design System: "Lab Terminal"
+
+The site uses a Terminal/CLI + Maker Space aesthetic:
+
+- **Typography**: JetBrains Mono for headings/UI, Inter for body text
+- **Colors**: Neutral base with terminal accent colors (cyan, green, amber)
+- **Visual elements**: Subtle grid background, ASCII box-drawing accents, status badges
+- **Components**: Terminal-style navigation, product cards with status indicators
 
 ### Project Structure
 - `src/components/` - All React components
@@ -36,32 +45,46 @@ This is a Vite + React (TypeScript) single-page application migrated from Next.j
 - `src/App.tsx` - Main app component with routing
 
 ### Key Components
-- **Layout.tsx** - Main layout wrapper with navigation
+- **Layout.tsx** - Main layout wrapper with navigation and footer
+- **LabHero.tsx** - Homepage hero section
+- **ProductGrid.tsx** - Product portfolio display
+- **ProductCard.tsx** - Individual product card
+- **StatusBadge.tsx** - Product status indicator (LIVE, BETA, IN DEV)
+- **Lab.tsx** - About the lab page
 - **ThemeProvider.tsx** - Dark/light theme management
-- **Analytics.tsx** - Web vitals and analytics tracking
-- **SEO.tsx** - React Helmet for meta tags
-- **MobileMenu.tsx** - Mobile navigation
 
 ### Routing Structure
 Routes are defined in App.tsx using React Router:
-- `/` - Home page
-- `/about` - About page
-- `/services` - Services overview
-- `/case-studies` - Case studies
-- `/bio` - Bio page
-- `/contact` - Contact page
+- `/` - Homepage with product showcase
+- `/lab` - About the lab, philosophy, founder bio
+- `/contact` - Contact form
+- `/privacy` - Privacy policy
+
+Legacy routes redirect to new pages:
+- `/about`, `/bio` → `/lab`
+- `/services`, `/case-studies` → `/`
 
 ### Styling Conventions
 - Use Tailwind CSS utility classes
+- Monospace font (`font-mono`) for headings and UI elements
+- Terminal-style status badges with bracket notation: `[LIVE]`, `[BETA]`
+- Section headers use comment style: `// SECTION_NAME`
 - Responsive design with mobile-first approach
 - Dark/light theme support via ThemeProvider context
-- Typography plugin for rich text content
 
-### Testing Setup
-- Vitest configured with jsdom environment
-- React Testing Library for component testing
-- Test setup file at `src/test/setup.ts`
-- Global test configuration in vitest.config.ts
+### Component Patterns
+- Navigation links: `[text]` bracket style
+- Buttons: `btn-primary` (bordered cyan) or `btn-ghost` (text only)
+- Cards: `product-card` class with hover glow effect
+- Status: `status-badge` with `status-live`, `status-beta`, `status-dev` variants
+
+### Products Data
+Product information is defined in `ProductGrid.tsx`. Current products:
+1. LocalMemory (LIVE) - localmemory.co
+2. World Memory (BETA)
+3. ReckonGrid (IN DEV)
+4. OutcomeStack (IN DEV)
+5. AssessKit (IN DEV)
 
 ### Deployment
 - Configured for AWS Amplify deployment

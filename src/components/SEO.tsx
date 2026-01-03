@@ -10,14 +10,14 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = 'D. E. Williams & Company - Strategic Technology Advisory',
-  description = 'Premium strategic advisory for leaders seeking to transform their organization through cloud, AI, and data. Expert consulting services for education technology, public sector, and nonprofit organizations.',
-  keywords = 'strategic advisory, technology consulting, AI consulting, cloud transformation, data strategy, education technology, edtech consulting, nonprofit technology, public sector technology',
-  image = '/hero.avif',
+  title = 'D. E. Williams + Co. — AI Product Lab',
+  description = 'Building AI-native products for knowledge, productivity, and growth. Home of LocalMemory, World Memory, ReckonGrid, and more.',
+  keywords = 'AI products, AI tools, LocalMemory, knowledge management, AI assistants, product lab, AI-native, machine learning products',
+  image = '/og-image.svg',
   url = 'https://dewilliams.co',
   type = 'website'
 }: SEOProps) {
-  const fullTitle = title.includes('D. E. Williams') ? title : `${title} | D. E. Williams & Company`;
+  const fullTitle = title.includes('D. E. Williams') ? title : `${title} — D. E. Williams + Co.`;
   const fullUrl = url.startsWith('http') ? url : `https://dewilliams.co${url}`;
   const fullImage = image.startsWith('http') ? image : `https://dewilliams.co${image}`;
 
@@ -35,7 +35,7 @@ export function SEO({
       <meta property="og:image" content={fullImage} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="D. E. Williams & Company" />
+      <meta property="og:site_name" content="D. E. Williams + Co." />
       
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -59,28 +59,26 @@ export function SEO({
             {
               "@type": "Organization",
               "name": "D. E. Williams and Company",
+              "alternateName": "D. E. Williams + Co.",
               "url": "https://dewilliams.co",
-              "logo": "https://dewilliams.co/placeholder-logo.svg",
+              "logo": "https://dewilliams.co/logo.svg",
               "sameAs": [
                 "https://www.linkedin.com/in/danieleugenewilliams/",
                 "https://twitter.com/dewilliamsco",
-                "https://dewilliamsco.substack.com/"
+                "https://dewilliamsco.substack.com/",
+                "https://github.com/DEWilliams"
               ],
               "description": description,
-              "foundingDate": "2020",
+              "foundingDate": "2024",
               "founder": {
                 "@type": "Person",
                 "name": "Daniel E. Williams"
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "US"
               }
             },
             {
               "@type": "WebSite",
               "url": "https://dewilliams.co",
-              "name": "D. E. Williams and Company",
+              "name": "D. E. Williams + Co.",
               "description": description,
               "publisher": {
                 "@type": "Organization",

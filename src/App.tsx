@@ -3,13 +3,9 @@ import { HelmetProvider } from 'react-helmet-async';
 import './App.css'
 import Home from './components/Home';
 import Layout from './components/Layout';
-import About from './components/About';
-import Services from './components/ServicesUpdated';
-import Bio from './components/Bio';
-import CaseStudies from './components/CaseStudies';
+import Lab from './components/Lab';
 import Contact from './components/Contact';
 import PrivacyPolicy from './components/PrivacyPolicy';
-import TermsConditions from './components/TermsConditions';
 import { ThemeProvider } from './components/ThemeProvider';
 import { Analytics } from './components/Analytics';
 
@@ -22,13 +18,14 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/case-studies" element={<CaseStudies />} />
-              <Route path="/bio" element={<Bio />} />
+              <Route path="/lab" element={<Lab />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
-              <Route path="/terms" element={<TermsConditions />} />
+              {/* Redirects for old routes - can be removed after transition */}
+              <Route path="/about" element={<Lab />} />
+              <Route path="/bio" element={<Lab />} />
+              <Route path="/services" element={<Home />} />
+              <Route path="/case-studies" element={<Home />} />
             </Routes>
           </Layout>
         </Router>

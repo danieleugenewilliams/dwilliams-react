@@ -4,58 +4,80 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - Light mode */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 217 100% 58%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 50% 50%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 217 100% 58%;
-    --radius: 0.5rem;
+    --card-foreground: 0 0% 10%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 187 72% 38%;
+    --radius: 0.25rem;
     
-    /* Brand colors */
-    --brand-primary: 217 100% 58%;
-    --brand-secondary: 210 50% 50%;
-    --brand-silver: 215 20% 65%;
+    /* Muted */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 42%;
+    
+    /* Primary - Cyan accent */
+    --primary: 187 72% 38%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary */
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 10%;
+    
+    /* Accent */
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 10%;
+    
+    /* Terminal colors */
+    --terminal-green: 142 71% 45%;
+    --terminal-amber: 38 92% 50%;
+    --terminal-cyan: 187 72% 48%;
+    --terminal-red: 0 72% 51%;
+    
+    /* Grid pattern */
+    --grid-pattern: 
+      linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217 91% 65%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 60% 60%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 80%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 217 91% 65%;
+    /* Base colors - Dark mode */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 88%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 88%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 187 72% 48%;
     
-    /* Brand colors for dark mode */
-    --brand-primary: 217 91% 65%;
-    --brand-secondary: 210 60% 60%;
-    --brand-silver: 215 20% 80%;
+    /* Muted */
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 56%;
+    
+    /* Primary - Cyan accent */
+    --primary: 187 72% 48%;
+    --primary-foreground: 0 0% 4%;
+    
+    /* Secondary */
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 88%;
+    
+    /* Accent */
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 88%;
+    
+    /* Terminal colors - slightly brighter for dark mode */
+    --terminal-green: 142 71% 55%;
+    --terminal-amber: 43 96% 56%;
+    --terminal-cyan: 187 85% 53%;
+    --terminal-red: 0 72% 58%;
+    
+    /* Grid pattern */
+    --grid-pattern: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   }
 }
 
@@ -63,40 +85,51 @@
   * {
     @apply border-border;
   }
+  
   body {
-    @apply bg-background text-foreground font-sans overflow-x-hidden;
+    @apply bg-background text-foreground font-sans overflow-x-hidden antialiased;
     min-height: 100vh;
     margin: 0;
     padding: 0;
   }
+  
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
+  
+  /* Typography */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-bold;
+    @apply font-mono font-semibold tracking-tight;
   }
+  
   h1 {
-    @apply text-4xl md:text-6xl text-primary mb-6 tracking-tight;
+    @apply text-3xl md:text-5xl text-foreground mb-4;
   }
+  
   h2 {
-    @apply text-2xl md:text-4xl text-primary mb-4 tracking-tight;
+    @apply text-xl md:text-2xl text-foreground mb-3;
   }
+  
   h3 {
-    @apply text-xl md:text-2xl text-foreground mb-2;
+    @apply text-lg md:text-xl text-foreground mb-2;
   }
+  
   a {
-    @apply text-primary hover:underline transition-colors duration-200;
+    @apply text-terminal-cyan hover:underline transition-colors duration-200;
   }
+  
   a:focus {
-    @apply outline-none ring-2 ring-ring;
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+  
+  code {
+    @apply font-mono text-sm;
   }
 }
 
-body, html, #root, .theme-transition-ready {
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+/* Root and body setup */
+body, html, #root {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -110,49 +143,47 @@ body, html, #root, .theme-transition-ready {
   width: 100vw;
 }
 
+/* Grid background utility */
+.bg-grid {
+  background-image: var(--grid-pattern);
+  background-size: 40px 40px;
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  body, html, #root, .theme-transition-ready {
-    transition: none !important;
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-}
-
-/* Fade-in animation for sections */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-section {
-  animation: fadeIn 0.6s ease-out forwards;
 }
 
 @layer utilities {
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
+  /* Staggered fade-in animations */
+  .animate-fade-in-1 {
+    animation: fadeIn 0.4s ease-out 0.1s forwards;
+    opacity: 0;
   }
   
-  .animate-subtle-zoom {
-    animation: subtleZoom 20s ease-out forwards;
+  .animate-fade-in-2 {
+    animation: fadeIn 0.4s ease-out 0.2s forwards;
+    opacity: 0;
   }
   
-  .animation-delay-300 {
-    animation-delay: 300ms;
+  .animate-fade-in-3 {
+    animation: fadeIn 0.4s ease-out 0.3s forwards;
+    opacity: 0;
   }
   
-  .animation-delay-600 {
-    animation-delay: 600ms;
+  .animate-fade-in-4 {
+    animation: fadeIn 0.4s ease-out 0.4s forwards;
+    opacity: 0;
   }
   
-  @keyframes fadeInUp {
+  @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(10px);
     }
     to {
       opacity: 1;
@@ -160,27 +191,78 @@ section {
     }
   }
   
-  @keyframes subtleZoom {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.05);
-    }
+  /* Terminal cursor blink */
+  .cursor-blink::after {
+    content: '_';
+    @apply animate-blink text-terminal-cyan;
   }
 }
 
 @layer components {
+  /* Navigation link */
   .nav-link {
-    @apply text-base font-medium text-muted-foreground hover:text-primary transition-colors px-2 py-1 rounded;
+    @apply font-mono text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-1;
   }
+  
+  .nav-link::before {
+    content: '[';
+    @apply text-muted-foreground/50;
+  }
+  
+  .nav-link::after {
+    content: ']';
+    @apply text-muted-foreground/50;
+  }
+  
+  .nav-link:hover::before,
+  .nav-link:hover::after {
+    @apply text-terminal-cyan;
+  }
+  
+  /* Primary button */
   .btn-primary {
-    @apply bg-primary text-primary-foreground font-semibold rounded-md px-6 py-3 shadow hover:bg-primary/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    @apply font-mono text-sm bg-transparent border border-terminal-cyan text-terminal-cyan 
+           px-4 py-2 hover:bg-terminal-cyan/10 transition-all duration-200 
+           focus:outline-none focus:ring-2 focus:ring-terminal-cyan focus:ring-offset-2 focus:ring-offset-background;
   }
-  .btn-outline {
-    @apply border border-primary text-primary rounded-md px-6 py-3 bg-transparent hover:bg-accent transition-colors duration-200;
+  
+  /* Ghost button */
+  .btn-ghost {
+    @apply font-mono text-sm text-muted-foreground hover:text-foreground 
+           px-4 py-2 transition-colors duration-200;
   }
-  .card {
-    @apply bg-card text-card-foreground border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200;
+  
+  /* Product card */
+  .product-card {
+    @apply bg-card border border-border p-6 transition-all duration-300
+           hover:border-terminal-cyan/50 hover:shadow-[0_0_20px_rgba(34,211,238,0.1)];
+  }
+  
+  /* Status badge base */
+  .status-badge {
+    @apply font-mono text-xs px-2 py-0.5 border;
+  }
+  
+  .status-live {
+    @apply border-terminal-green/50 text-terminal-green bg-terminal-green/10;
+  }
+  
+  .status-beta {
+    @apply border-terminal-amber/50 text-terminal-amber bg-terminal-amber/10;
+  }
+  
+  .status-dev {
+    @apply border-muted-foreground/50 text-muted-foreground bg-muted;
+  }
+  
+  /* Terminal prompt */
+  .terminal-prompt::before {
+    content: '> ';
+    @apply text-terminal-cyan;
+  }
+  
+  /* Box drawing divider */
+  .divider-box {
+    @apply font-mono text-muted-foreground/30 text-xs select-none;
   }
 }

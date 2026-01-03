@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background - near black -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  
+  <!-- Grid overlay -->
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Terminal prompt -->
+  <text x="100" y="200" font-family="monospace" font-size="24" fill="#6b7280">$ cd ~/lab</text>
+  
+  <!-- Main title -->
+  <text x="100" y="300" font-family="monospace" font-weight="700" font-size="72" fill="#e0e0e0">D. E. Williams + Co.</text>
+  
+  <!-- Tagline with cursor -->
+  <text x="100" y="380" font-family="monospace" font-size="36" fill="#6b7280">Building AI-native products</text>
+  <text x="520" y="380" font-family="monospace" font-size="36" fill="#22d3ee">_</text>
+  
+  <!-- Products list -->
+  <text x="100" y="480" font-family="monospace" font-size="20" fill="#22d3ee">[LIVE]</text>
+  <text x="180" y="480" font-family="monospace" font-size="20" fill="#6b7280">LocalMemory</text>
+  
+  <text x="360" y="480" font-family="monospace" font-size="20" fill="#fbbf24">[BETA]</text>
+  <text x="440" y="480" font-family="monospace" font-size="20" fill="#6b7280">World Memory</text>
+  
+  <text x="620" y="480" font-family="monospace" font-size="20" fill="#71717a">[IN DEV]</text>
+  <text x="720" y="480" font-family="monospace" font-size="20" fill="#6b7280">ReckonGrid • OutcomeStack • AssessKit</text>
+  
+  <!-- URL -->
+  <text x="100" y="560" font-family="monospace" font-size="24" fill="#22d3ee">dewilliams.co</text>
+  
+  <!-- Decorative box in corner -->
+  <text x="1000" y="100" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.1)">┌──────────────┐</text>
+  <text x="1000" y="120" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.1)">│ EST. 2024    │</text>
+  <text x="1000" y="140" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.1)">│ AI PRODUCT   │</text>
+  <text x="1000" y="160" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.1)">│ LAB          │</text>
+  <text x="1000" y="180" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.1)">└──────────────┘</text>
+</svg>
