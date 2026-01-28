@@ -23,16 +23,16 @@ export function MobileMenu() {
 
       {/* Mobile menu overlay */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 z-50">
+        <div className="fixed inset-0 z-[9999]">
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-background/80 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/50"
             onClick={closeMenu}
           />
 
           {/* Menu panel */}
-          <div className="fixed top-0 right-0 w-64 h-full bg-card border-l border-border">
-            <div className="p-6">
+          <div className="fixed top-0 right-0 w-64 h-full bg-white dark:bg-zinc-900 border-l border-border shadow-xl">
+            <div className="p-6 h-full">
               {/* Header */}
               <div className="flex justify-between items-center mb-8">
                 <span className="font-mono text-sm text-muted-foreground">// MENU</span>
@@ -49,7 +49,7 @@ export function MobileMenu() {
               </div>
 
               {/* Navigation */}
-              <nav className="space-y-1">
+              <nav className="space-y-1 bg-background">
                 <Link
                   to="/"
                   className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
