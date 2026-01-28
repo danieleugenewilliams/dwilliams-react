@@ -44,19 +44,27 @@ const products: Product[] = [
     status: 'dev',
     launchDate: 'Q3 2026',
   },
+  {
+    id: 'vitalcore',
+    name: 'VitalCore',
+    tagline: 'Your health between visits',
+    description: 'Personal health tracker that captures what your doctor needs to see—weight, blood pressure, body composition, and trends over time. Walk into your next appointment with data, not guesses.',
+    status: 'dev',
+    launchDate: 'Q2 2026',
+  },
 ];
 
 export function ProductGrid() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 border-t border-border">
       <div className="container max-w-6xl">
         {/* Section header */}
         <div className="mb-12">
           <h2 className="font-mono text-sm text-muted-foreground mb-2">
-            // PRODUCTS
+            // WHAT_WE_BUILD
           </h2>
           <p className="text-lg text-foreground max-w-2xl">
-            AI-native tools for knowledge, productivity, and growth.
+            Beyond consulting, we build AI-native products. Here's what's in the lab.
           </p>
         </div>
         

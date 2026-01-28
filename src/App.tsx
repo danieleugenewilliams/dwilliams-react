@@ -1,9 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import './App.css'
 import Home from './components/Home';
 import Layout from './components/Layout';
-import Lab from './components/Lab';
+import Consulting from './components/Consulting';
+import Newsletters from './components/Newsletters';
+import About from './components/About';
 import Contact from './components/Contact';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import { ThemeProvider } from './components/ThemeProvider';
@@ -18,14 +20,16 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/lab" element={<Lab />} />
+              <Route path="/consulting" element={<Consulting />} />
+              <Route path="/newsletters" element={<Newsletters />} />
+              <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
-              {/* Redirects for old routes - can be removed after transition */}
-              <Route path="/about" element={<Lab />} />
-              <Route path="/bio" element={<Lab />} />
-              <Route path="/services" element={<Home />} />
-              <Route path="/case-studies" element={<Home />} />
+              {/* Redirects for old routes */}
+              <Route path="/lab" element={<Navigate to="/consulting" replace />} />
+              <Route path="/bio" element={<Navigate to="/about" replace />} />
+              <Route path="/services" element={<Navigate to="/consulting" replace />} />
+              <Route path="/case-studies" element={<Navigate to="/" replace />} />
             </Routes>
           </Layout>
         </Router>

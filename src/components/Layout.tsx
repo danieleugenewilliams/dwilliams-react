@@ -5,43 +5,37 @@ import { MobileMenu } from "./MobileMenu";
 
 function Header() {
   return (
-    <header 
+    <header
       className="sticky top-0 z-40 w-full border-b border-border bg-background/90 backdrop-blur-sm"
-      role="banner" 
+      role="banner"
       aria-label="Site Header"
     >
       <div className="container mx-auto px-4 flex h-14 items-center justify-between">
         {/* Logo */}
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="font-mono text-sm font-semibold text-foreground hover:text-terminal-cyan transition-colors"
           aria-label="D. E. Williams + Co. Home"
         >
           DEW+Co
         </Link>
-        
+
         {/* Desktop navigation */}
-        <nav 
-          className="hidden md:flex items-center gap-1" 
-          role="navigation" 
+        <nav
+          className="hidden md:flex items-center gap-1"
+          role="navigation"
           aria-label="Main Navigation"
         >
           <Link to="/" className="nav-link">home</Link>
-          <Link to="/lab" className="nav-link">lab</Link>
-          <a
-            href="https://dewilliamsco.substack.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-link"
-          >
-            newsletter
-          </a>
+          <Link to="/consulting" className="nav-link">consulting</Link>
+          <Link to="/newsletters" className="nav-link">newsletters</Link>
+          <Link to="/about" className="nav-link">about</Link>
           <Link to="/contact" className="nav-link">contact</Link>
           <div className="ml-2 pl-2 border-l border-border">
             <ThemeToggle />
           </div>
         </nav>
-        
+
         {/* Mobile menu */}
         <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
@@ -61,35 +55,35 @@ function Footer() {
           <p className="font-mono text-xs text-muted-foreground">
             © {new Date().getFullYear()} D. E. Williams and Company
           </p>
-          
+
           {/* Links */}
           <div className="flex items-center gap-6">
-            <a 
-              href="https://www.linkedin.com/in/danieleugenewilliams/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://www.linkedin.com/in/danieleugenewilliams/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               LinkedIn
             </a>
-            <a 
-              href="https://twitter.com/dewilliamsco" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://twitter.com/dewilliamsco"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               Twitter
             </a>
-            <a 
-              href="https://github.com/danieleugenewilliams" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://github.com/danieleugenewilliams"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               GitHub
             </a>
-            <Link 
-              to="/privacy" 
+            <Link
+              to="/privacy"
               className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               Privacy

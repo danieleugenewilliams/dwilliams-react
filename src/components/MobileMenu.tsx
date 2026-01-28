@@ -25,11 +25,11 @@ export function MobileMenu() {
       {isOpen && (
         <div className="md:hidden fixed inset-0 z-50">
           {/* Backdrop */}
-          <div 
-            className="fixed inset-0 bg-background/80 backdrop-blur-sm" 
-            onClick={closeMenu} 
+          <div
+            className="fixed inset-0 bg-background/80 backdrop-blur-sm"
+            onClick={closeMenu}
           />
-          
+
           {/* Menu panel */}
           <div className="fixed top-0 right-0 w-64 h-full bg-card border-l border-border">
             <div className="p-6">
@@ -47,44 +47,49 @@ export function MobileMenu() {
                   </svg>
                 </button>
               </div>
-              
+
               {/* Navigation */}
               <nav className="space-y-1">
-                <Link 
-                  to="/" 
-                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors" 
+                <Link
+                  to="/"
+                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
                   onClick={closeMenu}
                 >
                   [home]
                 </Link>
-                <Link 
-                  to="/lab" 
-                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors" 
-                  onClick={closeMenu}
-                >
-                  [lab]
-                </Link>
-                <a
-                  href="https://dewilliamsco.substack.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/consulting"
                   className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
                   onClick={closeMenu}
                 >
-                  [newsletter]
-                </a>
-                <Link 
-                  to="/contact" 
-                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors" 
+                  [consulting]
+                </Link>
+                <Link
+                  to="/newsletters"
+                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
+                  onClick={closeMenu}
+                >
+                  [newsletters]
+                </Link>
+                <Link
+                  to="/about"
+                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
+                  onClick={closeMenu}
+                >
+                  [about]
+                </Link>
+                <Link
+                  to="/contact"
+                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
                   onClick={closeMenu}
                 >
                   [contact]
                 </Link>
               </nav>
-              
+
               {/* Divider */}
               <div className="my-8 border-t border-border"></div>
-              
+
               {/* Social links */}
               <div className="space-y-2">
                 <a

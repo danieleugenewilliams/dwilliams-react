@@ -27,7 +27,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
   return (
     <CardWrapper
       {...cardProps}
-      className={`product-card block animate-fade-in-${Math.min(index + 1, 4)} ${
+      className={`product-card flex flex-col h-full animate-fade-in-${Math.min(index + 1, 4)} ${
         isClickable ? 'cursor-pointer' : ''
       }`}
     >
@@ -38,19 +38,19 @@ export function ProductCard({ product, index }: ProductCardProps) {
         </h3>
         <StatusBadge status={product.status} version={product.version} />
       </div>
-      
+
       {/* Tagline */}
       <p className="font-mono text-sm text-terminal-cyan mb-3">
         {product.tagline}
       </p>
-      
+
       {/* Description */}
-      <p className="text-sm text-muted-foreground leading-relaxed">
+      <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
         {product.description}
       </p>
-      
+
       {/* Footer */}
-      <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
+      <div className="mt-auto pt-4 border-t border-border flex items-center justify-between">
         {product.launchDate && (
           <span className="font-mono text-xs text-muted-foreground">
             {product.status === 'live' ? 'Launched' : 'Expected'}: {product.launchDate}

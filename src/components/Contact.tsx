@@ -245,7 +245,7 @@ const Contact: React.FC = () => {
                       rel="noopener noreferrer"
                       className="btn-primary inline-block text-xs"
                     >
-                      [Subscribe]
+                      [Explore]
                     </a>
                   </div>
                   

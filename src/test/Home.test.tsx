@@ -20,14 +20,14 @@ const renderWithProviders = (component: React.ReactNode) => {
 describe('Home Component', () => {
   it('renders the home page', async () => {
     renderWithProviders(<Home />)
-    
-    // Wait for the component to render and check for content that exists
+
+    // Wait for the component to render and check for the hero headline (h1)
     await waitFor(() => {
-      expect(screen.getByText(/D. E. Williams \+ Co./i)).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1, name: /From AI Experiments to AI Results/i })).toBeInTheDocument()
     })
-    
+
     // Check for other content that should be present
-    expect(screen.getByText(/Premium strategic advisory/i)).toBeInTheDocument()
-    expect(screen.getByText(/Our Services/i)).toBeInTheDocument()
+    expect(screen.getByText(/I help companies stop piloting and start shipping/i)).toBeInTheDocument()
+    expect(screen.getByText(/THE_PROBLEM/)).toBeInTheDocument()
   })
 })
