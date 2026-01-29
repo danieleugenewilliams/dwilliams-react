@@ -38,8 +38,11 @@ export function GoogleAnalytics() {
 
     // Initialize GA
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args: unknown[]) {
-      window.dataLayer.push(args);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    function gtag(..._args: any[]) {
+      // Must use 'arguments' object directly - GA expects this specific format
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer.push(arguments);
     }
     
     gtag('js', new Date());
