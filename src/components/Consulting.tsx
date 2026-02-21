@@ -5,7 +5,7 @@ export default function Consulting() {
   return (
     <>
       <SEO
-        title="AI Consulting — D. E. Williams + Co."
+        title="Fractional CTO & AI Advisory — D. E. Williams + Co."
         description="AI advisory consulting: strategy, architecture, and implementation. I help companies move from AI pilots to production systems that deliver results."
         url="/consulting"
       />
@@ -20,7 +20,7 @@ export default function Consulting() {
               AI Advisory Services
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              I don't advise from the sidelines. I architect, build, and deploy AI solutions
+              As your Fractional CTO or Chief AI Officer, I architect, build, and deploy AI solutions
               that work—then train your team to own them.
             </p>
           </div>
@@ -42,6 +42,10 @@ export default function Consulting() {
                 20+ years of enterprise technology work taught me that sustainable solutions
                 require understanding the business, not just the tech. The best AI implementation
                 in the world fails if it doesn't fit how your organization actually works.
+              </p>
+              <p className="text-muted-foreground">
+                That's why I work as a fractional executive—embedded in your team enough to
+                understand the real dynamics, independent enough to challenge assumptions.
               </p>
             </div>
           </div>
@@ -145,6 +149,15 @@ export default function Consulting() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="border border-border bg-background p-6">
                 <h3 className="font-mono text-base font-semibold mb-3">
+                  Fractional CTO / CAIO
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Embedded technology leadership, 2-3 days per week. Architecture decisions,
+                  team building, AI strategy, and hands-on implementation.
+                </p>
+              </div>
+              <div className="border border-border bg-background p-6">
+                <h3 className="font-mono text-base font-semibold mb-3">
                   Advisory Retainer
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -159,6 +172,15 @@ export default function Consulting() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Scoped deliverables with defined outcomes. Strategy development,
                   implementation, or both.
+                </p>
+              </div>
+              <div className="border border-border bg-background p-6">
+                <h3 className="font-mono text-base font-semibold mb-3">
+                  Interim Leadership
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Full-time executive coverage for 3-6 months during transitions.
+                  Stabilize, build, and hand off to your permanent hire.
                 </p>
               </div>
             </div>

@@ -41,8 +41,8 @@ export function ConsultingHero() {
       {/* Decorative corner elements */}
       <div className="absolute top-8 right-8 font-mono text-xs text-muted-foreground/30 hidden lg:block">
         <div>┌──────────────────┐</div>
+        <div>│ FRACTIONAL CTO   │</div>
         <div>│ AI ADVISORY      │</div>
-        <div>│ CONSULTING       │</div>
         <div>└──────────────────┘</div>
       </div>
     </section>

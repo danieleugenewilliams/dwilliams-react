@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
     <>
       <SEO 
         title="Contact — D. E. Williams + Co."
-        description="Get in touch for product inquiries, advisory services, or collaboration opportunities."
+        description="Get in touch for fractional CTO engagements, AI advisory services, or collaboration opportunities."
         url="/contact"
       />
       <main className="bg-background text-foreground w-full">

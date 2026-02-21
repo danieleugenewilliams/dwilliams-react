@@ -2,7 +2,7 @@ import { ConsultingHero } from './ConsultingHero';
 import { ProblemSection } from './ProblemSection';
 import { WhatIDo } from './WhatIDo';
 import { ProofSection } from './ProofSection';
-import { ProductGrid } from './ProductGrid';
+import { CredentialsBanner } from './CredentialsBanner';
 import { HowItWorks } from './HowItWorks';
 import { WorkWithMe } from './WorkWithMe';
 import { SEO } from './SEO';
@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="D. E. Williams + Co. — AI Advisory & Consulting"
-        description="From AI experiments to AI results. I help companies stop piloting and start shipping. Strategy, architecture, and implementation."
+        title="D. E. Williams + Co. — Fractional CTO & AI Advisory"
+        description="Fractional CTO and Chief AI Officer. From AI experiments to AI results. I help companies stop piloting and start shipping."
         url="/"
       />
       <main className="bg-background text-foreground w-full overflow-x-hidden">
@@ -20,9 +20,7 @@ export default function Home() {
         <ProblemSection />
         <WhatIDo />
         <ProofSection />
-        <div id="products">
-          <ProductGrid />
-        </div>
+        <CredentialsBanner />
         <HowItWorks />
         <WorkWithMe />
       </main>

@@ -1,4 +1,4 @@
-type ProductStatus = 'live' | 'beta' | 'dev';
+type ProductStatus = 'live' | 'beta' | 'dev' | 'pre-pilot';
 
 interface StatusBadgeProps {
   status: ProductStatus;
@@ -9,6 +9,7 @@ const statusConfig: Record<ProductStatus, { label: string; className: string }> 
   live: { label: 'LIVE', className: 'status-live' },
   beta: { label: 'BETA', className: 'status-beta' },
   dev: { label: 'IN DEV', className: 'status-dev' },
+  'pre-pilot': { label: 'PRE-PILOT', className: 'status-dev' },
 };
 
 export function StatusBadge({ status, version }: StatusBadgeProps) {

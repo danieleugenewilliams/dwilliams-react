@@ -6,6 +6,7 @@ import Layout from './components/Layout';
 import Consulting from './components/Consulting';
 import Newsletters from './components/Newsletters';
 import About from './components/About';
+import Lab from './components/Lab';
 import Contact from './components/Contact';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import { ThemeProvider } from './components/ThemeProvider';
@@ -25,8 +26,8 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/lab" element={<Lab />} />
               {/* Redirects for old routes */}
-              <Route path="/lab" element={<Navigate to="/consulting" replace />} />
               <Route path="/bio" element={<Navigate to="/about" replace />} />
               <Route path="/services" element={<Navigate to="/consulting" replace />} />
               <Route path="/case-studies" element={<Navigate to="/" replace />} />

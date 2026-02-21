@@ -66,6 +66,11 @@ export function ProductCard({ product, index }: ProductCardProps) {
             In development
           </span>
         )}
+        {product.status === 'pre-pilot' && (
+          <span className="font-mono text-xs text-muted-foreground">
+            Pre-pilot
+          </span>
+        )}
       </div>
     </CardWrapper>
   );

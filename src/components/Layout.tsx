@@ -83,6 +83,12 @@ function Footer() {
               GitHub
             </a>
             <Link
+              to="/lab"
+              className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Lab
+            </Link>
+            <Link
               to="/privacy"
               className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
             >

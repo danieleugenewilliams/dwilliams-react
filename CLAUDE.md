@@ -11,6 +11,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run test` - Run tests in watch mode with Vitest
 - `npm run test:run` - Run tests once
 - `npm run test:coverage` - Run tests with coverage report
+- `npm run deploy` - Build and deploy to S3 + CloudFront
+- `npm run aws:setup` - One-time AWS infrastructure provisioning
 
 ## Local Memory
 
@@ -18,7 +20,11 @@ Proactively use local-memory MCP to store, retrieve, update, and analyze memorie
 
 ## Architecture Overview
 
-This is a Vite + React (TypeScript) single-page application. The site serves as the umbrella brand for D. E. Williams + Co., a product lab building AI-native tools.
+This is a Vite + React (TypeScript) single-page application. The site serves as the online presence for D. E. Williams + Co., a fractional CTO and AI advisory practice founded by Daniel E. Williams.
+
+### Positioning
+
+The primary audience is CEOs, COOs, and board members evaluating fractional technology leadership. The site positions Daniel as a Fractional CTO and Chief AI Officer with 20+ years of enterprise technology experience. Products live on a secondary `/lab` page; the homepage focuses on consulting credentials and proof points.
 
 ### Tech Stack
 - **React 19** with functional components and hooks
@@ -46,23 +52,29 @@ The site uses a Terminal/CLI + Maker Space aesthetic:
 
 ### Key Components
 - **Layout.tsx** - Main layout wrapper with navigation and footer
-- **LabHero.tsx** - Homepage hero section
-- **ProductGrid.tsx** - Product portfolio display
+- **ConsultingHero.tsx** - Homepage hero section
+- **CredentialsBanner.tsx** - Social proof strip on homepage (experience, impact, roles)
+- **Lab.tsx** - Product lab page with philosophy, approach, and ProductGrid
+- **ProductGrid.tsx** - Product portfolio display (lives on /lab page)
 - **ProductCard.tsx** - Individual product card
-- **StatusBadge.tsx** - Product status indicator (LIVE, BETA, IN DEV)
-- **Lab.tsx** - About the lab page
+- **StatusBadge.tsx** - Product status indicator (LIVE, BETA, IN DEV, PRE-PILOT)
+- **About.tsx** - Executive profile page with full career narrative
 - **ThemeProvider.tsx** - Dark/light theme management
 
 ### Routing Structure
 Routes are defined in App.tsx using React Router:
-- `/` - Homepage with product showcase
-- `/lab` - About the lab, philosophy, founder bio
+- `/` - Homepage with consulting hero, credentials, and proof points
+- `/consulting` - AI advisory services and engagement models
+- `/newsletters` - Newsletter links
+- `/about` - Executive profile (Daniel E. Williams)
+- `/lab` - Product lab with ProductGrid, philosophy, and approach
 - `/contact` - Contact form
 - `/privacy` - Privacy policy
 
 Legacy routes redirect to new pages:
-- `/about`, `/bio` → `/lab`
-- `/services`, `/case-studies` → `/`
+- `/bio` → `/about`
+- `/services` → `/consulting`
+- `/case-studies` → `/`
 
 ### Styling Conventions
 - Use Tailwind CSS utility classes
@@ -79,14 +91,18 @@ Legacy routes redirect to new pages:
 - Status: `status-badge` with `status-live`, `status-beta`, `status-dev` variants
 
 ### Products Data
-Product information is defined in `ProductGrid.tsx`. Current products:
-1. LocalMemory (LIVE) - localmemory.co
-2. World Memory (BETA)
-3. ReckonGrid (IN DEV)
-4. OutcomeStack (IN DEV)
-5. AssessKit (IN DEV)
+Product information is defined in `ProductGrid.tsx` and displayed on the `/lab` page. Current products:
+1. LocalMemory (LIVE) - localmemory.co - 60 paying customers
+2. ReckonGrid (IN DEV) - consulting estimation via GenAI
+3. Yasuke (PRE-PILOT) - managed personal AI agents (co-founded with Landon Gray)
+
+Open source projects also listed on `/lab`: Othello Agent, Agent Harness, zvec-go
 
 ### Deployment
-- Configured for AWS Amplify deployment
+- Hosted on S3 + CloudFront (deployed via `npm run deploy`)
+- Infrastructure provisioned via `npm run aws:setup` (one-time)
 - Build artifacts output to `dist/` directory
-- Uses `--legacy-peer-deps` for npm install compatibility
+- S3 bucket: `dewilliamsco-site` (all public access blocked, OAC only)
+- CloudFront handles HTTPS, caching, SPA routing, and security headers
+- Tiered cache-control: immutable for hashed assets, no-cache for index.html
+- `.env.production` contains real values (gitignored); `.env.production.example` is the template
