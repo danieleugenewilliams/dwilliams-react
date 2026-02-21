@@ -78,31 +78,33 @@ Use this checklist to verify that the website deployment has been successful and
 - [ ] All third-party scripts are loaded securely
 - [ ] API endpoints are protected with rate limiting
 
-## AWS Amplify Configuration
-- [ ] Verify that the correct `amplify.yml` is in use
-- [ ] Confirm compute bundle is properly configured in `amplify-nextjs.yml`
-- [ ] Check that CSS MIME types are correctly configured in the build spec
-- [ ] Verify the compute bundle output structure is correct
-- [ ] Confirm that server.js and required-server-files.json are present in the compute bundle
-- [ ] Run `pnpm run verify:amplify` before deployment to check configuration
-- [ ] Run `pnpm run test:css` to verify correct MIME types for CSS files
+## S3 + CloudFront Configuration
+- [ ] Verify S3 bucket `dewilliamsco-site` has all public access blocked
+- [ ] Confirm CloudFront OAC is attached and bucket policy allows it
+- [ ] Check CloudFront Function (SPA router) is published and associated
+- [ ] Verify response headers policy includes HSTS, X-Frame-Options, X-Content-Type-Options
+- [ ] Confirm ACM certificate covers `dewilliams.co` and `*.dewilliams.co`
+- [ ] Verify Route 53 A + AAAA alias records point to CloudFront distribution
+- [ ] Run `npm run deploy` and confirm S3 sync + CloudFront invalidation succeed
 
 ## Post-Deployment
-- [ ] Monitor AWS Amplify console for any build errors
-- [ ] Check AWS CloudWatch logs for any backend errors
+- [ ] Verify site loads at https://dewilliams.co
+- [ ] Test deep links (/consulting, /about, /contact) for SPA routing
+- [ ] Confirm www.dewilliams.co resolves correctly
+- [ ] Inspect response headers (HSTS, X-Frame-Options, etc.)
+- [ ] Check CloudWatch logs for any errors
 - [ ] Monitor Google Analytics for user activity
 - [ ] Verify HubSpot is receiving form submissions
-- [ ] Inspect browser network requests to confirm CSS files have text/css MIME type
+- [ ] Confirm hashed assets have immutable cache headers
+- [ ] Confirm index.html has no-cache headers
 - [ ] Test site again after 24 hours to ensure caching is working properly
 
-## CSS Troubleshooting (If Styling Issues Occur)
-- [ ] Check browser console for 404 errors related to CSS files
-- [ ] Verify that Tailwind CSS is compiled properly in the deployment
-- [ ] Check that content security policy is not blocking CSS resources
-- [ ] Inspect AWS Amplify build logs for CSS compilation issues
-- [ ] Verify all required static files are included in the deployment
-- [ ] Check that CSS files are correctly located in the standalone output
-- [ ] Test clearing browser cache to ensure latest styles are loaded
+## Troubleshooting
+- [ ] Check browser console for 404 errors or failed resource loads
+- [ ] Verify that Tailwind CSS is compiled properly in the build output
+- [ ] Run `npm run build` locally to confirm clean build
+- [ ] Check S3 bucket contents match dist/ output
+- [ ] Test clearing browser cache to ensure latest version is served
 - [ ] Verify that custom fonts are loading correctly
 
 ## Notes
