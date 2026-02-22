@@ -2,16 +2,16 @@ import { Link } from 'react-router-dom';
 
 export function ConsultingHero() {
   return (
-    <section className="relative min-h-[60vh] flex items-center bg-grid">
-      <div className="container max-w-6xl py-20 md:py-32">
-        <div className="max-w-3xl">
+    <section className="relative min-h-[70vh] flex items-center bg-grid">
+      <div className="container max-w-6xl section-padding">
+        <div className="max-w-4xl">
           {/* Terminal-style intro */}
           <div className="font-mono text-sm text-muted-foreground mb-6 animate-fade-in-1">
             <span className="text-terminal-cyan">$</span> ./consulting --init
           </div>
 
           {/* Main heading */}
-          <h1 className="text-4xl md:text-6xl font-mono font-bold text-foreground mb-6 animate-fade-in-2">
+          <h1 className="text-hero font-mono font-bold text-foreground mb-6 animate-fade-in-2">
             From AI Experiments to AI Results
           </h1>
 
@@ -39,7 +39,7 @@ export function ConsultingHero() {
       </div>
 
       {/* Decorative corner elements */}
-      <div className="absolute top-8 right-8 font-mono text-xs text-muted-foreground/30 hidden lg:block">
+      <div className="absolute bottom-8 right-8 font-mono text-xs text-muted-foreground/30 hidden lg:block">
         <div>┌──────────────────┐</div>
         <div>│ FRACTIONAL CTO   │</div>
         <div>│ AI ADVISORY      │</div>

@@ -69,6 +69,12 @@ module.exports = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      fontSize: {
+        'hero': 'var(--heading-hero)',
+        'page-hero': 'var(--heading-page)',
+        'section-display': 'var(--heading-section)',
+        'metric-display': 'var(--heading-metric)',
+      },
       fontFamily: {
         sans: [
           'Inter',

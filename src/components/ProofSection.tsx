@@ -1,3 +1,5 @@
+import { Reveal } from './Reveal';
+
 export function ProofSection() {
   const proofPoints = [
     {
@@ -23,25 +25,26 @@ export function ProofSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 border-t border-border bg-muted/30">
+    <section className="section-padding section-alt">
       <div className="container max-w-4xl">
-        <h2 className="font-mono text-sm text-muted-foreground mb-8">
-          // PROOF
-        </h2>
+        <Reveal>
+          <h2 className="font-mono text-sm text-muted-foreground mb-8">
+            // PROOF
+          </h2>
+        </Reveal>
 
         <div className="space-y-8">
           {proofPoints.map((point, index) => (
-            <div
-              key={index}
-              className="border-l-2 border-terminal-cyan pl-6 py-2"
-            >
-              <p className="font-mono text-lg md:text-xl font-semibold text-foreground mb-2">
-                {point.metric}
-              </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {point.description}
-              </p>
-            </div>
+            <Reveal key={index} delay={Math.min(index + 1, 4) as 1 | 2 | 3 | 4}>
+              <div className="border-l-2 border-terminal-cyan pl-6 py-2">
+                <p className="font-mono text-metric-display font-semibold text-foreground mb-2">
+                  {point.metric}
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {point.description}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

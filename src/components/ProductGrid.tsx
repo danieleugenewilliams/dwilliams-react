@@ -1,4 +1,5 @@
 import { ProductCard, Product } from './ProductCard';
+import { Reveal } from './Reveal';
 
 const products: Product[] = [
   {
@@ -54,55 +55,62 @@ const openSourceProjects: OpenSourceProject[] = [
 export function ProductGrid() {
   return (
     <>
-      <section className="py-16 md:py-24 border-t border-border">
+      <section className="section-padding">
         <div className="container max-w-6xl">
           {/* Section header */}
-          <div className="mb-12">
-            <h2 className="font-mono text-sm text-muted-foreground mb-2">
-              // WHAT_WE_BUILD
-            </h2>
-            <p className="text-lg text-foreground max-w-2xl">
-              Current and upcoming projects.
-            </p>
-          </div>
+          <Reveal>
+            <div className="mb-12">
+              <h2 className="font-mono text-sm text-muted-foreground mb-2">
+                // WHAT_WE_BUILD
+              </h2>
+              <p className="text-lg text-foreground max-w-2xl">
+                Current and upcoming projects.
+              </p>
+            </div>
+          </Reveal>
 
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, index) => (
-              <ProductCard key={product.id} product={product} index={index} />
+              <Reveal key={product.id} delay={Math.min(index + 1, 3) as 1 | 2 | 3}>
+                <ProductCard product={product} index={index} />
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* Open Source */}
-      <section className="py-16 md:py-24 border-t border-border">
+      <section className="section-padding section-alt">
         <div className="container max-w-6xl">
-          <div className="mb-12">
-            <h2 className="font-mono text-sm text-muted-foreground mb-2">
-              // OPEN_SOURCE
-            </h2>
-          </div>
+          <Reveal>
+            <div className="mb-12">
+              <h2 className="font-mono text-sm text-muted-foreground mb-2">
+                // OPEN_SOURCE
+              </h2>
+            </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {openSourceProjects.map((project) => (
-              <a
-                key={project.name}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-border bg-card p-6 hover:border-terminal-cyan/50 transition-colors cursor-pointer"
-              >
-                <h3 className="font-mono text-base font-semibold text-foreground mb-2">
-                  {project.name}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  {project.description}
-                </p>
-                <span className="font-mono text-xs text-terminal-cyan">
-                  GitHub →
-                </span>
-              </a>
+            {openSourceProjects.map((project, index) => (
+              <Reveal key={project.name} delay={Math.min(index + 1, 3) as 1 | 2 | 3}>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border border-border bg-card p-6 hover:border-terminal-cyan/50 transition-colors cursor-pointer h-full"
+                >
+                  <h3 className="font-mono text-base font-semibold text-foreground mb-2">
+                    {project.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    {project.description}
+                  </p>
+                  <span className="font-mono text-xs text-terminal-cyan">
+                    GitHub →
+                  </span>
+                </a>
+              </Reveal>
             ))}
           </div>
         </div>
