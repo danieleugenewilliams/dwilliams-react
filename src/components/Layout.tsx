@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import Lenis from "lenis";
 import { ThemeToggle } from "./ThemeToggle";
 import { MobileMenu } from "./MobileMenu";
+import { Logo } from "./Logo";
 
 function Header() {
   return (
@@ -15,10 +16,10 @@ function Header() {
         {/* Logo */}
         <Link
           to="/"
-          className="font-mono text-sm font-semibold text-foreground hover:text-terminal-cyan transition-colors"
+          className="text-foreground hover:text-terminal-cyan transition-colors"
           aria-label="D. E. Williams + Co. Home"
         >
-          DEW+Co
+          <Logo />
         </Link>
 
         {/* Desktop navigation */}

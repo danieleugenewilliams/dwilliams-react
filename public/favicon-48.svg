@@ -1,13 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
-  <!-- Background - near black -->
-  <rect width="48" height="48" fill="#0a0a0a"/>
-  
-  <!-- Terminal bracket left -->
-  <text x="6" y="30" font-family="monospace" font-weight="400" font-size="20" fill="#22d3ee" dominant-baseline="middle">[</text>
-  
-  <!-- DEW text -->
-  <text x="24" y="30" font-family="monospace" font-weight="700" font-size="14" fill="#e0e0e0" text-anchor="middle" dominant-baseline="middle">DEW</text>
-  
-  <!-- Terminal bracket right -->
-  <text x="42" y="30" font-family="monospace" font-weight="400" font-size="20" fill="#22d3ee" text-anchor="end" dominant-baseline="middle">]</text>
+  <rect width="48" height="48" rx="6" fill="#0a0a0a"/>
+  <text x="3" y="32" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="16" fill="#22d3ee">[</text>
+  <text x="12" y="32" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="16" fill="#e0e0e0">DEW</text>
+  <text x="40" y="32" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="16" fill="#22d3ee">]</text>
 </svg>

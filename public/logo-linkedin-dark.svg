@@ -1,10 +1,15 @@
 <svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="400" height="400" fill="#111827"/>
-  
-  <!-- Main Logo Text - DEW -->
-  <text x="200" y="170" font-family="Inter, sans-serif" font-weight="700" font-size="56" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">DEW</text>
-  
-  <!-- Plus symbol and Co. on same line -->
-  <text x="200" y="230" font-family="Inter, sans-serif" font-weight="600" font-size="32" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">+ Co.</text>
+  <rect width="400" height="400" fill="#0a0a0a"/>
+
+  <!-- Main name -->
+  <text x="200" y="170" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="32" fill="#e0e0e0" text-anchor="middle">D. E. Williams</text>
+
+  <!-- + Company -->
+  <text x="200" y="215" font-family="'JetBrains Mono', monospace" font-weight="400" font-size="28" text-anchor="middle">
+    <tspan fill="#22d3ee">+</tspan>
+    <tspan fill="#e0e0e0"> Company</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="200" y="270" font-family="'JetBrains Mono', monospace" font-weight="400" font-size="14" fill="#6b7280" text-anchor="middle">Fractional CTO &amp; AI Advisory</text>
 </svg>
