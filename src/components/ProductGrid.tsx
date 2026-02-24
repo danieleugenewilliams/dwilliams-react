@@ -50,6 +50,11 @@ const openSourceProjects: OpenSourceProject[] = [
     description: 'Go CGO bindings for Alibaba\'s embedded vector database',
     url: 'https://github.com/danieleugenewilliams/zvec-go',
   },
+  {
+    name: 'Fractionally',
+    description: 'Claude Code plugin for finding fractional executive roles and writing engagement proposals',
+    url: 'https://github.com/danieleugenewilliams/fractionally',
+  },
 ];
 
 export function ProductGrid() {
