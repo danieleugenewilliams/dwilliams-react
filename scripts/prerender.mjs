@@ -26,6 +26,7 @@ const ROUTES = [
   '/newsletters',
   '/contact',
   '/privacy',
+  '/assessment',
 ];
 
 // Simple static file server for the dist directory

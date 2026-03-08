@@ -9,6 +9,7 @@ import About from './components/About';
 import Lab from './components/Lab';
 import Contact from './components/Contact';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import Assessment from './components/Assessment';
 import { ThemeProvider } from './components/ThemeProvider';
 import { Analytics } from './components/Analytics';
 
@@ -27,6 +28,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/lab" element={<Lab />} />
+              <Route path="/assessment" element={<Assessment />} />
               {/* Redirects for old routes */}
               <Route path="/bio" element={<Navigate to="/about" replace />} />
               <Route path="/services" element={<Navigate to="/consulting" replace />} />

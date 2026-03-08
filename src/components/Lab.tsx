@@ -8,7 +8,7 @@ export default function Lab() {
     <>
       <SEO
         title="The Lab — D. E. Williams + Co."
-        description="AI products built from real enterprise problems. Home of LocalMemory, ReckonGrid, Yasuke, and open-source AI tools."
+        description="AI products built from real enterprise problems. Home of the WARE Framework, LocalMemory, and open-source AI tools."
         url="/lab"
       />
       <main className="bg-background text-foreground w-full">

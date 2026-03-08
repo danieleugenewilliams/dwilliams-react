@@ -33,6 +33,7 @@ function Header() {
           <Link to="/newsletters" className="nav-link">newsletters</Link>
           <Link to="/about" className="nav-link">about</Link>
           <Link to="/contact" className="nav-link">contact</Link>
+          <Link to="/assessment" className="nav-link text-terminal-cyan">assessment</Link>
           <div className="ml-2 pl-2 border-l border-border">
             <ThemeToggle />
           </div>

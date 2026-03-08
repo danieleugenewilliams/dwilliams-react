@@ -85,6 +85,13 @@ export function MobileMenu() {
                 >
                   [contact]
                 </Link>
+                <Link
+                  to="/assessment"
+                  className="block font-mono text-sm py-3 text-terminal-cyan hover:text-terminal-cyan/80 transition-colors"
+                  onClick={closeMenu}
+                >
+                  [assessment]
+                </Link>
               </nav>
 
               {/* Divider */}

@@ -17,7 +17,7 @@ interface HotjarSettings {
 declare global {
   interface Window {
     dataLayer: unknown[];
-    gtag: GtagFunction;
+    gtag?: GtagFunction;
     hj: HotjarFunction;
     _hjSettings: HotjarSettings;
   }

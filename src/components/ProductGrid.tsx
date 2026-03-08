@@ -3,6 +3,13 @@ import { Reveal } from './Reveal';
 
 const products: Product[] = [
   {
+    id: 'ware',
+    name: 'WARE Framework',
+    tagline: 'Workforce Automation Resilience Engine',
+    description: 'Hybrid scoring engine combining O*NET structural data, LLM semantic analysis, industry adoption factors, and observed AI usage data to assess role-level automation resilience.',
+    status: 'dev',
+  },
+  {
     id: 'localmemory',
     name: 'LocalMemory',
     tagline: 'Persistent memory for AI assistants',
@@ -11,20 +18,6 @@ const products: Product[] = [
     version: 'v1.0',
     url: 'https://localmemory.co',
     launchDate: 'Sept 2025',
-  },
-  {
-    id: 'reckongrid',
-    name: 'ReckonGrid',
-    tagline: 'Consulting estimation via GenAI',
-    description: 'Reduces consulting project estimation from 2-4 weeks to 10-30 minutes through GenAI integration. Currently being refactored.',
-    status: 'dev',
-  },
-  {
-    id: 'yasuke',
-    name: 'Yasuke',
-    tagline: 'Managed personal AI agents',
-    description: 'Co-founded with Landon Gray. Managed personal AI agents for executives (EA via SMS/email) and seniors (daily check-ins, medication reminders, scam protection).',
-    status: 'pre-pilot',
   },
 ];
 
