@@ -3,13 +3,14 @@ import { HelmetProvider } from 'react-helmet-async';
 import './App.css'
 import Home from './components/Home';
 import Layout from './components/Layout';
-import Consulting from './components/Consulting';
-import Newsletters from './components/Newsletters';
+import Services from './components/Services';
+import Insights from './components/Insights';
 import About from './components/About';
 import Lab from './components/Lab';
 import Contact from './components/Contact';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import Assessment from './components/Assessment';
+import Partners from './components/Partners';
 import { ThemeProvider } from './components/ThemeProvider';
 import { Analytics } from './components/Analytics';
 
@@ -22,16 +23,18 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/consulting" element={<Consulting />} />
-              <Route path="/newsletters" element={<Newsletters />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/insights" element={<Insights />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/lab" element={<Lab />} />
               <Route path="/assessment" element={<Assessment />} />
+              <Route path="/partners" element={<Partners />} />
               {/* Redirects for old routes */}
               <Route path="/bio" element={<Navigate to="/about" replace />} />
-              <Route path="/services" element={<Navigate to="/consulting" replace />} />
+              <Route path="/consulting" element={<Navigate to="/services" replace />} />
+              <Route path="/newsletters" element={<Navigate to="/insights" replace />} />
               <Route path="/case-studies" element={<Navigate to="/" replace />} />
             </Routes>
           </Layout>

@@ -47,6 +47,17 @@ export function ProofSection() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={4}>
+          <div className="mt-10 border border-terminal-cyan/30 bg-terminal-cyan/5 p-6 text-center">
+            <p className="font-mono text-sm text-terminal-cyan mb-1">
+              Powered by the WARE Framework
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Workforce analytics built on O*NET structural data, LLM semantic analysis, and real-world adoption signals.
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

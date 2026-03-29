@@ -16,10 +16,10 @@ export function HowItWorks() {
               <div className="font-mono text-4xl md:text-5xl text-terminal-cyan font-bold">01</div>
               <div>
                 <h3 className="font-mono text-lg font-semibold mb-2">
-                  Discovery Call
+                  Start Free
                 </h3>
                 <p className="text-muted-foreground">
-                  30 minutes, free. You tell me what's stuck. I tell you if I can help.
+                  Take the individual assessment. Get your AI resilience score in 5 minutes.
                 </p>
               </div>
             </div>
@@ -30,10 +30,10 @@ export function HowItWorks() {
               <div className="font-mono text-4xl md:text-5xl text-terminal-cyan font-bold">02</div>
               <div>
                 <h3 className="font-mono text-lg font-semibold mb-2">
-                  Scoping Session
+                  Go Deeper
                 </h3>
                 <p className="text-muted-foreground">
-                  Paid engagement. We map the problem, define success metrics, and build a work plan.
+                  Upgrade to Pro for a detailed role analysis with a personalized action plan.
                 </p>
               </div>
             </div>
@@ -44,10 +44,10 @@ export function HowItWorks() {
               <div className="font-mono text-4xl md:text-5xl text-terminal-cyan font-bold">03</div>
               <div>
                 <h3 className="font-mono text-lg font-semibold mb-2">
-                  Execution
+                  Scale Up
                 </h3>
                 <p className="text-muted-foreground">
-                  I build. You ship. Your team learns.
+                  Organizational assessments, executive advisory, and enterprise programs for teams and companies.
                 </p>
               </div>
             </div>

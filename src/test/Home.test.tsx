@@ -23,11 +23,11 @@ describe('Home Component', () => {
 
     // Wait for the component to render and check for the hero headline (h1)
     await waitFor(() => {
-      expect(screen.getByRole('heading', { level: 1, name: /From AI Experiments to AI Results/i })).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1, name: /Workforce Intelligence, Delivered/i })).toBeInTheDocument()
     })
 
     // Check for other content that should be present
-    expect(screen.getByText(/I help companies stop piloting and start shipping/i)).toBeInTheDocument()
+    expect(screen.getByText(/We help organizations get ahead of AI-driven workforce change/i)).toBeInTheDocument()
     expect(screen.getByText(/THE_PROBLEM/)).toBeInTheDocument()
   })
 })

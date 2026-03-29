@@ -25,7 +25,10 @@ export function CredentialsBanner() {
                 20+ years in enterprise technology
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Federal Reserve, Booz Allen Hamilton, Toyota/Lexus, Pariveda Solutions, NFL, OMERS
+                Federal Reserve, Booz Allen Hamilton, Pariveda Solutions, Beyondsoft/TPG, SAIC
+              </p>
+              <p className="text-xs text-muted-foreground/70 mt-1">
+                Clients include Toyota/Lexus, NFL, OMERS, TaxAct, Daylight Transport, Stop Soldier Suicide
               </p>
             </div>
           </Reveal>
@@ -50,7 +53,7 @@ export function CredentialsBanner() {
                 Roles
               </h3>
               <p className="text-metric-display text-foreground font-semibold mb-2">
-                Fractional CTO & Chief AI Officer
+                Founder & Chief AI Officer
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Board advisor, George Mason University
@@ -59,13 +62,25 @@ export function CredentialsBanner() {
           </Reveal>
         </div>
 
+        {/* Scale note */}
+        <Reveal>
+          <div className="mt-8 text-center border border-border bg-card p-4">
+            <p className="text-sm text-muted-foreground">
+              Need workforce intelligence at scale? We embed with leadership teams for ongoing advisory.{' '}
+              <Link to="/services" className="font-mono text-terminal-cyan hover:underline">
+                See service tiers →
+              </Link>
+            </p>
+          </div>
+        </Reveal>
+
         {/* Lab cross-link */}
         <Reveal>
-          <div className="mt-8 text-center">
+          <div className="mt-4 text-center">
             <p className="text-sm text-muted-foreground">
-              I also build AI products.{' '}
+              See what we're building.{' '}
               <Link to="/lab" className="font-mono text-terminal-cyan hover:underline">
-                See the Lab →
+                Visit the Lab →
               </Link>
             </p>
           </div>

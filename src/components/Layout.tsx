@@ -29,8 +29,8 @@ function Header() {
           aria-label="Main Navigation"
         >
           <Link to="/" className="nav-link">home</Link>
-          <Link to="/consulting" className="nav-link">consulting</Link>
-          <Link to="/newsletters" className="nav-link">newsletters</Link>
+          <Link to="/services" className="nav-link">services</Link>
+          <Link to="/insights" className="nav-link">insights</Link>
           <Link to="/about" className="nav-link">about</Link>
           <Link to="/contact" className="nav-link">contact</Link>
           <Link to="/assessment" className="nav-link text-terminal-cyan">assessment</Link>

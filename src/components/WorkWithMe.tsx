@@ -13,24 +13,18 @@ export function WorkWithMe() {
 
         <Reveal delay={1}>
           <p className="text-lg text-foreground mb-6 max-w-xl mx-auto">
-            I take on 2-3 clients at a time. If you're serious about moving from AI experiments
-            to AI results, let's talk.
+            From individual assessments to enterprise transformation, we meet you where you are.
           </p>
         </Reveal>
 
         <Reveal delay={2}>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact" className="btn-primary">
-              [Get in Touch]
+            <Link to="/assessment" className="btn-primary">
+              [Start Your Free Assessment]
             </Link>
-            <a
-              href="https://www.linkedin.com/in/danieleugenewilliams/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-ghost"
-            >
-              Connect on LinkedIn →
-            </a>
+            <Link to="/contact" className="btn-ghost">
+              Talk to Our Team →
+            </Link>
           </div>
         </Reveal>
       </div>

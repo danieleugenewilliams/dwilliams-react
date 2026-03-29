@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { SEO } from "./SEO";
 import { Reveal } from "./Reveal";
 
@@ -64,7 +65,7 @@ const Contact: React.FC = () => {
     <>
       <SEO
         title="Contact — D. E. Williams + Co."
-        description="Get in touch for fractional CTO engagements, AI advisory services, or collaboration opportunities."
+        description="Get in touch for workforce intelligence assessments, advisory services, or partnership opportunities."
         url="/contact"
       />
       <main className="bg-background text-foreground w-full">
@@ -78,20 +79,66 @@ const Contact: React.FC = () => {
               Get in Touch
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl animate-fade-in-3">
-              Product questions, advisory inquiries, or just want to connect—drop a message.
+              Workforce assessments, advisory services, partnerships, or just want to connect.
             </p>
           </div>
         </section>
 
-        {/* Form Section */}
+        {/* Audience CTAs */}
         <section className="section-padding">
+          <div className="container max-w-4xl">
+            <Reveal>
+              <h2 className="font-mono text-sm text-muted-foreground mb-8">
+                // WHERE_TO_START
+              </h2>
+            </Reveal>
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <Reveal delay={1}>
+                <div className="border border-border bg-card p-6 h-full">
+                  <h3 className="font-mono text-base font-semibold mb-3">
+                    For Individuals
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    Curious about your role's automation resilience? Start with the free
+                    assessment—it takes 5 minutes and gives you an immediate score.
+                  </p>
+                  <Link to="/assessment" className="btn-primary inline-block text-sm">
+                    [Take the Free Assessment]
+                  </Link>
+                </div>
+              </Reveal>
+              <Reveal delay={2}>
+                <div className="border border-terminal-cyan/30 bg-terminal-cyan/5 p-6 h-full">
+                  <h3 className="font-mono text-base font-semibold mb-3">
+                    For Organizations
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    Need workforce intelligence for your team or company? Book a discovery
+                    call to discuss Advisory, Executive, or Enterprise engagements.
+                  </p>
+                  <a
+                    href="https://calendly.com/dewilliamsco/discovery"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-block text-sm"
+                  >
+                    [Book a Discovery Call]
+                  </a>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Form Section */}
+        <section className="section-padding section-alt">
           <div className="container max-w-4xl">
             <div className="grid md:grid-cols-5 gap-12">
               {/* Form */}
               <div className="md:col-span-3">
                 <Reveal>
                   <h2 className="font-mono text-sm text-muted-foreground mb-6">
-                    // SEND MESSAGE
+                    // SEND_MESSAGE
                   </h2>
                 </Reveal>
 
@@ -99,7 +146,7 @@ const Contact: React.FC = () => {
                   <Reveal>
                     <div className="border border-terminal-green/50 bg-terminal-green/10 p-6">
                       <p className="font-mono text-terminal-green">
-                        [SUCCESS] Message received. I'll respond within 1-2 business days.
+                        [SUCCESS] Message received. We'll respond within 1-2 business days.
                       </p>
                     </div>
                   </Reveal>
@@ -246,16 +293,14 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="font-mono text-sm font-semibold mb-2">Newsletter</h3>
                       <p className="text-sm text-muted-foreground mb-3">
-                        Weekly insights on building with AI.
+                        Workforce intelligence insights and AI tutorials.
                       </p>
-                      <a
-                        href="https://claudecodefornoncoders.substack.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        to="/insights"
                         className="btn-primary inline-block text-xs"
                       >
-                        [Explore]
-                      </a>
+                        [Read Insights]
+                      </Link>
                     </div>
 
                     <div className="pt-6 border-t border-border">

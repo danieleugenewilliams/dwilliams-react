@@ -58,18 +58,18 @@ export function MobileMenu() {
                   [home]
                 </Link>
                 <Link
-                  to="/consulting"
+                  to="/services"
                   className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
                   onClick={closeMenu}
                 >
-                  [consulting]
+                  [services]
                 </Link>
                 <Link
-                  to="/newsletters"
+                  to="/insights"
                   className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
                   onClick={closeMenu}
                 >
-                  [newsletters]
+                  [insights]
                 </Link>
                 <Link
                   to="/about"

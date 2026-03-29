@@ -20,13 +20,14 @@ const PORT = 4173;
 
 const ROUTES = [
   '/',
-  '/consulting',
+  '/services',
+  '/insights',
   '/about',
   '/lab',
-  '/newsletters',
   '/contact',
   '/privacy',
   '/assessment',
+  '/partners',
 ];
 
 // Simple static file server for the dist directory

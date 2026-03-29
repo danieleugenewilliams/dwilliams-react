@@ -52,28 +52,35 @@ The site uses a Terminal/CLI + Maker Space aesthetic:
 
 ### Key Components
 - **Layout.tsx** - Main layout wrapper with navigation and footer
-- **ConsultingHero.tsx** - Homepage hero section
+- **ConsultingHero.tsx** - Homepage hero section (workforce intelligence positioning)
 - **CredentialsBanner.tsx** - Social proof strip on homepage (experience, impact, roles)
-- **Lab.tsx** - Product lab page with philosophy, approach, and ProductGrid
+- **Services.tsx** - 6-tier workforce intelligence services page
+- **Insights.tsx** - Newsletter/Substack links page
+- **About.tsx** - Founder story with AI-native thesis
+- **Lab.tsx** - WARE Framework showcase, LocalMemory, and ProductGrid
+- **Partners.tsx** - Channel partner information
+- **Assessment.tsx** - WARE assessment waitlist page
 - **ProductGrid.tsx** - Product portfolio display (lives on /lab page)
 - **ProductCard.tsx** - Individual product card
 - **StatusBadge.tsx** - Product status indicator (LIVE, BETA, IN DEV, PRE-PILOT)
-- **About.tsx** - Executive profile page with full career narrative
 - **ThemeProvider.tsx** - Dark/light theme management
 
 ### Routing Structure
 Routes are defined in App.tsx using React Router:
-- `/` - Homepage with consulting hero, credentials, and proof points
-- `/consulting` - AI advisory services and engagement models
-- `/newsletters` - Newsletter links
-- `/about` - Executive profile (Daniel E. Williams)
-- `/lab` - Product lab with ProductGrid, philosophy, and approach
-- `/contact` - Contact form
+- `/` - Homepage with workforce intelligence hero, credentials, and proof points
+- `/services` - 6-tier workforce intelligence services (Free → Enterprise)
+- `/insights` - Newsletter links (Substack)
+- `/about` - Founder story and company info
+- `/lab` - WARE Framework, LocalMemory, and open source projects
+- `/contact` - Contact form with audience-specific CTAs
+- `/assessment` - WARE assessment waitlist
+- `/partners` - Channel partner information
 - `/privacy` - Privacy policy
 
 Legacy routes redirect to new pages:
 - `/bio` → `/about`
-- `/services` → `/consulting`
+- `/consulting` → `/services`
+- `/newsletters` → `/insights`
 - `/case-studies` → `/`
 
 ### Styling Conventions

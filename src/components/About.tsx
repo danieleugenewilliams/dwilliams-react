@@ -6,8 +6,8 @@ export default function About() {
   return (
     <>
       <SEO
-        title="Daniel E. Williams — Fractional CTO & Chief AI Officer"
-        description="20+ years leading technology initiatives at Booz Allen Hamilton, Pariveda Solutions, Toyota/Lexus, and more. Fractional CTO helping companies move from AI experiments to AI results."
+        title="About — D. E. Williams + Co."
+        description="D. E. Williams + Co. is an AI-native services company delivering workforce intelligence at scale. Founded by Daniel E. Williams, a 20+ year technology executive."
         url="/about"
       />
       <main className="bg-background text-foreground w-full">
@@ -22,9 +22,7 @@ export default function About() {
               className="w-full h-full object-cover"
               style={{ objectPosition: '50% 25%' }}
             />
-            {/* Gradient overlay — dark from bottom for text readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
-            {/* Subtle grid pattern overlay to maintain terminal feel */}
             <div className="absolute inset-0 bg-grid opacity-20" />
           </div>
 
@@ -37,13 +35,93 @@ export default function About() {
               Daniel E. Williams
             </h1>
             <p className="font-mono text-sm md:text-lg text-terminal-cyan mb-4 md:mb-6 animate-fade-in-3">
-              Fractional CTO | Chief AI Officer | Technology Executive
+              Founder & Chief AI Officer, D. E. Williams + Co.
             </p>
             <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl animate-fade-in-4">
-              I help companies cut through the AI noise and ship real solutions. 20+ years
-              of enterprise technology work across financial services, automotive, healthcare,
-              nonprofit, and government—from hands-on engineering to executive advisory.
+              I founded this company because I saw a gap. Organizations were either panicking
+              about AI replacing their workforce or ignoring the problem entirely. Both responses
+              are expensive. I built DE Williams + Co. to give organizations the data and clarity
+              they need to navigate the transition.
             </p>
+          </div>
+        </section>
+
+        {/* The Thesis */}
+        <section className="section-padding">
+          <div className="container max-w-4xl">
+            <Reveal>
+              <h2 className="font-mono text-sm text-muted-foreground mb-8">
+                // THE_THESIS
+              </h2>
+            </Reveal>
+            <div className="space-y-6 text-foreground leading-relaxed">
+              <Reveal delay={1}>
+                <p>
+                  AI is not coming for jobs in some abstract future—it's reshaping them now.
+                  The Anthropic Economic Index shows 94% theoretical AI capability against only
+                  33% observed usage. That gap is closing fast, and most organizations have no plan
+                  for what happens when it does.
+                </p>
+              </Reveal>
+              <Reveal delay={2}>
+                <p className="text-muted-foreground">
+                  The answer isn't "upskill everyone" or "automate everything." It's understanding,
+                  at the task level, which roles will transform, which are at risk, and what
+                  to do about it—with timelines, not guesses. That's what we built the{' '}
+                  <Link to="/lab" className="text-terminal-cyan hover:underline">WARE Framework</Link>{' '}
+                  to deliver.
+                </p>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Career Path */}
+        <section className="section-padding section-alt">
+          <div className="container max-w-4xl">
+            <Reveal>
+              <h2 className="font-mono text-sm text-muted-foreground mb-8">
+                // THE_PATH_HERE
+              </h2>
+            </Reveal>
+            <div className="space-y-6 text-foreground leading-relaxed">
+              <Reveal delay={1}>
+                <p>
+                  I started as a software engineer at <span className="font-semibold">SPS Technologies</span>,
+                  then moved to the <span className="font-semibold">Federal Reserve Board</span> building
+                  data platforms and web services. That's where I learned that the hardest problems in
+                  technology aren't technical—they're about getting the right people aligned on what
+                  to build and why.
+                </p>
+              </Reveal>
+              <Reveal delay={2}>
+                <p className="text-muted-foreground">
+                  At <span className="font-semibold">SAIC</span> and then{' '}
+                  <span className="font-semibold">Booz Allen Hamilton</span>, I moved into
+                  consulting—winning $9M+ in new business by deploying Enterprise 2.0 solutions
+                  for federal agencies, including a collaboration platform used by 2,400+ senior
+                  VA executives.
+                </p>
+              </Reveal>
+              <Reveal delay={3}>
+                <p className="text-muted-foreground">
+                  I led the Lexus digital portfolio at{' '}
+                  <span className="font-semibold">Beyondsoft (formerly TPG)</span>, managing
+                  $35M in programs. Then at{' '}
+                  <span className="font-semibold">Pariveda Solutions</span>, I grew accounts, built
+                  a national nonprofit vertical generating $6M+ annually, and led engagements
+                  for the NFL, TaxAct, OMERS, and Daylight Transport.
+                </p>
+              </Reveal>
+              <Reveal delay={4}>
+                <p className="text-muted-foreground">
+                  As a <span className="font-semibold">JFF/JFFLabs Fellow</span>, I worked at the
+                  intersection of AI and workforce development—building GenAI prototypes for veteran
+                  mobility initiatives and developing the thinking that became the WARE Framework.
+                  In late 2024, I founded D. E. Williams + Co. to bring that work to market.
+                </p>
+              </Reveal>
+            </div>
           </div>
         </section>
 
@@ -59,7 +137,7 @@ export default function About() {
               {[
                 { metric: '$9M+', desc: 'New business won at Booz Allen Hamilton' },
                 { metric: '$35M', desc: 'Digital portfolio managed for Lexus' },
-                { metric: '$10M', desc: 'Data monetization investment authorized at OMERS' },
+                { metric: '$10M', desc: 'Data monetization investment at OMERS' },
                 { metric: '$6M+', desc: 'Annual revenue from nonprofit vertical at Pariveda' },
                 { metric: '$28K → $4M', desc: 'Grew Daylight Transport engagement in 9 months' },
                 { metric: '#1 AWS Partner', desc: 'Revenue driver for Southern California in 2021' },
@@ -75,100 +153,55 @@ export default function About() {
           </div>
         </section>
 
-        {/* Career */}
+        {/* The Company */}
         <section className="section-padding section-alt">
           <div className="container max-w-4xl">
             <Reveal>
               <h2 className="font-mono text-sm text-muted-foreground mb-8">
-                // CAREER
+                // THE_COMPANY
               </h2>
             </Reveal>
             <div className="space-y-6 text-foreground leading-relaxed">
               <Reveal delay={1}>
                 <p>
-                  I started my career as a software engineer at the Federal Reserve Board,
-                  building data platforms and web services in Java and C#. That's where I learned
-                  that the hardest problems in technology aren't technical—they're about getting
-                  the right people aligned on what to build and why.
+                  D. E. Williams + Co. is an AI-native services company. We use AI to deliver
+                  workforce intelligence at scale—from individual resilience assessments to
+                  enterprise-wide transformation programs.
                 </p>
               </Reveal>
               <Reveal delay={2}>
                 <p className="text-muted-foreground">
-                  At Booz Allen Hamilton, I moved into consulting—winning $9M+ in new business
-                  by deploying Enterprise 2.0 solutions for federal agencies, including a
-                  collaboration platform used by 2,400+ senior VA executives. I learned to
-                  translate technology capabilities into language that decision-makers act on.
+                  Founded in 2024 and based in Virginia. Every time AI models improve, our
+                  assessments get more accurate and our delivery gets faster. That's not a
+                  marketing claim—it's how we built the stack.
                 </p>
               </Reveal>
               <Reveal delay={3}>
-                <p className="text-muted-foreground">
-                  I then led the Lexus digital portfolio at Beyondsoft (formerly TPG), managing
-                  $35M in programs with 11 direct reports. The LexusPlus transformation—a $10M
-                  initiative that had failed multiple times—succeeded because I talked to every
-                  stakeholder across brands, dealers, and regions to build a coherent strategy.
-                  That pattern—initiatives fail from misalignment, not technology—has defined
-                  my career.
-                </p>
-              </Reveal>
-              <Reveal delay={4}>
-                <p className="text-muted-foreground">
-                  At Pariveda Solutions, I grew accounts, built a national nonprofit vertical
-                  generating $6M+ annually, and led complex engagements for the NFL, TaxAct,
-                  OMERS, and Daylight Transport. In late 2024, I founded D. E. Williams + Co.
-                  to focus full-time on helping companies move from AI experiments to AI results.
-                </p>
-              </Reveal>
-            </div>
-          </div>
-        </section>
-
-        {/* How I Work */}
-        <section className="section-padding">
-          <div className="container max-w-4xl">
-            <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-6">
-                // HOW_I_WORK
-              </h2>
-            </Reveal>
-            <Reveal delay={1}>
-              <p className="text-foreground leading-relaxed mb-8 max-w-2xl">
-                Fractional keeps incentives aligned—minimal investment from you, focused on
-                outcomes and value delivered. I create enough momentum on engagement days to
-                keep things moving between sessions. No slideware, just real products and solutions.
-              </p>
-            </Reveal>
-            <div className="grid md:grid-cols-3 gap-8">
-              <Reveal delay={1}>
-                <div className="border border-border bg-card p-6 h-full">
-                  <h3 className="font-mono text-base font-semibold mb-3">
-                    Fractional CTO
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Embedded technology leadership. Architecture decisions, team building,
-                    and technical strategy—typically 2-3 days per week.
-                  </p>
-                </div>
-              </Reveal>
-              <Reveal delay={2}>
-                <div className="border border-border bg-card p-6 h-full">
-                  <h3 className="font-mono text-base font-semibold mb-3">
-                    Fractional Chief AI Officer
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    AI strategy and implementation leadership. From opportunity assessment
-                    through production deployment and team enablement.
-                  </p>
-                </div>
-              </Reveal>
-              <Reveal delay={3}>
-                <div className="border border-border bg-card p-6 h-full">
-                  <h3 className="font-mono text-base font-semibold mb-3">
-                    Advisory
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Strategic guidance on a regular cadence. Board-level input on technology
-                    direction, AI readiness, and digital transformation.
-                  </p>
+                <div className="grid md:grid-cols-2 gap-6 mt-6">
+                  <div className="border border-border bg-card p-6">
+                    <h3 className="font-mono text-base font-semibold mb-3">What We've Built</h3>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex gap-2">
+                        <span className="text-terminal-cyan">→</span>
+                        <Link to="/lab" className="hover:text-terminal-cyan transition-colors">
+                          WARE Framework — workforce automation resilience engine
+                        </Link>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-terminal-cyan">→</span>
+                        <a href="https://localmemory.co" target="_blank" rel="noopener noreferrer" className="hover:text-terminal-cyan transition-colors">
+                          Local Memory — persistent AI knowledge management (open source)
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="border border-border bg-card p-6">
+                    <h3 className="font-mono text-base font-semibold mb-3">Clients Served</h3>
+                    <p className="text-sm text-muted-foreground">
+                      NFL Digital Media, OMERS, TaxAct, Toyota/Lexus, Daylight Transport,
+                      Stop Soldier Suicide
+                    </p>
+                  </div>
                 </div>
               </Reveal>
             </div>
@@ -176,7 +209,7 @@ export default function About() {
         </section>
 
         {/* Credentials */}
-        <section className="section-padding section-alt">
+        <section className="section-padding">
           <div className="container max-w-4xl">
             <Reveal>
               <h2 className="font-mono text-sm text-muted-foreground mb-8">
@@ -209,7 +242,7 @@ export default function About() {
         </section>
 
         {/* Advisory */}
-        <section className="section-padding">
+        <section className="section-padding section-alt">
           <div className="container max-w-4xl">
             <Reveal>
               <h2 className="font-mono text-sm text-muted-foreground mb-8">
@@ -231,6 +264,12 @@ export default function About() {
               </Reveal>
               <Reveal delay={3}>
                 <p>
+                  <span className="font-semibold">JFF/JFFLabs Fellow</span>
+                  <span className="text-muted-foreground"> — AI + Workforce Development</span>
+                </p>
+              </Reveal>
+              <Reveal delay={4}>
+                <p>
                   <span className="font-semibold">Prominent Patriot Award</span>
                   <span className="text-muted-foreground"> — George Mason University, May 2024</span>
                 </p>
@@ -240,7 +279,7 @@ export default function About() {
         </section>
 
         {/* Published */}
-        <section className="section-padding section-alt">
+        <section className="section-padding">
           <div className="container max-w-4xl">
             <Reveal>
               <h2 className="font-mono text-sm text-muted-foreground mb-8">
@@ -268,25 +307,6 @@ export default function About() {
                 </Reveal>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Also */}
-        <section className="section-padding">
-          <div className="container max-w-4xl">
-            <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-6">
-                // ALSO
-              </h2>
-            </Reveal>
-            <Reveal delay={1}>
-              <p className="text-muted-foreground leading-relaxed">
-                Beyond consulting, I build AI products.{' '}
-                <Link to="/lab" className="font-mono text-terminal-cyan hover:underline">
-                  See what's in the lab →
-                </Link>
-              </p>
-            </Reveal>
           </div>
         </section>
 
@@ -325,7 +345,7 @@ export default function About() {
                   [GitHub]
                 </a>
                 <a
-                  href="https://claudecodefornoncoders.substack.com/"
+                  href="https://dewilliamsco.substack.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-mono text-sm text-terminal-cyan hover:underline"
