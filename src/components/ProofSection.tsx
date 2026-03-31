@@ -19,7 +19,7 @@ export function ProofSection() {
       description: 'Led customer strategy for Stop Soldier Suicide\'s Black Box Project; rearchitected AWS platform using AI/ML to identify markers for suicidality for clinicians serving veterans.',
     },
     {
-      metric: '9,000+ newsletter subscribers',
+      metric: '10,000+ newsletter subscribers',
       description: 'Claude Code for Non-Coders is the largest independent newsletter demystifying AI-native development for business leaders. Direct distribution channel converting readers into advisory clients and workshop attendees.',
     },
   ];
