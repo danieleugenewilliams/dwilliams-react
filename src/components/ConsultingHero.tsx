@@ -28,7 +28,7 @@ export function ConsultingHero() {
               [Book a Discovery Call]
             </Link>
             <a href="#proof" className="btn-ghost">
-              See Proof Points &gt;
+              See Proof Points {'>'}
             </a>
           </div>
         </div>

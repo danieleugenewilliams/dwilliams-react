@@ -31,12 +31,16 @@ function formatDate(dateStr: string): string {
 
 export default function Insights() {
   const [postsData, setPostsData] = useState<PostsData | null>(null);
+  const [fetchFailed, setFetchFailed] = useState(false);
 
   useEffect(() => {
     fetch('/data/posts.json')
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to load posts');
+        return res.json();
+      })
       .then(setPostsData)
-      .catch(() => {});
+      .catch(() => setFetchFailed(true));
   }, []);
 
   const cc4nc = postsData?.feeds.find((f) => f.id === 'cc4nc');
@@ -136,7 +140,21 @@ export default function Insights() {
                 // RECENT
               </h2>
             </Reveal>
-            {recentPosts.length > 0 ? (
+            {fetchFailed ? (
+              <div className="border border-border p-6 text-center">
+                <p className="text-muted-foreground mb-4">
+                  Latest posts are available on Substack.
+                </p>
+                <a
+                  href="https://claudecodefornoncoders.substack.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-block"
+                >
+                  [Read on Substack]
+                </a>
+              </div>
+            ) : recentPosts.length > 0 ? (
               <div className="space-y-4">
                 {recentPosts.map((post, i) => (
                   <Reveal key={post.link} delay={Math.min(i + 1, 4) as 1 | 2 | 3 | 4}>

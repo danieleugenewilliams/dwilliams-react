@@ -24,7 +24,7 @@ export function WorkWithMe() {
               [Book a Discovery Call]
             </Link>
             <a href="https://automationresilience.com" target="_blank" rel="noopener noreferrer" className="btn-ghost">
-              Take the Free WARE Assessment &gt;
+              Take the Free WARE Assessment {'>'}
             </a>
           </div>
         </Reveal>

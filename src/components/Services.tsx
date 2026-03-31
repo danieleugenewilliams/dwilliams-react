@@ -224,7 +224,7 @@ export default function Services() {
                   rel="noopener noreferrer"
                   className="btn-ghost inline-block"
                 >
-                  Try the Free WARE Assessment &gt;
+                  Try the Free WARE Assessment {'>'}
                 </a>
               </div>
             </Reveal>
