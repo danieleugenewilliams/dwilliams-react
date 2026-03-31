@@ -7,7 +7,7 @@ const products: Product[] = [
     name: 'WARE Framework',
     tagline: 'Workforce Automation Resilience Engine',
     description: 'Hybrid scoring engine combining O*NET structural data, LLM semantic analysis, industry adoption factors, and observed AI usage data to assess role-level automation resilience.',
-    status: 'dev',
+    status: 'live',
   },
   {
     id: 'localmemory',

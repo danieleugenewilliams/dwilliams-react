@@ -4,28 +4,28 @@ export function ProofSection() {
   const proofPoints = [
     {
       metric: '$2.5M saved in year one',
-      description: 'Led TaxAct\'s legacy modernization—automatically converting 20-year-old C++ to modern C# and React, then scaling the solution across their codebase.',
+      description: 'Led TaxAct\'s legacy modernization, advising the CTO and President directly. Built custom ML-driven crawler to map 20-year-old C++ logic paths, then automated conversion to modern C# and React.',
     },
     {
       metric: '$28K → $4M in 9 months',
-      description: 'Accelerated a transportation client\'s business transformation through integrated product strategy, technical architecture, and executive alignment.',
+      description: 'Grew Daylight Transport from pilot to $4M engagement through integrated product strategy, executive alignment, and a logistics OS incorporating ML into route planning.',
     },
     {
       metric: '$5M annual operational savings',
-      description: 'Reimagined NFL Digital Media\'s organizational design and product engineering strategy.',
-    },
-    {
-      metric: '$250K partner funding secured',
-      description: 'Guided Daylight Transport\'s 3-year cloud infrastructure strategy through comprehensive process mapping and stakeholder collaboration.',
+      description: 'Reimagined NFL Digital Media\'s organizational design for a 1,000+ person org in 12 weeks. Redesigned roles, team structure, and technology platform strategy. Pariveda remains embedded to this day.',
     },
     {
       metric: 'Zero loss of life',
-      description: 'Led customer strategy for Stop Soldier Suicide\'s platform rearchitecture, enabling AI-driven signals of suicidality for clinicians serving veterans.',
+      description: 'Led customer strategy for Stop Soldier Suicide\'s Black Box Project; rearchitected AWS platform using AI/ML to identify markers for suicidality for clinicians serving veterans.',
+    },
+    {
+      metric: '9,000+ newsletter subscribers',
+      description: 'Claude Code for Non-Coders is the largest independent newsletter demystifying AI-native development for business leaders. Direct distribution channel converting readers into advisory clients and workshop attendees.',
     },
   ];
 
   return (
-    <section className="section-padding section-alt">
+    <section id="proof" className="section-padding section-alt">
       <div className="container max-w-4xl">
         <Reveal>
           <h2 className="font-mono text-sm text-muted-foreground mb-8">

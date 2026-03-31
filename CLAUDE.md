@@ -24,7 +24,7 @@ This is a Vite + React (TypeScript) single-page application. The site serves as 
 
 ### Positioning
 
-The primary audience is CEOs, COOs, and board members evaluating fractional technology leadership. The site positions Daniel as a Fractional CTO and Chief AI Officer with 20+ years of enterprise technology experience. Products live on a secondary `/lab` page; the homepage focuses on consulting credentials and proof points.
+The primary audience is CEOs, COOs, and board members evaluating fractional technology leadership. The site positions Daniel as a Fractional CTO & AI Transformation Officer with 20+ years of enterprise technology experience. The homepage leads with embedded advisory identity ("AI Transformation Leadership, Embedded") and proof points. Products live on a secondary `/lab` page; the WARE Framework and newsletter serve as supporting assets that power the practice.
 
 ### Tech Stack
 - **React 19** with functional components and hooks
@@ -52,9 +52,9 @@ The site uses a Terminal/CLI + Maker Space aesthetic:
 
 ### Key Components
 - **Layout.tsx** - Main layout wrapper with navigation and footer
-- **ConsultingHero.tsx** - Homepage hero section (workforce intelligence positioning)
+- **ConsultingHero.tsx** - Homepage hero section (embedded advisory positioning)
 - **CredentialsBanner.tsx** - Social proof strip on homepage (experience, impact, roles)
-- **Services.tsx** - 6-tier workforce intelligence services page
+- **Services.tsx** - Fractional leadership (primary) + 6-tier WARE assessment services page
 - **Insights.tsx** - Newsletter/Substack links page
 - **About.tsx** - Founder story with AI-native thesis
 - **Lab.tsx** - WARE Framework showcase, LocalMemory, and ProductGrid
@@ -67,8 +67,8 @@ The site uses a Terminal/CLI + Maker Space aesthetic:
 
 ### Routing Structure
 Routes are defined in App.tsx using React Router:
-- `/` - Homepage with workforce intelligence hero, credentials, and proof points
-- `/services` - 6-tier workforce intelligence services (Free → Enterprise)
+- `/` - Homepage with embedded advisory hero, credentials, and proof points
+- `/services` - Fractional leadership (primary) + WARE assessment tiers (Free → Enterprise)
 - `/insights` - Newsletter links (Substack)
 - `/about` - Founder story and company info
 - `/lab` - WARE Framework, LocalMemory, and open source projects
@@ -99,11 +99,10 @@ Legacy routes redirect to new pages:
 
 ### Products Data
 Product information is defined in `ProductGrid.tsx` and displayed on the `/lab` page. Current products:
-1. LocalMemory (LIVE) - localmemory.co - 60 paying customers
-2. ReckonGrid (IN DEV) - consulting estimation via GenAI
-3. Yasuke (PRE-PILOT) - managed personal AI agents (co-founded with Landon Gray)
+1. WARE Framework (LIVE) - workforce automation resilience engine
+2. LocalMemory (LIVE) - localmemory.co - 60 paying customers
 
-Open source projects also listed on `/lab`: Othello Agent, Agent Harness, zvec-go
+Open source projects also listed on `/lab`: Othello Agent, Agent Harness, zvec-go, Fractionally
 
 ### Deployment
 - Hosted on S3 + CloudFront (deployed via `npm run deploy`)

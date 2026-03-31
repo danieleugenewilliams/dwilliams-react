@@ -6,14 +6,14 @@ export function WhatIDo() {
       <div className="container max-w-4xl">
         <Reveal>
           <h2 className="font-mono text-sm text-muted-foreground mb-8">
-            // WHAT_WE_DO
+            // WHAT_I_DO
           </h2>
         </Reveal>
 
         <Reveal delay={1}>
           <p className="text-lg text-foreground mb-10 max-w-2xl">
-            <span className="font-semibold">We don't guess which roles are at risk.</span>{' '}
-            We score them, map the timeline, and build the playbook.
+            <span className="font-semibold">I don't advise from the sidelines.</span>{' '}
+            I embed, build, and lead.
           </p>
         </Reveal>
 
@@ -21,10 +21,12 @@ export function WhatIDo() {
           <Reveal delay={1}>
             <div className="border border-border p-6 hover:border-terminal-cyan/50 transition-colors h-full">
               <h3 className="font-mono text-base font-semibold mb-3">
-                [01] Assess
+                [01] Embed
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                AI-powered workforce resilience scoring. Every role analyzed against automation capability, observed adoption, and industry-specific factors.
+                I join your leadership team as Fractional CTO or AI Transformation Officer.
+                Architecture decisions, vendor orchestration, AI governance, and the
+                stakeholder alignment that makes transformation stick.
               </p>
             </div>
           </Reveal>
@@ -32,10 +34,11 @@ export function WhatIDo() {
           <Reveal delay={2}>
             <div className="border border-border p-6 hover:border-terminal-cyan/50 transition-colors h-full">
               <h3 className="font-mono text-base font-semibold mb-3">
-                [02] Advise
+                [02] Build
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Strategic playbooks for workforce transition. Not generic "upskill everyone" advice — role-specific, timeline-aware action plans.
+                Production systems, not prototypes. From AI-augmented workflows to
+                full platform modernization, I architect and ship alongside your team.
               </p>
             </div>
           </Reveal>
@@ -43,10 +46,11 @@ export function WhatIDo() {
           <Reveal delay={3}>
             <div className="border border-border p-6 hover:border-terminal-cyan/50 transition-colors h-full">
               <h3 className="font-mono text-base font-semibold mb-3">
-                [03] Transform
+                [03] Transfer
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Organizational readiness programs. Restructuring, reskilling roadmaps, and ongoing monitoring as AI capabilities evolve.
+                I train your people to maintain and extend what we build. The goal is
+                organizational capability, not consultant dependency.
               </p>
             </div>
           </Reveal>
@@ -54,7 +58,7 @@ export function WhatIDo() {
 
         <Reveal>
           <p className="font-mono text-sm text-muted-foreground">
-            Powered by the WARE Framework — workforce analytics backed by real data, not consultant intuition.
+            Powered by the WARE Framework and 20+ years of enterprise delivery.
           </p>
         </Reveal>
       </div>

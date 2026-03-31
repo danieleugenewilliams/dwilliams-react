@@ -21,7 +21,7 @@ export default function Consulting() {
               AI Advisory Services
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl animate-fade-in-3">
-              As your Fractional CTO or Chief AI Officer, I architect, build, and deploy AI solutions
+              As your Fractional CTO or AI Transformation Officer, I architect, build, and deploy AI solutions
               that work—then train your team to own them.
             </p>
           </div>

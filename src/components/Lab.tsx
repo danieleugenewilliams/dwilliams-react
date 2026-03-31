@@ -22,8 +22,8 @@ export default function Lab() {
               The Lab
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl animate-fade-in-3">
-              AI products built from real enterprise problems. The research and tools
-              that power our workforce intelligence services.
+              These tools power our advisory engagements. They ship as delivered
+              services inside client work, not as standalone software.
             </p>
           </div>
         </section>
@@ -40,8 +40,8 @@ export default function Lab() {
               <Reveal delay={1}>
                 <div className="flex items-center gap-3 mb-4">
                   <h3 className="font-mono text-2xl font-bold">WARE</h3>
-                  <span className="font-mono text-xs text-terminal-amber border border-terminal-amber/30 px-2 py-0.5">
-                    [IN DEV]
+                  <span className="font-mono text-xs text-terminal-green border border-terminal-green/30 px-2 py-0.5">
+                    [LIVE]
                   </span>
                 </div>
                 <p className="font-mono text-sm text-terminal-cyan mb-6">
@@ -102,9 +102,14 @@ export default function Lab() {
                 </Reveal>
 
                 <Reveal delay={4}>
-                  <Link to="/assessment" className="btn-primary inline-block">
+                  <a
+                    href="https://automationresilience.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-block"
+                  >
                     [Try It Yourself]
-                  </Link>
+                  </a>
                 </Reveal>
               </div>
             </div>

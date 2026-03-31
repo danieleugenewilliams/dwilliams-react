@@ -35,13 +35,13 @@ export default function About() {
               Daniel E. Williams
             </h1>
             <p className="font-mono text-sm md:text-lg text-terminal-cyan mb-4 md:mb-6 animate-fade-in-3">
-              Founder & Chief AI Officer, D. E. Williams + Co.
+              Founder & AI Transformation Officer, D. E. Williams + Co.
             </p>
             <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl animate-fade-in-4">
-              I founded this company because I saw a gap. Organizations were either panicking
-              about AI replacing their workforce or ignoring the problem entirely. Both responses
-              are expensive. I built DE Williams + Co. to give organizations the data and clarity
-              they need to navigate the transition.
+              I founded this company because I kept seeing the same pattern: organizations with
+              ambitious AI strategies and no one to execute them. Pilots that never ship. Strategy
+              decks that collect dust. I built D. E. Williams + Co. to close that gap — embedded
+              leadership that builds and delivers.
             </p>
           </div>
         </section>
@@ -115,10 +115,13 @@ export default function About() {
               </Reveal>
               <Reveal delay={4}>
                 <p className="text-muted-foreground">
-                  As a <span className="font-semibold">JFF/JFFLabs Fellow</span>, I worked at the
-                  intersection of AI and workforce development—building GenAI prototypes for veteran
-                  mobility initiatives and developing the thinking that became the WARE Framework.
-                  In late 2024, I founded D. E. Williams + Co. to bring that work to market.
+                  As Fractional CPO at <span className="font-semibold">JFF Solutions</span>, I delivered
+                  a working MVP for their career navigation platform in under 3 months — nine months
+                  ahead of the 12-month timeline. At <span className="font-semibold">JFFLabs</span>, I
+                  built an innovation pipeline model evaluating 30+ portfolio initiatives, exiting half
+                  for failing to meet criteria. That work at the intersection of AI and workforce
+                  development became the foundation for the WARE Framework. In late 2024, I founded
+                  D. E. Williams + Co. to bring it to market.
                 </p>
               </Reveal>
             </div>
@@ -216,7 +219,7 @@ export default function About() {
                 // CREDENTIALS
               </h2>
             </Reveal>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               <Reveal delay={1}>
                 <div>
                   <h3 className="font-mono text-base font-semibold mb-4">Education</h3>
@@ -234,6 +237,17 @@ export default function About() {
                     <p>Lean Six Sigma Green Belt — Dartmouth College</p>
                     <p>Project Management Professional (PMP)</p>
                     <p>Certified Scrum Master</p>
+                  </div>
+                </div>
+              </Reveal>
+              <Reveal delay={3}>
+                <div>
+                  <h3 className="font-mono text-base font-semibold mb-4">AI Governance</h3>
+                  <div className="font-mono text-sm text-muted-foreground space-y-2">
+                    <p>NIST AI Risk Management Framework</p>
+                    <p>Responsible AI Implementation</p>
+                    <p>Algorithmic Impact Assessment</p>
+                    <p>AI Operating Model Design</p>
                   </div>
                 </div>
               </Reveal>
@@ -264,8 +278,8 @@ export default function About() {
               </Reveal>
               <Reveal delay={3}>
                 <p>
-                  <span className="font-semibold">JFF/JFFLabs Fellow</span>
-                  <span className="text-muted-foreground"> — AI + Workforce Development</span>
+                  <span className="font-semibold">JFF Solutions / JFFLabs</span>
+                  <span className="text-muted-foreground"> — Fractional CPO & Digital Product Advisor</span>
                 </p>
               </Reveal>
               <Reveal delay={4}>

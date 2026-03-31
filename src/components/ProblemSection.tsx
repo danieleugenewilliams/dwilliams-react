@@ -13,21 +13,23 @@ export function ProblemSection() {
         <div className="space-y-6 text-lg leading-relaxed">
           <Reveal delay={1}>
             <p className="text-foreground font-semibold text-section-display">
-              Most organizations have no idea which roles AI will reshape next.
+              Most companies are stuck between AI ambition and AI execution.
             </p>
           </Reveal>
 
           <Reveal delay={2}>
             <p className="text-muted-foreground">
-              AI tools can theoretically automate 94% of tasks across industries — but only 33%
-              are seeing real adoption today. That gap is closing fast, and most companies are
-              either panicking or ignoring it. Both responses are expensive.
+              MIT research confirms it: despite $30–40 billion in enterprise GenAI investment,
+              95% of organizations are getting zero return. Only 5% have crossed from pilot
+              to production. The barrier isn't the technology — it's brittle workflows,
+              lack of contextual learning, and misalignment with day-to-day operations.
+              Closing that gap requires someone who has done it before.
             </p>
           </Reveal>
 
           <Reveal delay={3}>
             <p className="text-foreground font-mono text-xl md:text-2xl border-l-2 border-terminal-cyan pl-4">
-              We close that gap with data, not guesswork.
+              That's the work I do.
             </p>
           </Reveal>
         </div>
