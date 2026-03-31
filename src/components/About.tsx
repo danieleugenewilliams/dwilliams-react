@@ -68,7 +68,7 @@ export default function About() {
                   The answer isn't "upskill everyone" or "automate everything." It's understanding,
                   at the task level, which roles will transform, which are at risk, and what
                   to do about it—with timelines, not guesses. That's what we built the{' '}
-                  <Link to="/lab" className="text-terminal-cyan hover:underline">WARE Framework</Link>{' '}
+                  <a href="https://automationresilience.com" target="_blank" rel="noopener noreferrer" className="text-terminal-cyan hover:underline">WARE Framework</a>{' '}
                   to deliver.
                 </p>
               </Reveal>
@@ -186,9 +186,9 @@ export default function About() {
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex gap-2">
                         <span className="text-terminal-cyan">→</span>
-                        <Link to="/lab" className="hover:text-terminal-cyan transition-colors">
+                        <a href="https://automationresilience.com" target="_blank" rel="noopener noreferrer" className="hover:text-terminal-cyan transition-colors">
                           WARE Framework — workforce automation resilience engine
-                        </Link>
+                        </a>
                       </li>
                       <li className="flex gap-2">
                         <span className="text-terminal-cyan">→</span>
