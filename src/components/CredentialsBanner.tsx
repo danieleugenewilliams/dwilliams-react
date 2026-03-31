@@ -14,8 +14,8 @@ export function CredentialsBanner() {
           </div>
         </Reveal>
 
-        {/* 3-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Credentials grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <Reveal delay={1}>
             <div className="border border-border bg-card p-6 h-full">
               <h3 className="font-mono text-base font-semibold text-foreground mb-3">
@@ -53,10 +53,35 @@ export function CredentialsBanner() {
                 Roles
               </h3>
               <p className="text-metric-display text-foreground font-semibold mb-2">
-                Founder & Chief AI Officer
+                Founder & AI Transformation Officer
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Board advisor, George Mason University
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={3}>
+            <div className="border border-border bg-card p-6 h-full">
+              <h3 className="font-mono text-base font-semibold text-foreground mb-3">
+                Distribution
+              </h3>
+              <p className="text-metric-display text-foreground font-semibold mb-2">
+                9,000+ subscribers
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Claude Code for Non-Coders — AI transformation thinking at scale
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={4}>
+            <div className="border border-border bg-card p-6 h-full">
+              <h3 className="font-mono text-base font-semibold text-foreground mb-3">
+                Governance
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                NIST AI RMF · Responsible AI · Algorithmic Impact Assessment · AI Operating Model Design
               </p>
             </div>
           </Reveal>
@@ -66,9 +91,9 @@ export function CredentialsBanner() {
         <Reveal>
           <div className="mt-8 text-center border border-border bg-card p-4">
             <p className="text-sm text-muted-foreground">
-              Need workforce intelligence at scale? We embed with leadership teams for ongoing advisory.{' '}
+              I take on 2–3 embedded engagements at a time. Let's see if there's a fit.{' '}
               <Link to="/services" className="font-mono text-terminal-cyan hover:underline">
-                See service tiers →
+                See services →
               </Link>
             </p>
           </div>
@@ -78,7 +103,7 @@ export function CredentialsBanner() {
         <Reveal>
           <div className="mt-4 text-center">
             <p className="text-sm text-muted-foreground">
-              See what we're building.{' '}
+              See what I'm building.{' '}
               <Link to="/lab" className="font-mono text-terminal-cyan hover:underline">
                 Visit the Lab →
               </Link>

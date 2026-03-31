@@ -6,85 +6,51 @@ const tiers = [
   {
     name: 'Free',
     audience: 'Anyone',
-    description: 'Get your AI resilience score and a basic risk summary in 5 minutes.',
+    price: '$0',
+    description: 'Get your AI resilience score and a basic risk summary. 2 free analyses to explore.',
     features: [
       'AI resilience score (0–100)',
       'Risk category assessment',
-      'Top 3 most-exposed tasks',
-      'Top 3 automation-resistant tasks',
+      'Limited recommendations',
+      '2 analyses included',
     ],
-    cta: 'Join the Waitlist',
-    ctaLink: '/assessment',
+    cta: 'Try It Free',
+    ctaLink: 'https://automationresilience.com',
+    external: true,
     highlight: false,
   },
   {
-    name: 'Pro',
-    audience: 'Individual professionals',
-    description: 'Detailed role analysis with task-level breakdown and a personalized action plan.',
+    name: 'Single Report',
+    audience: 'Individual professionals & students',
+    price: '$9.99',
+    description: 'Complete task-level breakdown with strategic recommendations and exportable PDF. Students get a discounted rate with a valid .edu email.',
     features: [
       'Full task-level risk breakdown',
-      'Personalized reskilling roadmap',
-      'Industry-specific factors',
+      'All strategic recommendations',
       'Exportable PDF report',
+      'Scoring transparency',
+      '$6 student rate with .edu email',
     ],
-    cta: 'Join the Waitlist',
-    ctaLink: '/assessment',
-    highlight: false,
-  },
-  {
-    name: 'Advisory',
-    audience: 'Teams / small organizations',
-    description: 'Multi-role assessment with department heat maps and a live strategy session.',
-    features: [
-      'Up to 25 role assessments',
-      'Department-level heat map',
-      '2-hour strategy session',
-      'Priority action plan',
-    ],
-    cta: 'Talk to Our Team',
-    ctaLink: '/contact',
-    highlight: false,
-  },
-  {
-    name: 'Executive',
-    audience: 'C-suite / board',
-    description: 'Workforce transformation roadmap with board-ready reporting and ongoing advisory.',
-    features: [
-      'Workforce transformation roadmap',
-      'Board-ready reporting',
-      'Monthly advisory sessions',
-      'Quarterly capability updates',
-    ],
-    cta: 'Talk to Our Team',
-    ctaLink: '/contact',
+    cta: 'Get Your Report',
+    ctaLink: 'https://automationresilience.com',
+    external: true,
     highlight: true,
   },
   {
-    name: 'Organizational',
-    audience: 'Mid-market companies',
-    description: 'Full workforce audit across 50–500 roles with transition playbooks and change management.',
+    name: 'Professional',
+    audience: 'Coaches, advisors & workforce leaders',
+    price: '$99.99/mo',
+    description: 'Unlimited analyses for executive coaches, career advisors, and workforce development leaders who need to assess multiple roles.',
     features: [
-      'Full workforce audit (50–500 roles)',
-      'Role-by-role transition playbook',
-      'Change management framework',
-      'Reskilling roadmaps by department',
+      'Unlimited analyses',
+      'All report features',
+      'Analysis history & tracking',
+      'Priority support',
+      'Cancel anytime',
     ],
-    cta: 'Talk to Our Team',
-    ctaLink: '/contact',
-    highlight: false,
-  },
-  {
-    name: 'Enterprise',
-    audience: 'Large organizations',
-    description: 'Continuous workforce monitoring, API integration, and a dedicated advisory team.',
-    features: [
-      'Continuous monitoring dashboard',
-      'API integration with HR systems',
-      'Dedicated advisory team',
-      'Custom model training on your data',
-    ],
-    cta: 'Talk to Our Team',
-    ctaLink: '/contact',
+    cta: 'Go Professional',
+    ctaLink: 'https://automationresilience.com',
+    external: true,
     highlight: false,
   },
 ];
@@ -94,8 +60,8 @@ export default function Services() {
     <>
       <SEO
         title="Services — D. E. Williams + Co."
-        description="Workforce intelligence services from free AI resilience assessments to enterprise transformation programs. Powered by the WARE Framework."
-        keywords="workforce intelligence, AI resilience assessment, workforce transformation, automation readiness, WARE Framework"
+        description="Fractional CTO & AI Transformation Officer. Embedded advisory leadership and WARE Framework-powered assessment services."
+        keywords="fractional CTO, AI transformation, embedded advisory, WARE Framework, workforce intelligence"
         url="/services"
       />
       <main className="bg-background text-foreground w-full">
@@ -106,27 +72,69 @@ export default function Services() {
               <span className="text-terminal-cyan">$</span> cat services.md
             </div>
             <h1 className="text-page-hero font-mono font-bold mb-6 animate-fade-in-2">
-              Workforce Intelligence Services
+              Advisory & Transformation Services
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl animate-fade-in-3">
-              From a free individual assessment to enterprise-wide transformation programs.
-              Every tier is powered by the{' '}
-              <Link to="/lab" className="text-terminal-cyan hover:underline">WARE Framework</Link>
-              —task-level analysis, not job-title guessing.
+              I embed with leadership teams as Fractional CTO & AI Transformation Officer.
+              Every engagement is powered by the{' '}
+              <Link to="/lab" className="text-terminal-cyan hover:underline">WARE Framework</Link>.
+              Assessments are also available as standalone services.
             </p>
           </div>
         </section>
 
-        {/* Service Tiers */}
+        {/* Fractional Leadership — Primary Offering */}
+        <section className="section-padding section-alt">
+          <div className="container max-w-4xl">
+            <Reveal>
+              <h2 className="font-mono text-sm text-muted-foreground mb-6">
+                // FRACTIONAL_LEADERSHIP
+              </h2>
+            </Reveal>
+            <Reveal delay={1}>
+              <div className="border border-terminal-cyan/30 bg-terminal-cyan/5 p-8">
+                <h3 className="font-mono text-lg font-semibold mb-4">
+                  Fractional CTO & AI Transformation Officer
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  I embed with your leadership team on a retained basis — typically 2–3 days per week.
+                  Architecture decisions, AI governance, vendor orchestration, team building, and
+                  hands-on implementation.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  This is for organizations that need ongoing technology leadership and
+                  accountability, not a one-time assessment.
+                </p>
+                <Link to="/contact" className="btn-primary inline-block">
+                  [Book a Discovery Call]
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* WARE Assessment Tiers */}
         <section className="section-padding">
           <div className="container max-w-6xl">
             <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-10">
-                // SERVICE_TIERS
+              <h2 className="font-mono text-sm text-muted-foreground mb-4">
+                // WARE_ASSESSMENTS
               </h2>
+              <p className="text-lg text-foreground mb-10 max-w-2xl">
+                The WARE Framework powers task-level automation resilience assessments.
+                Available as a standalone service at{' '}
+                <a
+                  href="https://automationresilience.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-terminal-cyan hover:underline"
+                >
+                  automationresilience.com
+                </a>.
+              </p>
             </Reveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {tiers.map((tier, i) => (
                 <Reveal key={tier.name} delay={Math.min(i + 1, 4) as 1 | 2 | 3 | 4}>
                   <div
@@ -144,6 +152,9 @@ export default function Services() {
                           <span className="font-mono text-xs text-terminal-cyan">[POPULAR]</span>
                         )}
                       </div>
+                      <p className="font-mono text-2xl font-bold text-foreground mt-1">
+                        {tier.price}
+                      </p>
                       <p className="font-mono text-xs text-muted-foreground mt-1">
                         {tier.audience}
                       </p>
@@ -165,12 +176,23 @@ export default function Services() {
                     </ul>
 
                     {/* CTA */}
-                    <Link
-                      to={tier.ctaLink}
-                      className="btn-primary text-center block"
-                    >
-                      [{tier.cta}]
-                    </Link>
+                    {tier.external ? (
+                      <a
+                        href={tier.ctaLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary text-center block"
+                      >
+                        [{tier.cta}]
+                      </a>
+                    ) : (
+                      <Link
+                        to={tier.ctaLink}
+                        className="btn-primary text-center block"
+                      >
+                        [{tier.cta}]
+                      </Link>
+                    )}
                   </div>
                 </Reveal>
               ))}
@@ -178,35 +200,8 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Fractional CTO / CAO */}
-        <section className="section-padding section-alt">
-          <div className="container max-w-4xl">
-            <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-6">
-                // FRACTIONAL_LEADERSHIP
-              </h2>
-            </Reveal>
-            <Reveal delay={1}>
-              <div className="border border-border bg-card p-8">
-                <h3 className="font-mono text-lg font-semibold mb-4">
-                  Need a Fractional CTO or Chief AI Officer?
-                </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  We also embed with leadership teams on a retained basis. Architecture decisions,
-                  team building, AI strategy, and hands-on implementation—typically 2-3 days per week.
-                  This is for organizations that need ongoing technology leadership, not just a
-                  one-time assessment.
-                </p>
-                <Link to="/contact" className="btn-primary inline-block">
-                  [Let's Talk]
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
         {/* CTA */}
-        <section className="section-padding">
+        <section className="section-padding section-alt">
           <div className="container max-w-4xl text-center">
             <Reveal>
               <h2 className="font-mono text-sm text-muted-foreground mb-6">
@@ -215,18 +210,22 @@ export default function Services() {
             </Reveal>
             <Reveal delay={1}>
               <p className="text-lg text-foreground mb-6 max-w-xl mx-auto">
-                Not sure which tier fits? Start with the free assessment—it takes 5 minutes
-                and you'll know where you stand.
+                Not sure where to start? Book a discovery call — 30 minutes, no obligation.
               </p>
             </Reveal>
             <Reveal delay={2}>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/assessment" className="btn-primary inline-block">
-                  [Take the Free Assessment]
+                <Link to="/contact" className="btn-primary inline-block">
+                  [Book a Discovery Call]
                 </Link>
-                <Link to="/contact" className="btn-ghost inline-block">
-                  [Talk to Our Team]
-                </Link>
+                <a
+                  href="https://automationresilience.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost inline-block"
+                >
+                  Try the Free WARE Assessment {'>'}
+                </a>
               </div>
             </Reveal>
           </div>

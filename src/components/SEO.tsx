@@ -11,8 +11,8 @@ interface SEOProps {
 
 export function SEO({
   title = 'D. E. Williams + Co. — Fractional CTO & AI Advisory',
-  description = 'Fractional CTO and Chief AI Officer. I help companies move from AI experiments to AI results. Strategy, architecture, and implementation.',
-  keywords = 'fractional CTO, fractional Chief AI Officer, AI consulting, AI advisory, AI implementation, technology executive, AI strategy',
+  description = 'Fractional CTO & AI Transformation Officer. I help companies move from AI experiments to AI results. Strategy, governance, architecture, and implementation.',
+  keywords = 'fractional CTO, AI transformation officer, AI consulting, AI advisory, AI implementation, technology executive, AI strategy',
   image = '/og-image.svg',
   url = 'https://dewilliams.co',
   type = 'website'
@@ -78,7 +78,7 @@ export function SEO({
             {
               "@type": "Person",
               "name": "Daniel E. Williams",
-              "jobTitle": "Fractional CTO & Chief AI Officer",
+              "jobTitle": "Fractional CTO & AI Transformation Officer",
               "url": "https://dewilliams.co/about",
               "worksFor": {
                 "@type": "Organization",

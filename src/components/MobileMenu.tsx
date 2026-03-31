@@ -65,13 +65,6 @@ export function MobileMenu() {
                   [services]
                 </Link>
                 <Link
-                  to="/insights"
-                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
-                  onClick={closeMenu}
-                >
-                  [insights]
-                </Link>
-                <Link
                   to="/about"
                   className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
                   onClick={closeMenu}
@@ -79,18 +72,18 @@ export function MobileMenu() {
                   [about]
                 </Link>
                 <Link
+                  to="/insights"
+                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
+                  onClick={closeMenu}
+                >
+                  [insights]
+                </Link>
+                <Link
                   to="/contact"
                   className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
                   onClick={closeMenu}
                 >
                   [contact]
-                </Link>
-                <Link
-                  to="/assessment"
-                  className="block font-mono text-sm py-3 text-terminal-cyan hover:text-terminal-cyan/80 transition-colors"
-                  onClick={closeMenu}
-                >
-                  [assessment]
                 </Link>
               </nav>
 

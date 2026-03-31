@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="D. E. Williams + Co. — Workforce Intelligence & AI Advisory"
-        description="Workforce intelligence for the AI era. We help organizations understand which roles automation will reshape, when, and what to do about it."
+        title="D. E. Williams + Co. — Fractional CTO & AI Transformation Officer"
+        description="AI transformation leadership, embedded. I help companies move from AI experiments to AI results. Strategy, governance, architecture, and implementation."
         url="/"
       />
       <main className="bg-background text-foreground w-full overflow-x-hidden">

@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
               Get in Touch
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl animate-fade-in-3">
-              Workforce assessments, advisory services, partnerships, or just want to connect.
+              Advisory engagements, WARE assessments, partnerships, or just want to connect.
             </p>
           </div>
         </section>
@@ -99,12 +99,17 @@ const Contact: React.FC = () => {
                     For Individuals
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Curious about your role's automation resilience? Start with the free
-                    assessment—it takes 5 minutes and gives you an immediate score.
+                    Curious about your role's automation resilience? Try the free
+                    WARE assessment — it takes 30 seconds and gives you an immediate score.
                   </p>
-                  <Link to="/assessment" className="btn-primary inline-block text-sm">
+                  <a
+                    href="https://automationresilience.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-block text-sm"
+                  >
                     [Take the Free Assessment]
-                  </Link>
+                  </a>
                 </div>
               </Reveal>
               <Reveal delay={2}>
@@ -113,17 +118,9 @@ const Contact: React.FC = () => {
                     For Organizations
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Need workforce intelligence for your team or company? Book a discovery
-                    call to discuss Advisory, Executive, or Enterprise engagements.
+                    Need AI transformation leadership? Use the form below to start a
+                    conversation about embedded advisory engagements.
                   </p>
-                  <a
-                    href="https://calendly.com/dewilliamsco/discovery"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-block text-sm"
-                  >
-                    [Book a Discovery Call]
-                  </a>
                 </div>
               </Reveal>
             </div>

@@ -13,18 +13,19 @@ export function WorkWithMe() {
 
         <Reveal delay={1}>
           <p className="text-lg text-foreground mb-6 max-w-xl mx-auto">
-            From individual assessments to enterprise transformation, we meet you where you are.
+            I take on 2–3 embedded engagements at a time. If your organization
+            needs AI transformation leadership — not just AI tools — let's talk.
           </p>
         </Reveal>
 
         <Reveal delay={2}>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/assessment" className="btn-primary">
-              [Start Your Free Assessment]
+            <Link to="/contact" className="btn-primary">
+              [Book a Discovery Call]
             </Link>
-            <Link to="/contact" className="btn-ghost">
-              Talk to Our Team →
-            </Link>
+            <a href="https://automationresilience.com" target="_blank" rel="noopener noreferrer" className="btn-ghost">
+              Take the Free WARE Assessment {'>'}
+            </a>
           </div>
         </Reveal>
       </div>
