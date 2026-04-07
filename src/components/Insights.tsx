@@ -83,7 +83,7 @@ export default function Insights() {
               <Reveal delay={1}>
                 <div className="border border-terminal-cyan/30 bg-terminal-cyan/5 p-8 hover:border-terminal-cyan/50 transition-colors h-full flex flex-col">
                   <div className="font-mono text-xs text-terminal-cyan mb-4">
-                    [WEEKLY] · 14,000+ subscribers
+                    [WEEKLY] · 15,000+ subscribers
                   </div>
                   <h3 className="font-mono text-xl font-semibold mb-4">
                     Claude Code for Non-Coders
