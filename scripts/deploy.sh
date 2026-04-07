@@ -102,7 +102,7 @@ echo ""
 echo "--- Invalidating CloudFront ---"
 INVALIDATION_ID=$(aws cloudfront create-invalidation \
   --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
-  --paths "/index.html" "/" \
+  --paths "/index.html" "/" "/data/*" \
   --query "Invalidation.Id" \
   --output text)
 
