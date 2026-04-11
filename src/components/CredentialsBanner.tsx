@@ -67,7 +67,7 @@ export function CredentialsBanner() {
                 Distribution
               </h3>
               <p className="text-metric-display text-foreground font-semibold mb-2">
-                15,000+ subscribers
+                17,000+ subscribers
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Claude Code for Non-Coders — AI transformation thinking at scale
