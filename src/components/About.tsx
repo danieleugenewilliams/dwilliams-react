@@ -45,7 +45,7 @@ const TIMELINE = [
 const IMPACT = [
   { n: '$9M+', l: 'New business won', d: 'Technical lead on winning bids at Booz Allen Hamilton.' },
   { n: '$35M', l: 'Digital portfolio', d: 'Managed Lexus digital portfolio and retail transformation initiatives.' },
-  { n: '$10M', l: 'Data monetization', d: 'C-suite investment thesis delivered at a top-20 pension fund (OMERS).' },
+  { n: '$10M', l: 'Annual revenue enabled', d: 'Data rationalization strategy unlocking new financial data products across OMERS business units — approved by CEO executive team and board.' },
   { n: '$6M+', l: 'Annual revenue', d: "Built Pariveda's national nonprofit vertical from scratch." },
   { n: '$28K → $4M', l: 'In 9 months', d: 'Grew a Daylight Transport engagement through integrated strategy and build.' },
   { n: '#1 AWS', l: 'Partner driver · SoCal 2021', d: 'Drove recognition as top AWS revenue driver in Southern California.' },

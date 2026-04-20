@@ -98,11 +98,12 @@ export function ProofSection() {
             <span className="proof__cell__label">OMERS</span>
             <div className="proof__cell__metric">
               $<CountUp to={10} format={(n) => Math.round(n).toString()} />M
-              <span className="unit">investment thesis</span>
+              <span className="unit">annual revenue enabled</span>
             </div>
             <p className="proof__cell__body">
-              Delivered a data monetization investment thesis to C-suite at a
-              top-20 global pension fund.
+              Built a data rationalization strategy that unlocked new financial data
+              products across multiple business units — approved by the CEO's executive
+              team and board.
             </p>
           </div>
 
