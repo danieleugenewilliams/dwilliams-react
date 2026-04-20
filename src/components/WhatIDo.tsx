@@ -1,65 +1,54 @@
+import { Link } from 'react-router-dom';
 import { Reveal } from './Reveal';
+import { ArrowUpRight } from './Icons';
+
+const CELLS = [
+  {
+    num: 'A — Process → Architecture',
+    title: <>Find where AI <em>actually</em> creates value.</>,
+    desc: "Operations mapping to locate the leverage points — not where it sounds impressive, where it moves the business.",
+  },
+  {
+    num: 'B — Implementation',
+    title: <>Ship <em>production</em> systems, not prototypes.</>,
+    desc: "Architecture, build, integration, and hardening. The work ends when something is making money — not when the slide deck ships.",
+  },
+  {
+    num: 'C — Team enablement',
+    title: <>Train your people to <em>own</em> it.</>,
+    desc: "Knowledge transfer isn't a phase, it's the whole point. You walk away with an internal team that can maintain and extend.",
+  },
+];
 
 export function WhatIDo() {
   return (
-    <section className="section-padding">
-      <div className="container max-w-4xl">
-        <Reveal>
-          <h2 className="font-mono text-sm text-muted-foreground mb-8">
-            // WHAT_I_DO
-          </h2>
-        </Reveal>
-
-        <Reveal delay={1}>
-          <p className="text-lg text-foreground mb-10 max-w-2xl">
-            <span className="font-semibold">I don't advise from the sidelines.</span>{' '}
-            I embed, build, and lead.
-          </p>
-        </Reveal>
-
-        <div className="grid md:grid-cols-3 gap-8 mb-10">
-          <Reveal delay={1}>
-            <div className="border border-border p-6 hover:border-terminal-cyan/50 transition-colors h-full">
-              <h3 className="font-mono text-base font-semibold mb-3">
-                [01] Embed
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                I join your leadership team as Fractional CTO or AI Transformation Officer.
-                Architecture decisions, vendor orchestration, AI governance, and the
-                stakeholder alignment that makes transformation stick.
-              </p>
-            </div>
+    <section className="section" id="services">
+      <div className="shell">
+        <div className="what__intro">
+          <Reveal>
+            <span className="eyebrow">02 — Services</span>
+            <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '18ch' }}>
+              I don't advise from the{' '}
+              <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>sidelines</em>.
+              I architect, build, and deploy.
+            </h2>
           </Reveal>
-
           <Reveal delay={2}>
-            <div className="border border-border p-6 hover:border-terminal-cyan/50 transition-colors h-full">
-              <h3 className="font-mono text-base font-semibold mb-3">
-                [02] Build
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Production systems, not prototypes. From AI-augmented workflows to
-                full platform modernization, I architect and ship alongside your team.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={3}>
-            <div className="border border-border p-6 hover:border-terminal-cyan/50 transition-colors h-full">
-              <h3 className="font-mono text-base font-semibold mb-3">
-                [03] Transfer
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                I train your people to maintain and extend what we build. The goal is
-                organizational capability, not consultant dependency.
-              </p>
-            </div>
+            <Link to="/services" className="btn btn--ghost">
+              Full services <ArrowUpRight />
+            </Link>
           </Reveal>
         </div>
 
-        <Reveal>
-          <p className="font-mono text-sm text-muted-foreground">
-            Powered by the WARE Framework and 20+ years of enterprise delivery.
-          </p>
+        <Reveal className="what__grid">
+          {CELLS.map((c) => (
+            <div key={c.num} className="what__cell">
+              <span className="what__cell__arrow"><ArrowUpRight /></span>
+              <span className="what__cell__num">{c.num}</span>
+              <h3 className="what__cell__title">{c.title}</h3>
+              <p className="what__cell__desc">{c.desc}</p>
+            </div>
+          ))}
         </Reveal>
       </div>
     </section>

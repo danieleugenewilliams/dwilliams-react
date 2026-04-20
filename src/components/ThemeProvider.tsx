@@ -25,9 +25,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    // Apply theme to document
+    // Apply theme to document — both class (Tailwind) and data-theme (new design system)
     document.documentElement.classList.remove('light', 'dark');
     document.documentElement.classList.add(theme);
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.accent = 'ember';
     localStorage.setItem('theme', theme);
   }, [theme]);
 
