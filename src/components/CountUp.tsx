@@ -19,6 +19,10 @@ export function CountUp({ to, duration = 1600, format = (n) => n.toLocaleString(
         entries.forEach((e) => {
           if (e.isIntersecting && !started) {
             setStarted(true);
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+              setVal(to);
+              return;
+            }
             const start = performance.now();
             const tick = (now: number) => {
               const t = Math.min(1, (now - start) / duration);

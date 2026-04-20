@@ -337,6 +337,9 @@ html.lenis, html.lenis body { height: auto; }
   /* Easing */
   --ease-out-quart: cubic-bezier(0.16, 1, 0.3, 1);
 
+  /* Nav height — referenced in Layout main padding and hero offset */
+  --nav-h: 3.5rem;
+
   /* FOUC fallback — dark theme defaults applied before ThemeProvider hydrates */
   --bg: #0a0a0a;
   --bg-elev: #111110;
@@ -1075,6 +1078,19 @@ html.lenis, html.lenis body { height: auto; }
   transition: color 0.2s;
 }
 .writing__item:hover .writing__item__read { color: var(--brand); }
+.writing__item--skeleton {
+  min-height: 14rem;
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface-hover) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .writing__item--skeleton { animation: none; background: var(--surface); }
+}
 
 /* ---- work-with-me CTA ---- */
 .cta-section {

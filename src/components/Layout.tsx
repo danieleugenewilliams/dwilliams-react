@@ -138,7 +138,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col w-full overflow-x-hidden" style={{ background: "var(--bg)", color: "var(--fg)" }}>
       <Nav />
-      <main className="flex-1 w-full overflow-x-hidden" style={{ paddingTop: "3.5rem" }}>
+      <main className="flex-1 w-full overflow-x-hidden" style={{ paddingTop: "var(--nav-h)" }}>
         {children}
       </main>
       <Footer />

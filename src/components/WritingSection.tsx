@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Reveal } from './Reveal';
+import { ArrowUpRight } from './Icons';
 
 interface Post {
   title: string;
@@ -29,28 +30,23 @@ function formatPostDate(dateStr: string): string {
   }
 }
 
-function ArrowUpRight() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-      <path d="M5 11L11 5M6 5h5v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
-    </svg>
-  );
-}
-
 export function WritingSection() {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[] | null>(null);
 
   useEffect(() => {
     fetch('/data/posts.json')
-      .then((r) => r.ok ? r.json() : Promise.reject())
+      .then((r) => r.ok ? r.json() : Promise.reject(new Error(`${r.status} ${r.url}`)))
       .then((data: PostsData) => {
         const cc4nc = data.feeds.find((f) => f.id === 'cc4nc');
         setPosts(cc4nc?.posts.slice(0, 3) ?? []);
       })
-      .catch(() => {});
+      .catch((e) => {
+        if (import.meta.env.DEV) console.warn('WritingSection fetch failed', e);
+        setPosts([]);
+      });
   }, []);
 
-  if (posts.length === 0) return null;
+  if (posts !== null && posts.length === 0) return null;
 
   return (
     <section className="section rule-top" id="writing">
@@ -69,23 +65,31 @@ export function WritingSection() {
           </Reveal>
         </div>
 
-        <Reveal className="writing__grid">
-          {posts.map((p, i) => (
-            <a
-              key={i}
-              className="writing__item"
-              href={p.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="writing__item__date">{formatPostDate(p.pubDate)}</span>
-              <h3 className="writing__item__title">{p.title}</h3>
-              <span className="writing__item__read">
-                Read essay <ArrowUpRight />
-              </span>
-            </a>
-          ))}
-        </Reveal>
+        {posts === null ? (
+          <div className="writing__grid writing__grid--skeleton" aria-busy="true" aria-label="Loading recent posts">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="writing__item writing__item--skeleton" />
+            ))}
+          </div>
+        ) : (
+          <Reveal className="writing__grid">
+            {posts.map((p) => (
+              <a
+                key={p.link}
+                className="writing__item"
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="writing__item__date">{formatPostDate(p.pubDate)}</span>
+                <h3 className="writing__item__title">{p.title}</h3>
+                <span className="writing__item__read">
+                  Read essay <ArrowUpRight size={14} />
+                </span>
+              </a>
+            ))}
+          </Reveal>
+        )}
       </div>
     </section>
   );

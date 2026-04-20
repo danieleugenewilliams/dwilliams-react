@@ -17,7 +17,7 @@ export function MarqueeStrip() {
     <div className="marquee" aria-hidden="true">
       <div className="marquee__track">
         {loop.map((name, i) => (
-          <span className="marquee__item" key={i}>
+          <span className="marquee__item" key={`${name}-${i}`}>
             <span className="sep" />
             {name}
           </span>

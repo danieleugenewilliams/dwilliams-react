@@ -1,14 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Reveal } from './Reveal';
 import { CountUp } from './CountUp';
-
-function ArrowRight() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
-    </svg>
-  );
-}
+import { ArrowRight } from './Icons';
 
 export function ConsultingHero() {
   return (
