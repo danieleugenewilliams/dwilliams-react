@@ -1,113 +1,60 @@
 import { Link } from 'react-router-dom';
 import { Reveal } from './Reveal';
 
+const TAGS = [
+  'MS Tech Management · GMU',
+  'BS Computer Science · Bowie State',
+  'PMP',
+  'Lean Six Sigma Green Belt',
+  'Certified Scrum Master',
+  'GMU Alumni Board',
+  'NIST AI RMF',
+  'Responsible AI',
+];
+
 export function CredentialsBanner() {
   return (
-    <section className="section-padding section-accent">
-      <div className="container max-w-6xl">
-        {/* Section header */}
+    <section className="section bg-section" id="background">
+      <div className="shell bg-section__inner">
         <Reveal>
-          <div className="mb-12">
-            <h2 className="font-mono text-sm text-muted-foreground mb-2">
-              // CREDENTIALS
-            </h2>
-          </div>
+          <span className="eyebrow">04 — Background</span>
+          <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '16ch' }}>
+            Two decades. One{' '}
+            <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>operating system.</em>
+          </h2>
+          <p
+            className="t-mono-sm t-muted-new"
+            style={{ marginTop: '2rem', maxWidth: '30ch' }}
+          >
+            Engineer's mind, artist's soul.
+            <br />
+            Consulting rigor, founder instincts.
+          </p>
         </Reveal>
 
-        {/* Credentials grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Reveal delay={1}>
-            <div className="border border-border bg-card p-6 h-full">
-              <h3 className="font-mono text-base font-semibold text-foreground mb-3">
-                Experience
-              </h3>
-              <p className="text-metric-display text-foreground font-semibold mb-2">
-                20+ years in enterprise technology
-              </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Federal Reserve, Booz Allen Hamilton, Pariveda Solutions, Beyondsoft/TPG, SAIC
-              </p>
-              <p className="text-xs text-muted-foreground/70 mt-1">
-                Clients include Toyota/Lexus, NFL, OMERS, TaxAct, Daylight Transport, Stop Soldier Suicide
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={2}>
-            <div className="border border-border bg-card p-6 h-full">
-              <h3 className="font-mono text-base font-semibold text-foreground mb-3">
-                Impact
-              </h3>
-              <p className="text-metric-display text-foreground font-semibold mb-2">
-                $35M+ in managed portfolios
-              </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                $9M+ in new business won
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={3}>
-            <div className="border border-border bg-card p-6 h-full">
-              <h3 className="font-mono text-base font-semibold text-foreground mb-3">
-                Roles
-              </h3>
-              <p className="text-metric-display text-foreground font-semibold mb-2">
-                Founder & AI Transformation Officer
-              </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Board advisor, George Mason University
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={3}>
-            <div className="border border-border bg-card p-6 h-full">
-              <h3 className="font-mono text-base font-semibold text-foreground mb-3">
-                Distribution
-              </h3>
-              <p className="text-metric-display text-foreground font-semibold mb-2">
-                17,000+ subscribers
-              </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Claude Code for Non-Coders — AI transformation thinking at scale
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={4}>
-            <div className="border border-border bg-card p-6 h-full">
-              <h3 className="font-mono text-base font-semibold text-foreground mb-3">
-                Governance
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                NIST AI RMF · Responsible AI · Algorithmic Impact Assessment · AI Operating Model Design
-              </p>
-            </div>
-          </Reveal>
-        </div>
-
-        {/* Scale note */}
-        <Reveal>
-          <div className="mt-8 text-center border border-border bg-card p-4">
-            <p className="text-sm text-muted-foreground">
-              I take on 2–3 embedded engagements at a time. Let's see if there's a fit.{' '}
-              <Link to="/services" className="font-mono text-terminal-cyan hover:underline">
-                See services →
-              </Link>
+        <Reveal delay={2}>
+          <div className="bg-section__prose">
+            <p>
+              20+ years leading technology initiatives at Booz Allen Hamilton, Pariveda
+              Solutions, and enterprise clients including Toyota/Lexus, NFL, OMERS,
+              Federal Reserve Board, and TaxAct.
+            </p>
+            <p>
+              I've won <span className="brand-accent">$9M+</span> in new business,
+              built and led consulting practices generating $6M+ annually, and
+              shipped solutions across financial services, transportation, healthcare,
+              nonprofit, and media.
             </p>
           </div>
-        </Reveal>
-
-        {/* Lab cross-link */}
-        <Reveal>
-          <div className="mt-4 text-center">
-            <p className="text-sm text-muted-foreground">
-              See what I'm building.{' '}
-              <Link to="/lab" className="font-mono text-terminal-cyan hover:underline">
-                Visit the Lab →
-              </Link>
-            </p>
+          <div className="credentials-tags">
+            {TAGS.map((t) => (
+              <span key={t} className="credentials-tag">{t}</span>
+            ))}
+          </div>
+          <div style={{ marginTop: '2rem' }}>
+            <Link to="/about" className="btn btn--ghost" style={{ display: 'inline-flex' }}>
+              Full background →
+            </Link>
           </div>
         </Reveal>
       </div>

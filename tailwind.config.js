@@ -76,7 +76,14 @@ module.exports = {
         'metric-display': 'var(--heading-metric)',
       },
       fontFamily: {
+        display: [
+          'Fraunces',
+          'ui-serif',
+          'Georgia',
+          'serif',
+        ],
         sans: [
+          'Inter Tight',
           'Inter',
           'system-ui',
           '-apple-system',
