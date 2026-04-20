@@ -5,7 +5,7 @@ const STEPS = [
     n: '01',
     badge: '30 min · free',
     title: <>Discovery <em>call</em></>,
-    desc: "You tell me what's stuck. I tell you if I can help. No deck, no pitch — just a direct read on fit.",
+    desc: "You tell me what's stuck. I tell you if I can help. No deck, no pitch. Just a direct read on fit.",
     note: '→ Low friction by design',
   },
   {
@@ -30,7 +30,7 @@ export function HowItWorks() {
       <div className="shell">
         <div className="what__intro">
           <Reveal>
-            <span className="eyebrow">05 — How it works</span>
+            <span className="eyebrow">05 · How it works</span>
             <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '20ch' }}>
               Three steps. No mystery.
             </h2>

@@ -13,31 +13,31 @@ const TIMELINE = [
     accentFirst: true,
   },
   {
-    year: '2019 — 2024',
+    year: '2019–2024',
     company: 'Pariveda Solutions',
     role: 'Managing Principal · National Segment Lead',
     desc: 'Built a national nonprofit vertical generating $6M+ annually. Grew a T&L account from $28K to $4M+ in nine months. Drove $10M+ in AWS net-new revenue, #1 AWS partner driver in SoCal (2021).',
     tags: ['NFL Digital Media', 'TaxAct', 'OMERS', 'Daylight Transport'],
   },
   {
-    year: '2017 — 2019',
+    year: '2017–2019',
     company: 'Beyondsoft Consulting',
     role: 'Senior Advisor · Product Lead, Key Accounts',
-    desc: 'Managed Toyota & Lexus digital properties — 6M+ monthly visits, 564K leads annually. Led Lexus Retail Transformation discovery securing $1.5M dev/implementation budget. Managed $35M Lexus portfolio.',
+    desc: 'Managed Toyota & Lexus digital properties: 6M+ monthly visits, 564K leads annually. Led Lexus Retail Transformation discovery securing $1.5M dev/implementation budget. Managed $35M Lexus portfolio.',
     tags: ['Toyota', 'Lexus', '$35M portfolio'],
   },
   {
-    year: '2010 — 2013',
+    year: '2010–2013',
     company: 'Booz Allen Hamilton',
     role: 'Associate · Enterprise Collaboration & Technology',
     desc: 'Won $9M+ new business as technical lead. Built the award-winning "Hello" employee networking app. Implemented FISMA-compliant internal cloud cutting data-center cost 66% across a $100M+ research program.',
     tags: ['Federal', 'Enterprise 2.0', '$9M+ won'],
   },
   {
-    year: '2003 — 2010',
+    year: '2003–2010',
     company: 'SAIC · Federal Reserve Board',
     role: 'Senior Software Engineer · Senior Applications Analyst',
-    desc: 'Led Federal Reserve Data Download — the first platform enabling statistical data sharing among the FRB, World Bank, IMF, and BLS.',
+    desc: 'Led Federal Reserve Data Download, the first platform enabling statistical data sharing among the FRB, World Bank, IMF, and BLS.',
     tags: ['Federal Reserve', 'Data platforms'],
   },
 ];
@@ -45,7 +45,7 @@ const TIMELINE = [
 const IMPACT = [
   { n: '$9M+', l: 'New business won', d: 'Technical lead on winning bids at Booz Allen Hamilton.' },
   { n: '$35M', l: 'Digital portfolio', d: 'Managed Lexus digital portfolio and retail transformation initiatives.' },
-  { n: '$10M', l: 'Annual revenue enabled', d: 'Data rationalization strategy unlocking new financial data products across OMERS business units — approved by CEO executive team and board.' },
+  { n: '$10M', l: 'Annual revenue enabled', d: 'Data rationalization strategy unlocking new financial data products across OMERS business units, approved by CEO executive team and board.' },
   { n: '$6M+', l: 'Annual revenue', d: "Built Pariveda's national nonprofit vertical from scratch." },
   { n: '$28K → $4M', l: 'In 9 months', d: 'Grew a Daylight Transport engagement through integrated strategy and build.' },
   { n: '#1 AWS', l: 'Partner driver · SoCal 2021', d: 'Drove recognition as top AWS revenue driver in Southern California.' },
@@ -101,7 +101,7 @@ export default function About() {
               I founded this company because I kept seeing the same pattern: organizations
               with ambitious AI strategies and very few people with the skills and experience
               to execute them. Pilots that never ship. Decks that collect dust. I built
-              D. E. Williams + Co. to close that gap — embedded leadership that architects,
+              D. E. Williams + Co. to close that gap: embedded leadership that architects,
               builds, and delivers value.
             </p>
           </Reveal>
@@ -120,11 +120,11 @@ export default function About() {
       <section className="thesis" id="thesis">
         <div className="shell thesis__grid">
           <Reveal>
-            <span className="eyebrow">02 — The thesis</span>
+            <span className="eyebrow">0\1 · The thesis</span>
           </Reveal>
           <Reveal delay={1}>
             <h2 className="thesis__quote">
-              AI isn't coming for jobs in some abstract <em>future</em> — it's reshaping them <span className="about-accent">now.</span>
+              AI isn't coming for jobs in some abstract <em>future.</em> It's reshaping them <span className="about-accent">now.</span>
             </h2>
             <p style={{ marginTop: '1.75rem', color: 'var(--fg-muted)', fontSize: 'var(--fs-lead)', lineHeight: 1.6, maxWidth: '58ch' }}>
               The Anthropic Economic Index shows 94% theoretical AI capability against only
@@ -134,7 +134,7 @@ export default function About() {
             <p style={{ marginTop: '1.25rem', color: 'var(--fg-muted)', fontSize: 'var(--fs-lead)', lineHeight: 1.6, maxWidth: '58ch' }}>
               The answer isn't <span style={{ color: 'var(--fg)' }}>"upskill everyone"</span> or <span style={{ color: 'var(--fg)' }}>"automate everything."</span> It's understanding,
               at the task level, which roles will transform, which are at risk, and what to do
-              about it — with timelines, not guesses.
+              about it, with timelines, not guesses.
             </p>
             <div className="stat-strip">
               <div className="stat-strip__item"><span className="n">94%</span><span className="l">AI capability (theory)</span></div>
@@ -151,7 +151,7 @@ export default function About() {
         <div className="shell">
           <div className="timeline__head">
             <Reveal>
-              <span className="eyebrow">03 — The path here</span>
+              <span className="eyebrow">0\1 · The path here</span>
               <h2 className="t-display" style={{ marginTop: '1.25rem', maxWidth: '18ch' }}>
                 Twenty years in <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>five chapters</em>.
               </h2>
@@ -188,14 +188,14 @@ export default function About() {
       <section className="about-impact" id="impact">
         <div className="shell impact__head">
           <Reveal>
-            <span className="eyebrow">04 — Impact</span>
+            <span className="eyebrow">0\1 · Impact</span>
             <h2 className="t-display" style={{ marginTop: '1.25rem', maxWidth: '16ch' }}>
               The work, in <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>numbers.</em>
             </h2>
           </Reveal>
           <Reveal delay={2}>
             <p className="t-lead t-muted-new">
-              Outcomes shipped — not activities billed. Each number came with a signed-off metric and a successor team trained to keep it going.
+              Outcomes shipped, not activities billed. Each number came with a signed-off metric and a successor team trained to keep it going.
             </p>
           </Reveal>
         </div>
@@ -216,9 +216,9 @@ export default function About() {
       <section className="about-creds" id="credentials">
         <div className="shell">
           <Reveal>
-            <span className="eyebrow">05 — Credentials</span>
+            <span className="eyebrow">0\1 · Credentials</span>
             <h2 className="t-display" style={{ marginTop: '1.25rem', maxWidth: '24ch' }}>
-              Table stakes — on the record.
+              Table stakes, on the record.
             </h2>
           </Reveal>
           <div className="creds__grid">
@@ -262,7 +262,7 @@ export default function About() {
       <section className="about-offhours" id="offhours">
         <div className="shell offhours__grid">
           <Reveal>
-            <span className="eyebrow">06 — Off the clock</span>
+            <span className="eyebrow">0\1 · Off the clock</span>
             <div className="offhours__prose" style={{ marginTop: '1.5rem' }}>
               <p>Engineer's mind. <span className="about-accent">Artist's soul.</span></p>
               <p style={{ marginTop: '1.25rem' }}>
@@ -299,9 +299,9 @@ export default function About() {
       <section className="about-pub" id="published">
         <div className="shell">
           <Reveal>
-            <span className="eyebrow">07 — Published</span>
+            <span className="eyebrow">0\1 · Published</span>
             <h2 className="t-display" style={{ marginTop: '1.25rem', maxWidth: '20ch' }}>
-              Written — and read. <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>Repeatedly.</em>
+              Written and read. <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>Repeatedly.</em>
             </h2>
           </Reveal>
           <div className="pub__list">
@@ -327,7 +327,7 @@ export default function About() {
           <Reveal delay={1}>
             <h2 className="cta-close__title" style={{ marginTop: '1.5rem' }}>
               If this <em>sounds</em> like the shape of the<br />
-              problem you're working on —<br />
+              problem you're working on,<br />
               <span className="about-accent">let's talk.</span>
             </h2>
           </Reveal>

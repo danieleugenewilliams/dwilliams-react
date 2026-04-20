@@ -39,7 +39,7 @@ export function ConsultingHero() {
             <p className="t-lead t-muted-new">
               I serve as Fractional CTO &amp; AI Transformation Officer for organizations
               navigating the shift from AI experimentation to AI operations. Strategy,
-              governance, architecture, and implementation — I connect executive vision
+              governance, architecture, and implementation. I connect executive vision
               to engineering execution, then train your team to own it.
             </p>
             <div className="hero__ctas" style={{ marginTop: '1.75rem' }}>

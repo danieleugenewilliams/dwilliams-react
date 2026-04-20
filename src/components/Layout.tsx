@@ -79,7 +79,7 @@ function Footer() {
               D. E. Williams <em>+</em> Co.
             </div>
             <p className="footer-new__tagline">
-              AI transformation leadership — embedded. Strategy, architecture, implementation,
+              AI transformation leadership, embedded. Strategy, architecture, implementation,
               and team enablement from a single operator.
             </p>
           </div>

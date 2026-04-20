@@ -4,17 +4,17 @@ import { ArrowUpRight } from './Icons';
 
 const CELLS = [
   {
-    num: 'A — Process → Architecture',
+    num: 'A · Process → Architecture',
     title: <>Find where AI <em>actually</em> creates value.</>,
-    desc: "Operations mapping to locate the leverage points — not where it sounds impressive, where it moves the business.",
+    desc: "Operations mapping to locate the leverage points. Not where it sounds impressive, where it moves the business.",
   },
   {
-    num: 'B — Implementation',
+    num: 'B · Implementation',
     title: <>Ship <em>production</em> systems, not prototypes.</>,
-    desc: "Architecture, build, integration, and hardening. The work ends when something is making money — not when the slide deck ships.",
+    desc: "Architecture, build, integration, and hardening. The work ends when something is making money, not when the slide deck ships.",
   },
   {
-    num: 'C — Team enablement',
+    num: 'C · Team enablement',
     title: <>Train your people to <em>own</em> it.</>,
     desc: "Knowledge transfer isn't a phase, it's the whole point. You walk away with an internal team that can maintain and extend.",
   },
@@ -26,7 +26,7 @@ export function WhatIDo() {
       <div className="shell">
         <div className="what__intro">
           <Reveal>
-            <span className="eyebrow">02 — Services</span>
+            <span className="eyebrow">02 · Services</span>
             <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '18ch' }}>
               I don't advise from the{' '}
               <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>sidelines</em>.

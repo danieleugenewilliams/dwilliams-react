@@ -53,7 +53,7 @@ export function WritingSection() {
       <div className="shell">
         <div className="what__intro">
           <Reveal>
-            <span className="eyebrow">06 — Writing</span>
+            <span className="eyebrow">06 · Writing</span>
             <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '22ch' }}>
               Field notes from the <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>build.</em>
             </h2>
