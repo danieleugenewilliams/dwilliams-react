@@ -44,7 +44,7 @@ function Nav() {
         <div className="nav__links">
           <Link className="nav__link" to="/services">Services</Link>
           <Link className="nav__link" to="/about">About</Link>
-          <Link className="nav__link" to="/insights">Writing</Link>
+          <Link className="nav__link" to="/insights">Insights</Link>
           <Link className="nav__link" to="/lab">Lab</Link>
           <Link className="nav__link" to="/contact">Contact</Link>
         </div>
@@ -88,7 +88,7 @@ function Footer() {
             <ul>
               <li><Link to="/services">Services</Link></li>
               <li><Link to="/about">About</Link></li>
-              <li><Link to="/insights">Writing</Link></li>
+              <li><Link to="/insights">Insights</Link></li>
               <li><Link to="/lab">Lab</Link></li>
             </ul>
           </div>

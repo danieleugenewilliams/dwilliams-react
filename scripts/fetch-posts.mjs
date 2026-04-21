@@ -28,7 +28,8 @@ const FEEDS = [
   },
 ];
 
-const MAX_POSTS_PER_FEED = 10;
+// Capture all posts the RSS feed provides (Substack returns up to 20)
+const MAX_POSTS_PER_FEED = 50;
 
 function parseItems(xml) {
   const items = [];
@@ -48,8 +49,12 @@ function parseItems(xml) {
       ? description.replace(/<[^>]+>/g, '').replace(/&#\d+;/g, ' ').trim().slice(0, 200)
       : '';
 
+    // Cover image from <enclosure url="...">
+    const enclosureMatch = block.match(/<enclosure url="([^"]+)"/);
+    const coverUrl = enclosureMatch ? enclosureMatch[1] : '';
+
     if (title && link) {
-      items.push({ title, link, pubDate, excerpt });
+      items.push({ title, link, pubDate, excerpt, coverUrl });
     }
   }
 
