@@ -95,7 +95,7 @@ function Footer() {
           <div className="footer-new__col">
             <h4>Connect</h4>
             <ul>
-              <li><a href="mailto:DanielEugeneWilliams@gmail.com">Email</a></li>
+              <li><Link to="/contact">Contact</Link></li>
               <li><a href="https://linkedin.com/in/danieleugenewilliams" target="_blank" rel="noreferrer">LinkedIn</a></li>
               <li><a href="https://claudecodefornoncoders.substack.com" target="_blank" rel="noreferrer">Newsletter</a></li>
               <li><a href="https://github.com/danieleugenewilliams" target="_blank" rel="noreferrer">GitHub</a></li>
