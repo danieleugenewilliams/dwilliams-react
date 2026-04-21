@@ -73,7 +73,6 @@ export default function About() {
         <div className="about-hero__grid" />
         <div
           className="about-hero__portrait"
-          style={{ backgroundImage: "linear-gradient(180deg, transparent, color-mix(in oklab, var(--bg) 60%, transparent)), url('/images/profile/headshot2-hero.jpg')" }}
           aria-hidden="true"
         />
         <div className="shell about-hero__inner">
