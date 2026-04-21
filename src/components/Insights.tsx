@@ -482,7 +482,7 @@ export default function Insights() {
               {!fetchFailed && filteredPosts.length === 0 && allPosts.length > 0 && (
                 <div className="arch__empty">No essays match this filter.</div>
               )}
-              {filteredPosts.map((p, i) => (
+              {filteredPosts.map((p) => (
                 <Reveal key={p.link}>
                   <a
                     className="arch__row"
