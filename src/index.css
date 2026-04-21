@@ -1187,6 +1187,7 @@ html.lenis, html.lenis body { height: auto; }
 }
 .about-hero__bg {
   position: absolute; inset: 0;
+  background: linear-gradient(180deg, var(--bg-elev) 0%, var(--bg) 100%);
   background:
     radial-gradient(120% 100% at 85% 20%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 60%),
     linear-gradient(180deg, var(--bg-elev) 0%, var(--bg) 100%);
@@ -1194,6 +1195,7 @@ html.lenis, html.lenis body { height: auto; }
 .about-hero__portrait {
   position: absolute;
   right: 0; top: 0; bottom: 0;
+  background-image: linear-gradient(180deg, transparent, var(--bg-sunken));
   width: min(52%, 720px);
   pointer-events: none;
   background-size: cover;
@@ -1351,6 +1353,7 @@ html.lenis, html.lenis body { height: auto; }
     transform: translateX(-0.5px);
   }
 }
+.tl__entry-wrap { display: contents; }
 .tl__entry { display: contents; }
 .tl__year {
   font-family: var(--font-mono-new);
@@ -1379,7 +1382,7 @@ html.lenis, html.lenis body { height: auto; }
   padding: 2rem 0 2.25rem;
   border-bottom: 1px solid var(--rule);
 }
-.tl__entry:last-child .tl__card { border-bottom: none; }
+.tl__entry-wrap:last-child .tl__card { border-bottom: none; }
 .tl__company {
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 2.4vw, 1.9rem);
@@ -1581,7 +1584,7 @@ html.lenis, html.lenis body { height: auto; }
 @media (min-width: 780px) {
   .pub__item { grid-template-columns: 120px 1fr auto; gap: 2.5rem; padding: 1.75rem 0; }
 }
-.pub__item:hover { background: color-mix(in oklab, var(--brand) 4%, transparent); padding-left: 1rem; padding-right: 1rem; }
+.pub__item:hover { background: var(--brand-soft); background: color-mix(in oklab, var(--brand) 4%, transparent); padding-left: 1rem; padding-right: 1rem; }
 .pub__date {
   font-family: var(--font-mono-new);
   font-size: var(--fs-small);

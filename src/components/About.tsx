@@ -56,8 +56,6 @@ const PUBLISHED = [
   { date: 'Feb 2023', title: 'The Impact of AI as Companies Address the Skilled Labor Shortage', src: 'ReadWrite', href: 'https://readwrite.com/the-impact-of-ai-as-companies-address-the-skilled-labor-shortage/' },
   { date: 'Aug 2022', title: 'How CIOs can approach digital transformation investments to increase value', src: 'TechRepublic', href: 'https://www.techrepublic.com/article/how-cios-can-approach-digital-transformation-investments-to-increase-value/' },
   { date: 'Apr 2020', title: 'Create Symbiotic Relationships with AI in Business', src: 'ReadWrite', href: 'https://readwrite.com/create-symbiotic-relationships-with-ai-in-business/' },
-  { date: 'Sep 2011', title: 'Meeting the Challenges of the Modern CIO', src: 'Booz Allen Hamilton', href: '#' },
-  { date: 'Jul 2011', title: 'People, Process, Technology Strategy for Enterprise 2.0', src: 'Booz Allen Hamilton', href: '#' },
 ];
 
 export default function About() {
@@ -120,7 +118,7 @@ export default function About() {
       <section className="thesis" id="thesis">
         <div className="shell thesis__grid">
           <Reveal>
-            <span className="eyebrow">0\1 · The thesis</span>
+            <span className="eyebrow">02 · The thesis</span>
           </Reveal>
           <Reveal delay={1}>
             <h2 className="thesis__quote">
@@ -151,7 +149,7 @@ export default function About() {
         <div className="shell">
           <div className="timeline__head">
             <Reveal>
-              <span className="eyebrow">0\1 · The path here</span>
+              <span className="eyebrow">03 · The path here</span>
               <h2 className="t-display" style={{ marginTop: '1.25rem', maxWidth: '18ch' }}>
                 Twenty years in <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>five chapters</em>.
               </h2>
@@ -166,16 +164,18 @@ export default function About() {
 
           <div className="tl">
             {TIMELINE.map((e, i) => (
-              <Reveal key={e.company} className="tl__entry" delay={Math.min(i + 1, 4) as 1 | 2 | 3 | 4}>
-                <div className="tl__year">{e.year}</div>
-                <div className="tl__card">
-                  <h3 className="tl__company">{e.company}</h3>
-                  <span className="tl__role">{e.role}</span>
-                  <p className="tl__desc">{e.desc}</p>
-                  <div className="tl__tags">
-                    {e.tags.map((t, j) => (
-                      <span key={t} className={`tl__tag${e.accentFirst && j === 0 ? ' is-accent' : ''}`}>{t}</span>
-                    ))}
+              <Reveal key={e.company} className="tl__entry-wrap" delay={Math.min(i + 1, 4) as 1 | 2 | 3 | 4}>
+                <div className="tl__entry">
+                  <div className="tl__year">{e.year}</div>
+                  <div className="tl__card">
+                    <h3 className="tl__company">{e.company}</h3>
+                    <span className="tl__role">{e.role}</span>
+                    <p className="tl__desc">{e.desc}</p>
+                    <div className="tl__tags">
+                      {e.tags.map((t, j) => (
+                        <span key={t} className={`tl__tag${e.accentFirst && j === 0 ? ' is-accent' : ''}`}>{t}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </Reveal>
@@ -188,7 +188,7 @@ export default function About() {
       <section className="about-impact" id="impact">
         <div className="shell impact__head">
           <Reveal>
-            <span className="eyebrow">0\1 · Impact</span>
+            <span className="eyebrow">04 · Impact</span>
             <h2 className="t-display" style={{ marginTop: '1.25rem', maxWidth: '16ch' }}>
               The work, in <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>numbers.</em>
             </h2>
@@ -216,7 +216,7 @@ export default function About() {
       <section className="about-creds" id="credentials">
         <div className="shell">
           <Reveal>
-            <span className="eyebrow">0\1 · Credentials</span>
+            <span className="eyebrow">05 · Credentials</span>
             <h2 className="t-display" style={{ marginTop: '1.25rem', maxWidth: '24ch' }}>
               Table stakes, on the record.
             </h2>
@@ -262,7 +262,7 @@ export default function About() {
       <section className="about-offhours" id="offhours">
         <div className="shell offhours__grid">
           <Reveal>
-            <span className="eyebrow">0\1 · Off the clock</span>
+            <span className="eyebrow">06 · Off the clock</span>
             <div className="offhours__prose" style={{ marginTop: '1.5rem' }}>
               <p>Engineer's mind. <span className="about-accent">Artist's soul.</span></p>
               <p style={{ marginTop: '1.25rem' }}>
@@ -299,7 +299,7 @@ export default function About() {
       <section className="about-pub" id="published">
         <div className="shell">
           <Reveal>
-            <span className="eyebrow">0\1 · Published</span>
+            <span className="eyebrow">07 · Published</span>
             <h2 className="t-display" style={{ marginTop: '1.25rem', maxWidth: '20ch' }}>
               Written and read. <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>Repeatedly.</em>
             </h2>
