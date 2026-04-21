@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Reveal } from './Reveal';
 import { CountUp } from './CountUp';
 import { ArrowRight } from './Icons';
+import { CC4NC_SUBSCRIBERS } from '../lib/constants';
 
 export function ConsultingHero() {
   return (
@@ -72,7 +73,7 @@ export function ConsultingHero() {
             </div>
             <div className="hero__stat">
               <span className="n">
-                <CountUp to={23} format={(n) => Math.round(n).toString()} />K+
+                <CountUp to={CC4NC_SUBSCRIBERS.count} format={(n) => Math.round(n).toString()} />K+
               </span>
               <span className="l">Newsletter subscribers</span>
             </div>
