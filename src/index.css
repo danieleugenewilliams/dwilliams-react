@@ -2,6 +2,7 @@
 @import "./styles/editorial.css";
 @import "./styles/about.css";
 @import "./styles/insights.css";
+@import "./styles/services.css";
 
 @tailwind base;
 @tailwind components;
