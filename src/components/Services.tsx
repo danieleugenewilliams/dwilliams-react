@@ -1,4 +1,4 @@
-import { useState, useEffect, type ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from './SEO';
 import { Reveal } from './Reveal';
@@ -128,7 +128,11 @@ const SERVICES: ServiceItem[] = [
   },
 ];
 
-function ServicesHero() {
+interface ServicesHeroProps {
+  onExpand: (id: string) => void;
+}
+
+function ServicesHero({ onExpand }: ServicesHeroProps) {
   const [hovered, setHovered] = useState<string | null>(null);
 
   const scrollToService = (id: string) => {
@@ -136,7 +140,7 @@ function ServicesHero() {
     if (!el) return;
     const y = el.getBoundingClientRect().top + window.scrollY - 80;
     window.scrollTo({ top: y, behavior: 'smooth' });
-    window.dispatchEvent(new CustomEvent('svc:expand', { detail: { id } }));
+    onExpand(id);
   };
 
   return (
@@ -201,10 +205,11 @@ interface ServiceCardProps {
 }
 
 function ServiceCard({ svc, expanded, onToggle }: ServiceCardProps) {
-  const isExternal = svc.href.startsWith('http') || svc.href.startsWith('#');
+  const isHttp = svc.href.startsWith('http');
+  const isAnchor = svc.href.startsWith('#');
 
   return (
-    <article
+    <div
       className="svc"
       data-expanded={expanded ? 'true' : 'false'}
       data-headline={svc.headline ? 'true' : 'false'}
@@ -223,8 +228,8 @@ function ServiceCard({ svc, expanded, onToggle }: ServiceCardProps) {
       <p className="svc__line">{svc.line}</p>
 
       <div className="svc__meta">
-        {svc.meta.map((m, i) => (
-          <div key={i}>
+        {svc.meta.map((m) => (
+          <div key={m.k}>
             <div className="svc__meta__k">{m.k}</div>
             <div className="svc__meta__v">{m.v}</div>
           </div>
@@ -241,8 +246,8 @@ function ServiceCard({ svc, expanded, onToggle }: ServiceCardProps) {
           <div>
             <h4>What's in scope</h4>
             <ul>
-              {svc.scope.map((it, i) => (
-                <li key={i}>
+              {svc.scope.map((it) => (
+                <li key={it.t}>
                   {it.t}
                   <span>{it.s}</span>
                 </li>
@@ -254,7 +259,11 @@ function ServiceCard({ svc, expanded, onToggle }: ServiceCardProps) {
               <span className="label">Best for</span>
               {svc.bestFor}
             </div>
-            {isExternal ? (
+            {isHttp ? (
+              <a className="svc__drawer__cta" href={svc.href} target="_blank" rel="noopener noreferrer">
+                {svc.cta} <ArrowRight />
+              </a>
+            ) : isAnchor ? (
               <a className="svc__drawer__cta" href={svc.href}>
                 {svc.cta} <ArrowRight />
               </a>
@@ -267,24 +276,16 @@ function ServiceCard({ svc, expanded, onToggle }: ServiceCardProps) {
           </aside>
         </div>
       )}
-    </article>
+    </div>
   );
 }
 
-function Catalog() {
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+interface CatalogProps {
+  expandedId: string | null;
+  onToggle: (id: string) => void;
+}
 
-  useEffect(() => {
-    const onExpand = (e: Event) => {
-      const id = (e as CustomEvent<{ id: string }>).detail.id;
-      setExpandedId(id);
-    };
-    window.addEventListener('svc:expand', onExpand);
-    return () => window.removeEventListener('svc:expand', onExpand);
-  }, []);
-
-  const toggle = (id: string) => setExpandedId((cur) => (cur === id ? null : id));
-
+function Catalog({ expandedId, onToggle }: CatalogProps) {
   return (
     <section className="cat" id="catalog">
       <div className="shell">
@@ -311,7 +312,7 @@ function Catalog() {
               <ServiceCard
                 svc={s}
                 expanded={expandedId === s.id}
-                onToggle={() => toggle(s.id)}
+                onToggle={() => onToggle(s.id)}
               />
             </Reveal>
           ))}
@@ -502,6 +503,9 @@ function SvClose() {
 }
 
 export default function Services() {
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const toggle = (id: string) => setExpandedId((cur) => (cur === id ? null : id));
+
   return (
     <>
       <SEO
@@ -511,8 +515,8 @@ export default function Services() {
         url="/services"
       />
       <main>
-        <ServicesHero />
-        <Catalog />
+        <ServicesHero onExpand={setExpandedId} />
+        <Catalog expandedId={expandedId} onToggle={toggle} />
         <WareTiers />
         <SvClose />
       </main>
