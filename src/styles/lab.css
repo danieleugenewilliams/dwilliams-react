@@ -2,6 +2,8 @@
    LAB PAGE
    ============================================================ */
 
+.lab-main { background: var(--bg); color: var(--fg); }
+
 /* ---- Lab Hero ---- */
 .lab-hero {
   position: relative;
@@ -152,6 +154,7 @@
   color: var(--fg-muted);
   margin-bottom: 0;
 }
+.lab-feat__desc + .lab-feat__desc { margin-top: 1.25rem; }
 .lab-feat__desc strong { color: var(--fg); font-weight: 500; }
 .lab-feat__meta { display: flex; flex-direction: column; gap: 2rem; justify-content: space-between; }
 .lab-feat__method {
@@ -204,7 +207,6 @@
 @media (min-width: 820px) {
   .lab-product__inner { grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; }
 }
-.lab-product__header {}
 .lab-product__badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
   font-family: var(--font-mono-new);
@@ -230,7 +232,6 @@
   color: var(--fg-muted);
   font-style: italic;
 }
-.lab-product__body {}
 .lab-product__desc {
   font-size: var(--fs-lead);
   line-height: 1.6;
@@ -378,7 +379,6 @@
 @media (min-width: 820px) {
   .lab-cta__inner { grid-template-columns: 1fr auto; gap: 4rem; }
 }
-.lab-cta__text {}
 .lab-cta__label {
   font-family: var(--font-mono-new);
   font-size: var(--fs-micro);

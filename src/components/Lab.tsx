@@ -34,7 +34,7 @@ export default function Lab() {
         description="Home of the WARE Framework and LocalMemory. AI products built from real enterprise problems."
         url="/lab"
       />
-      <main style={{ background: 'var(--bg)', color: 'var(--fg)' }}>
+      <main className="lab-main">
 
         {/* Hero */}
         <section className="lab-hero">
@@ -97,7 +97,7 @@ export default function Lab() {
                     the Anthropic Economic Index—to assess role-level automation resilience.
                     Task-level analysis, not job-title guessing.
                   </p>
-                  <p className="lab-feat__desc" style={{ marginTop: '1.25rem' }}>
+                  <p className="lab-feat__desc">
                     Every assessment tier—from the free individual score to enterprise-wide
                     workforce audits—runs on the same engine, scaled to fit. <strong>As AI models
                     improve, WARE's assessments get more accurate automatically.</strong>
@@ -196,7 +196,7 @@ export default function Lab() {
             </div>
             <div className="lab-oss__grid">
               {openSourceProjects.map((project, i) => (
-                <Reveal key={project.name} delay={Math.min(i + 1, 3) as 1 | 2 | 3}>
+                <Reveal key={project.name} delay={Math.min(i + 1, 3)}>
                   <a
                     href={project.url}
                     target="_blank"

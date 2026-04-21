@@ -2,7 +2,7 @@ import { useRef, useEffect, type ReactNode, type ElementType } from 'react';
 
 interface RevealProps {
   children: ReactNode;
-  delay?: 0 | 1 | 2 | 3 | 4;
+  delay?: number;
   className?: string;
   as?: ElementType;
 }
@@ -34,7 +34,8 @@ export function Reveal({ children, delay = 0, className = '', as: Tag = 'div' }:
     return () => observer.disconnect();
   }, []);
 
-  const delayClass = delay > 0 ? ` reveal-delay-${delay}` : '';
+  const clampedDelay = Math.min(Math.max(Math.round(delay), 0), 4);
+  const delayClass = clampedDelay > 0 ? ` reveal-delay-${clampedDelay}` : '';
 
   return (
     <Tag ref={ref} className={`reveal${delayClass}${className ? ` ${className}` : ''}`}>
