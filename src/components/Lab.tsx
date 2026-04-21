@@ -1,7 +1,30 @@
 import { Link } from 'react-router-dom';
 import { SEO } from './SEO';
-import { ProductGrid } from './ProductGrid';
 import { Reveal } from './Reveal';
+import { ArrowUpRight } from './Icons';
+
+const openSourceProjects = [
+  {
+    name: 'Othello Agent',
+    description: 'Go-based local AI assistant with MCP integration',
+    url: 'https://github.com/danieleugenewilliams/othello-agent',
+  },
+  {
+    name: 'Agent Harness',
+    description: 'Workflow orchestration for AI coding agents',
+    url: 'https://github.com/danieleugenewilliams/agent-harness',
+  },
+  {
+    name: 'zvec-go',
+    description: "Go CGO bindings for Alibaba's embedded vector database",
+    url: 'https://github.com/danieleugenewilliams/zvec-go',
+  },
+  {
+    name: 'Fractionally',
+    description: 'Claude Code plugin for finding fractional executive roles and writing engagement proposals',
+    url: 'https://github.com/danieleugenewilliams/fractionally',
+  },
+];
 
 export default function Lab() {
   return (
@@ -11,224 +34,241 @@ export default function Lab() {
         description="Home of the WARE Framework and LocalMemory. AI products built from real enterprise problems."
         url="/lab"
       />
-      <main className="bg-background text-foreground w-full">
+      <main style={{ background: 'var(--bg)', color: 'var(--fg)' }}>
+
         {/* Hero */}
-        <section className="section-padding bg-grid">
-          <div className="container max-w-4xl">
-            <div className="font-mono text-sm text-muted-foreground mb-6 animate-fade-in-1">
-              <span className="text-terminal-cyan">$</span> ls lab/
+        <section className="lab-hero">
+          <div className="lab-hero__bg" aria-hidden="true" />
+          <div className="lab-hero__grid" aria-hidden="true" />
+          <div className="lab-hero__inner shell">
+            <Reveal>
+              <div className="lab-hero__meta">
+                <span className="dot" />
+                The Lab — Products &amp; Open Source
+              </div>
+            </Reveal>
+            <Reveal delay={1}>
+              <h1 className="lab-hero__title">
+                Built from<br /><em>real problems</em>
+              </h1>
+            </Reveal>
+            <div className="lab-hero__sub">
+              <Reveal delay={2}>
+                <p className="lab-hero__lede">
+                  These tools power our advisory engagements. <strong>They ship as delivered
+                  services inside client work</strong>, not as standalone software. Every product
+                  started as a solution to a problem we encountered in the field.
+                </p>
+              </Reveal>
+              <Reveal delay={3}>
+                <div className="lab-hero__stats">
+                  <div className="lab-hero__stat">
+                    <div className="n">2</div>
+                    <div className="l">Live products</div>
+                  </div>
+                  <div className="lab-hero__stat">
+                    <div className="n">60+</div>
+                    <div className="l">LocalMemory customers</div>
+                  </div>
+                </div>
+              </Reveal>
             </div>
-            <h1 className="text-page-hero font-mono font-bold mb-6 animate-fade-in-2">
-              The Lab
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl animate-fade-in-3">
-              These tools power our advisory engagements. They ship as delivered
-              services inside client work, not as standalone software.
-            </p>
           </div>
         </section>
 
-        {/* WARE Framework — Dedicated Section */}
-        <section className="section-padding">
-          <div className="container max-w-4xl">
+        {/* WARE Framework — Featured */}
+        <section className="lab-feat">
+          <div className="shell">
             <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-8">
-                // WARE_FRAMEWORK
-              </h2>
+              <div className="lab-feat__eyebrow">Flagship product</div>
             </Reveal>
-            <div className="border border-terminal-cyan/30 bg-terminal-cyan/5 p-8 mb-8">
-              <Reveal delay={1}>
-                <div className="flex items-center gap-3 mb-4">
-                  <h3 className="font-mono text-2xl font-bold">WARE</h3>
-                  <span className="font-mono text-xs text-terminal-green border border-terminal-green/30 px-2 py-0.5">
-                    [LIVE]
-                  </span>
+            <Reveal delay={1}>
+              <div className="lab-feat__card">
+                <div>
+                  <div className="lab-feat__badge">
+                    <span className="dot" />
+                    Live
+                  </div>
+                  <h2 className="lab-feat__name">WARE Framework</h2>
+                  <p className="lab-feat__tagline">Workforce Automation Resilience Engine</p>
+                  <p className="lab-feat__desc">
+                    A hybrid scoring engine that combines <strong>O*NET structural data</strong>, LLM semantic
+                    analysis, industry adoption factors, and observed AI usage data—including
+                    the Anthropic Economic Index—to assess role-level automation resilience.
+                    Task-level analysis, not job-title guessing.
+                  </p>
+                  <p className="lab-feat__desc" style={{ marginTop: '1.25rem' }}>
+                    Every assessment tier—from the free individual score to enterprise-wide
+                    workforce audits—runs on the same engine, scaled to fit. <strong>As AI models
+                    improve, WARE's assessments get more accurate automatically.</strong>
+                  </p>
                 </div>
-                <p className="font-mono text-sm text-terminal-cyan mb-6">
-                  Workforce Automation Resilience Engine
-                </p>
-              </Reveal>
-
-              <div className="space-y-6">
-                <Reveal delay={2}>
-                  <div>
-                    <h4 className="font-mono text-sm font-semibold mb-3">What It Is</h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      A hybrid scoring engine that combines O*NET structural data, LLM semantic
-                      analysis, industry adoption factors, and observed AI usage data (including
-                      the Anthropic Economic Index) to assess role-level automation resilience.
-                      Task-level analysis, not job-title guessing.
-                    </p>
-                  </div>
-                </Reveal>
-
-                <Reveal delay={3}>
-                  <div>
-                    <h4 className="font-mono text-sm font-semibold mb-3">What It Powers</h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Every assessment tier—from the free individual score to enterprise-wide
-                      workforce audits. The same engine, scaled to fit. As AI models improve,
-                      WARE's assessments get more accurate automatically.
-                    </p>
-                  </div>
-                </Reveal>
-
-                <Reveal delay={4}>
-                  <div>
-                    <h4 className="font-mono text-sm font-semibold mb-3">Methodology</h4>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex gap-2">
-                        <span className="text-terminal-cyan">→</span>
-                        Task decomposition using O*NET occupational data
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-terminal-cyan">→</span>
-                        AI capability matching via LLM semantic analysis
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-terminal-cyan">→</span>
-                        Industry-specific adoption weighting
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-terminal-cyan">→</span>
-                        Observed usage calibration (Anthropic Economic Index data)
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-terminal-cyan">→</span>
-                        Composite resilience scoring (0–100)
-                      </li>
+                <div className="lab-feat__meta">
+                  <div className="lab-feat__method">
+                    <div className="lab-feat__method-label">Methodology</div>
+                    <ul className="lab-feat__method-list">
+                      <li>Task decomposition using O*NET occupational data</li>
+                      <li>AI capability matching via LLM semantic analysis</li>
+                      <li>Industry-specific adoption weighting</li>
+                      <li>Observed usage calibration (Anthropic Economic Index)</li>
+                      <li>Composite resilience scoring (0–100)</li>
                     </ul>
                   </div>
-                </Reveal>
-
-                <Reveal delay={4}>
-                  <a
-                    href="https://automationresilience.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-block"
-                  >
-                    [Try It Yourself]
-                  </a>
-                </Reveal>
+                  <div className="lab-feat__actions">
+                    <a
+                      href="https://automationresilience.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn"
+                    >
+                      Try It Yourself
+                    </a>
+                    <Link to="/services" className="btn btn--ghost">
+                      Assessment tiers
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
-        {/* Local Memory — Dedicated Section */}
-        <section className="section-padding section-alt">
-          <div className="container max-w-4xl">
-            <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-8">
-                // LOCAL_MEMORY
-              </h2>
-            </Reveal>
-            <div className="border border-border bg-card p-8">
-              <Reveal delay={1}>
-                <div className="flex items-center gap-3 mb-4">
-                  <h3 className="font-mono text-2xl font-bold">LocalMemory</h3>
-                  <span className="font-mono text-xs text-terminal-green border border-terminal-green/30 px-2 py-0.5">
-                    [LIVE]
-                  </span>
+        {/* LocalMemory */}
+        <section className="lab-product">
+          <div className="shell">
+            <div className="lab-product__inner">
+              <Reveal>
+                <div className="lab-product__header">
+                  <div className="lab-product__badge">Live · v1.0 · Sept 2025</div>
+                  <h2 className="lab-product__name">LocalMemory</h2>
+                  <p className="lab-product__tagline">Persistent memory for AI assistants</p>
                 </div>
-                <p className="font-mono text-sm text-muted-foreground mb-6">
-                  Open-source MCP server for AI persistent knowledge management
-                </p>
               </Reveal>
-
-              <div className="space-y-6">
-                <Reveal delay={2}>
-                  <p className="text-muted-foreground leading-relaxed">
-                    LocalMemory gives Claude and other AI assistants the ability to store, search,
-                    and build on knowledge across conversations. 60 paying customers and growing.
+              <Reveal delay={1}>
+                <div className="lab-product__body">
+                  <p className="lab-product__desc">
+                    LocalMemory gives Claude and other AI assistants the ability to <strong>store,
+                    search, and build on knowledge across conversations</strong>. Open-source MCP server,
+                    60 paying customers and growing.
                   </p>
-                </Reveal>
-
-                <Reveal delay={3}>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Building Local Memory taught us how AI systems actually retain and apply
-                    knowledge. That R&D directly shapes how we design workforce assessments—the
+                  <p className="lab-product__desc">
+                    Building LocalMemory taught us how AI systems actually retain and apply
+                    knowledge. That R&amp;D directly shapes how we design workforce assessments—the
                     same principles of structured knowledge, semantic search, and contextual
                     retrieval power the WARE Framework's analysis engine.
                   </p>
-                </Reveal>
-
-                <Reveal delay={4}>
-                  <div className="flex flex-wrap gap-4">
+                  <div className="lab-product__actions">
                     <a
                       href="https://localmemory.co"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-primary inline-block"
+                      className="btn"
                     >
-                      [localmemory.co]
+                      localmemory.co
                     </a>
                     <a
                       href="https://github.com/danieleugenewilliams"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-ghost inline-block"
+                      className="btn btn--ghost"
                     >
-                      [GitHub]
+                      GitHub
                     </a>
                   </div>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Open Source */}
+        <section className="lab-oss">
+          <div className="shell">
+            <div className="lab-oss__head">
+              <Reveal>
+                <h2 className="lab-oss__title">Open <em>source</em></h2>
+              </Reveal>
+              <Reveal delay={1}>
+                <p className="lab-oss__sub">
+                  Experiments, utilities, and tools built in the open. All on GitHub.
+                </p>
+              </Reveal>
+            </div>
+            <div className="lab-oss__grid">
+              {openSourceProjects.map((project, i) => (
+                <Reveal key={project.name} delay={Math.min(i + 1, 3) as 1 | 2 | 3}>
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="lab-oss__card"
+                  >
+                    <div className="lab-oss__card-name">{project.name}</div>
+                    <p className="lab-oss__card-desc">{project.description}</p>
+                    <div className="lab-oss__card-link">
+                      GitHub <ArrowUpRight size={11} />
+                    </div>
+                  </a>
                 </Reveal>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Philosophy */}
-        <section className="section-padding">
-          <div className="container max-w-4xl">
+        <section className="lab-philosophy">
+          <div className="shell">
             <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-6">
-                // PHILOSOPHY
-              </h2>
+              <blockquote className="lab-philosophy__pull">
+                AI should extend human judgment, <em>not replace it.</em>
+              </blockquote>
             </Reveal>
-            <div className="space-y-6 text-foreground leading-relaxed">
-              <Reveal delay={1}>
-                <p>
-                  AI should extend human judgment, not replace it. The best AI implementations
-                  handle the mechanical work—remembering, connecting, organizing—so people can
-                  focus on what matters: decisions, relationships, and creative work.
-                </p>
+            <Reveal delay={1}>
+              <p className="lab-philosophy__body">
+                The best AI implementations handle the mechanical work—remembering, connecting,
+                organizing—so people can focus on what matters: <strong>decisions, relationships,
+                and creative work.</strong>
+              </p>
+            </Reveal>
+            <Reveal delay={2}>
+              <p className="lab-philosophy__body">
+                Every engagement starts with a real problem. We're not interested in AI for
+                its own sake—only AI that creates measurable value for the business and
+                the people in it.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="lab-cta">
+          <div className="shell">
+            <div className="lab-cta__inner">
+              <Reveal>
+                <div className="lab-cta__text">
+                  <div className="lab-cta__label">Get in touch</div>
+                  <h2 className="lab-cta__title">
+                    Interested in the WARE Framework <em>or want to collaborate?</em>
+                  </h2>
+                  <p className="lab-cta__desc">
+                    Whether it's a workforce assessment, an open-source contribution, or just a conversation.
+                  </p>
+                </div>
               </Reveal>
-              <Reveal delay={2}>
-                <p className="text-muted-foreground">
-                  Every engagement starts with a real problem. We're not interested in AI for
-                  its own sake—only AI that creates measurable value for the business and
-                  the people in it.
-                </p>
+              <Reveal delay={1}>
+                <div className="lab-cta__actions">
+                  <Link to="/contact" className="btn">
+                    Contact
+                  </Link>
+                  <Link to="/services" className="btn btn--ghost">
+                    Services
+                  </Link>
+                </div>
               </Reveal>
             </div>
           </div>
         </section>
 
-        {/* Products & Open Source */}
-        <ProductGrid />
-
-        {/* CTA */}
-        <section className="section-padding section-alt">
-          <div className="container max-w-4xl">
-            <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-6">
-                // GET_IN_TOUCH
-              </h2>
-            </Reveal>
-            <Reveal delay={1}>
-              <p className="text-foreground leading-relaxed mb-6 max-w-2xl">
-                Interested in the WARE Framework, want to collaborate, or just want to connect?
-              </p>
-            </Reveal>
-            <Reveal delay={2}>
-              <Link to="/contact" className="btn-primary inline-block">
-                [Contact]
-              </Link>
-            </Reveal>
-          </div>
-        </section>
       </main>
     </>
   );

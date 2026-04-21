@@ -3,6 +3,7 @@
 @import "./styles/about.css";
 @import "./styles/insights.css";
 @import "./styles/services.css";
+@import "./styles/lab.css";
 
 @tailwind base;
 @tailwind components;
