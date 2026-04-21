@@ -3,6 +3,8 @@ import { SEO } from './SEO';
 import { Reveal } from './Reveal';
 import { ArrowUpRight } from './Icons';
 
+const CC4NC_SUBSCRIBERS = { short: '23k', full: '23,000+' };
+
 interface Post {
   title: string;
   link: string;
@@ -169,7 +171,7 @@ export default function Insights() {
                     <span className="l">Essays fetched</span>
                   </div>
                   <div className="ins-hero__stat">
-                    <div className="n">23k</div>
+                    <div className="n">{CC4NC_SUBSCRIBERS.short}</div>
                     <span className="l">Subscribers · CC4NC</span>
                   </div>
                   <div className="ins-hero__stat">
@@ -268,16 +270,6 @@ export default function Insights() {
                           <ArrowUpRight />
                         </span>
                       </span>
-                      <span
-                        className="t-mono t-dim"
-                        style={{
-                          fontSize: 'var(--fs-micro)',
-                          letterSpacing: '0.1em',
-                          textTransform: 'uppercase',
-                        }}
-                      >
-                        ~ 6 min
-                      </span>
                     </div>
                   </div>
                 </a>
@@ -329,7 +321,7 @@ export default function Insights() {
                 >
                   <div className="pub-card__kicker">
                     <span className="tag">Weekly</span>
-                    <span>23,000+ subscribers</span>
+                    <span>{CC4NC_SUBSCRIBERS.full} subscribers</span>
                   </div>
                   <h3 className="pub-card__title">
                     Claude Code <em>for</em> Non-Coders.
@@ -492,7 +484,7 @@ export default function Insights() {
                 <div className="arch__empty">No essays match this filter.</div>
               )}
               {filteredPosts.map((p, i) => (
-                <Reveal key={p.link + i}>
+                <Reveal key={p.link}>
                   <a
                     className="arch__row"
                     href={p.link}

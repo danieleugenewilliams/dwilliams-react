@@ -201,12 +201,14 @@
   color: var(--fg);
   letter-spacing: 0.02em;
 }
-.feat__card:hover .feat__read { color: var(--brand); }
+.feat__card:hover .feat__read,
+.pub-card:hover .feat__read { color: var(--brand); }
 .feat__read__arrow {
   display: inline-block;
   transition: transform 0.3s var(--ease-out-quart);
 }
-.feat__card:hover .feat__read__arrow { transform: translate(3px, -3px); }
+.feat__card:hover .feat__read__arrow,
+.pub-card:hover .feat__read__arrow { transform: translate(3px, -3px); }
 
 /* ---- Publications strip ---- */
 .pubs {
