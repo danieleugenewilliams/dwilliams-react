@@ -14,8 +14,8 @@ export function WorkWithMe() {
             <span className="brand-accent">Let's talk.</span>
           </h2>
           <p className="cta-section__sub">
-            I take 2–3 clients at a time. If your organization needs AI transformation
-            leadership, not just AI tools. Tell me what's stuck. I'll reply within
+            If your organization needs AI transformation
+            leadership, not just AI tools, tell me what's stuck. I'll reply within
             two business days.
           </p>
           <div style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>

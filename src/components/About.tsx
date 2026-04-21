@@ -108,7 +108,6 @@ export default function About() {
               <div><span className="k">Based</span><span className="v">Coastal Virginia</span></div>
               <div><span className="k">Founded</span><span className="v">2024</span></div>
               <div><span className="k">Focus</span><span className="v">AI · Workforce · Transformation</span></div>
-              <div><span className="k">Capacity</span><span className="v">2–3 clients, by design</span></div>
             </div>
           </Reveal>
         </div>
