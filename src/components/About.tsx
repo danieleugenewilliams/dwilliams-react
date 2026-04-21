@@ -1,6 +1,62 @@
 import { Link } from 'react-router-dom';
 import { SEO } from './SEO';
 import { Reveal } from './Reveal';
+import { ArrowRight } from './Icons';
+
+const TIMELINE = [
+  {
+    year: '2024 →',
+    company: 'D. E. Williams + Co.',
+    role: 'Founder · AI Transformation Officer',
+    desc: 'Strategic technology advisory specializing in AI product development, digital transformation, and workforce resilience. Built the WARE Framework and LocalMemory.co (85% weekly retention at beta).',
+    tags: ['AI Strategy', 'WARE Framework', 'LocalMemory', 'Fractional CTO'],
+    accentFirst: true,
+  },
+  {
+    year: '2019–2024',
+    company: 'Pariveda Solutions',
+    role: 'Managing Principal · National Segment Lead',
+    desc: 'Built a national nonprofit vertical generating $6M+ annually. Grew a T&L account from $28K to $4M+ in nine months. Drove $10M+ in AWS net-new revenue, #1 AWS partner driver in SoCal (2021).',
+    tags: ['NFL Digital Media', 'TaxAct', 'OMERS', 'Daylight Transport'],
+  },
+  {
+    year: '2017–2019',
+    company: 'Beyondsoft Consulting',
+    role: 'Senior Advisor · Product Lead, Key Accounts',
+    desc: 'Managed Toyota & Lexus digital properties: 6M+ monthly visits, 564K leads annually. Led Lexus Retail Transformation discovery securing $1.5M dev/implementation budget. Managed $35M Lexus portfolio.',
+    tags: ['Toyota', 'Lexus', '$35M portfolio'],
+  },
+  {
+    year: '2010–2013',
+    company: 'Booz Allen Hamilton',
+    role: 'Associate · Enterprise Collaboration & Technology',
+    desc: 'Won $9M+ new business as technical lead. Built the award-winning "Hello" employee networking app. Implemented FISMA-compliant internal cloud cutting data-center cost 66% across a $100M+ research program.',
+    tags: ['Federal', 'Enterprise 2.0', '$9M+ won'],
+  },
+  {
+    year: '2003–2010',
+    company: 'SAIC · Federal Reserve Board',
+    role: 'Senior Software Engineer · Senior Applications Analyst',
+    desc: 'Led Federal Reserve Data Download, the first platform enabling statistical data sharing among the FRB, World Bank, IMF, and BLS.',
+    tags: ['Federal Reserve', 'Data platforms'],
+  },
+];
+
+const IMPACT = [
+  { n: '$9M+', l: 'New business won', d: 'Technical lead on winning bids at Booz Allen Hamilton.' },
+  { n: '$35M', l: 'Digital portfolio', d: 'Managed Lexus digital portfolio and retail transformation initiatives.' },
+  { n: '$10M', l: 'Annual revenue enabled', d: 'Data rationalization strategy unlocking new financial data products across OMERS business units, approved by CEO executive team and board.' },
+  { n: '$6M+', l: 'Annual revenue', d: "Built Pariveda's national nonprofit vertical from scratch." },
+  { n: '$28K → $4M', l: 'In 9 months', d: 'Grew a Daylight Transport engagement through integrated strategy and build.' },
+  { n: '#1 AWS', l: 'Partner driver · SoCal 2021', d: 'Drove recognition as top AWS revenue driver in Southern California.' },
+];
+
+const PUBLISHED = [
+  { date: 'Sep 2023', title: 'A Framework for Building a Future-Ready Nonprofit', src: 'Pariveda Perspectives', href: 'https://parivedasolutions.com/resources/a-framework-for-building-a-future-ready-nonprofit/' },
+  { date: 'Feb 2023', title: 'The Impact of AI as Companies Address the Skilled Labor Shortage', src: 'ReadWrite', href: 'https://readwrite.com/the-impact-of-ai-as-companies-address-the-skilled-labor-shortage/' },
+  { date: 'Aug 2022', title: 'How CIOs can approach digital transformation investments to increase value', src: 'TechRepublic', href: 'https://www.techrepublic.com/article/how-cios-can-approach-digital-transformation-investments-to-increase-value/' },
+  { date: 'Apr 2020', title: 'Create Symbiotic Relationships with AI in Business', src: 'ReadWrite', href: 'https://readwrite.com/create-symbiotic-relationships-with-ai-in-business/' },
+];
 
 export default function About() {
   return (
@@ -10,372 +66,285 @@ export default function About() {
         description="D. E. Williams + Co. is an AI-native services company delivering workforce intelligence at scale. Founded by Daniel E. Williams, a 20+ year technology executive."
         url="/about"
       />
-      <main className="bg-background text-foreground w-full">
-        {/* Hero — photo background */}
-        <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
-          {/* Background image */}
-          <div className="absolute inset-0">
-            <img
-              src="/images/profile/headshot2-hero.jpg"
-              alt=""
-              aria-hidden="true"
-              className="w-full h-full object-cover"
-              style={{ objectPosition: '50% 25%' }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
-            <div className="absolute inset-0 bg-grid opacity-20" />
-          </div>
 
-          {/* Content — pinned to bottom */}
-          <div className="relative z-10 container max-w-5xl pb-10 md:pb-16 pt-36 md:pt-44">
-            <div className="font-mono text-sm text-white/60 mb-4 md:mb-6 animate-fade-in-1">
-              <span className="text-terminal-cyan">$</span> cat about.md
-            </div>
-            <h1 className="text-page-hero font-mono font-bold text-white mb-3 md:mb-4 animate-fade-in-2">
-              Daniel E. Williams
+      {/* Hero */}
+      <section className="about-hero" id="top">
+        <div className="about-hero__bg" />
+        <div className="about-hero__grid" />
+        <div
+          className="about-hero__portrait"
+          aria-hidden="true"
+        />
+        <div className="shell about-hero__inner">
+          <Reveal>
+            <span className="eyebrow about-hero__eyebrow">
+              <span>About</span>
+              <span style={{ color: 'var(--fg-dim)' }}>— 01 / 07</span>
+            </span>
+          </Reveal>
+          <Reveal delay={1}>
+            <h1 className="about-hero__title">
+              Daniel E.<br />
+              <span className="about-accent">Williams</span><em>.</em>
             </h1>
-            <p className="font-mono text-sm md:text-lg text-terminal-cyan mb-4 md:mb-6 animate-fade-in-3">
-              Founder & AI Transformation Officer, D. E. Williams + Co.
+          </Reveal>
+          <Reveal delay={2}>
+            <div className="about-hero__role">
+              Founder &amp; AI Transformation Officer · D. E. Williams + Co.
+            </div>
+          </Reveal>
+          <Reveal delay={3}>
+            <p className="about-hero__lede">
+              I founded this company because I kept seeing the same pattern: organizations
+              with ambitious AI strategies and very few people with the skills and experience
+              to execute them. Pilots that never ship. Decks that collect dust. I built
+              D. E. Williams + Co. to close that gap: embedded leadership that architects,
+              builds, and delivers value.
             </p>
-            <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl animate-fade-in-4">
-              I founded this company because I kept seeing the same pattern: organizations with
-              ambitious AI strategies and no one to execute them. Pilots that never ship. Strategy
-              decks that collect dust. I built D. E. Williams + Co. to close that gap — embedded
-              leadership that builds and delivers.
+          </Reveal>
+          <Reveal delay={4}>
+            <div className="about-hero__meta">
+              <div><span className="k">Based</span><span className="v">Coastal Virginia</span></div>
+              <div><span className="k">Founded</span><span className="v">2024</span></div>
+              <div><span className="k">Focus</span><span className="v">AI · Workforce · Transformation</span></div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Thesis */}
+      <section className="thesis" id="thesis">
+        <div className="shell thesis__grid">
+          <Reveal>
+            <span className="eyebrow">02 · The thesis</span>
+          </Reveal>
+          <Reveal delay={1}>
+            <h2 className="thesis__quote">
+              AI isn't coming for jobs in some abstract <em>future.</em> It's reshaping them <span className="about-accent">now.</span>
+            </h2>
+            <p style={{ marginTop: '1.75rem', color: 'var(--fg-muted)', fontSize: 'var(--fs-lead)', lineHeight: 1.6, maxWidth: '58ch' }}>
+              The Anthropic Economic Index shows 94% theoretical AI capability against only
+              33% observed usage. That gap is closing fast, and most organizations have no plan
+              for what happens when it does.
             </p>
-          </div>
-        </section>
-
-        {/* The Thesis */}
-        <section className="section-padding">
-          <div className="container max-w-4xl">
-            <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-8">
-                // THE_THESIS
-              </h2>
-            </Reveal>
-            <div className="space-y-6 text-foreground leading-relaxed">
-              <Reveal delay={1}>
-                <p>
-                  AI is not coming for jobs in some abstract future—it's reshaping them now.
-                  The Anthropic Economic Index shows 94% theoretical AI capability against only
-                  33% observed usage. That gap is closing fast, and most organizations have no plan
-                  for what happens when it does.
-                </p>
-              </Reveal>
-              <Reveal delay={2}>
-                <p className="text-muted-foreground">
-                  The answer isn't "upskill everyone" or "automate everything." It's understanding,
-                  at the task level, which roles will transform, which are at risk, and what
-                  to do about it—with timelines, not guesses. That's what we built the{' '}
-                  <a href="https://automationresilience.com" target="_blank" rel="noopener noreferrer" className="text-terminal-cyan hover:underline">WARE Framework</a>{' '}
-                  to deliver.
-                </p>
-              </Reveal>
+            <p style={{ marginTop: '1.25rem', color: 'var(--fg-muted)', fontSize: 'var(--fs-lead)', lineHeight: 1.6, maxWidth: '58ch' }}>
+              The answer isn't <span style={{ color: 'var(--fg)' }}>"upskill everyone"</span> or <span style={{ color: 'var(--fg)' }}>"automate everything."</span> It's understanding,
+              at the task level, which roles will transform, which are at risk, and what to do
+              about it, with timelines, not guesses.
+            </p>
+            <div className="stat-strip">
+              <div className="stat-strip__item"><span className="n">94%</span><span className="l">AI capability (theory)</span></div>
+              <div className="stat-strip__item"><span className="n">33%</span><span className="l">Observed usage</span></div>
+              <div className="stat-strip__item"><span className="n">61pt</span><span className="l">Adoption gap</span></div>
+              <div className="stat-strip__item"><span className="n">24 mo</span><span className="l">Closure window</span></div>
             </div>
-          </div>
-        </section>
+          </Reveal>
+        </div>
+      </section>
 
-        {/* Career Path */}
-        <section className="section-padding section-alt">
-          <div className="container max-w-4xl">
+      {/* Timeline */}
+      <section className="about-timeline" id="path">
+        <div className="shell">
+          <div className="timeline__head">
             <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-8">
-                // THE_PATH_HERE
+              <span className="eyebrow">03 · The path here</span>
+              <h2 className="t-display" style={{ marginTop: '1.25rem', maxWidth: '18ch' }}>
+                Twenty years in <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>five chapters</em>.
               </h2>
             </Reveal>
-            <div className="space-y-6 text-foreground leading-relaxed">
-              <Reveal delay={1}>
-                <p>
-                  I started as a software engineer at <span className="font-semibold">SPS Technologies</span>,
-                  then moved to the <span className="font-semibold">Federal Reserve Board</span> building
-                  data platforms and web services. That's where I learned that the hardest problems in
-                  technology aren't technical—they're about getting the right people aligned on what
-                  to build and why.
-                </p>
-              </Reveal>
-              <Reveal delay={2}>
-                <p className="text-muted-foreground">
-                  At <span className="font-semibold">SAIC</span> and then{' '}
-                  <span className="font-semibold">Booz Allen Hamilton</span>, I moved into
-                  consulting—winning $9M+ in new business by deploying Enterprise 2.0 solutions
-                  for federal agencies, including a collaboration platform used by 2,400+ senior
-                  VA executives.
-                </p>
-              </Reveal>
-              <Reveal delay={3}>
-                <p className="text-muted-foreground">
-                  I led the Lexus digital portfolio at{' '}
-                  <span className="font-semibold">Beyondsoft (formerly TPG)</span>, managing
-                  $35M in programs. Then at{' '}
-                  <span className="font-semibold">Pariveda Solutions</span>, I grew accounts, built
-                  a national nonprofit vertical generating $6M+ annually, and led engagements
-                  for the NFL, TaxAct, OMERS, and Daylight Transport.
-                </p>
-              </Reveal>
-              <Reveal delay={4}>
-                <p className="text-muted-foreground">
-                  As Fractional CPO at <span className="font-semibold">JFF Solutions</span>, I delivered
-                  a working MVP for their career navigation platform in under 3 months — nine months
-                  ahead of the 12-month timeline. At <span className="font-semibold">JFFLabs</span>, I
-                  built an innovation pipeline model evaluating 30+ portfolio initiatives, exiting half
-                  for failing to meet criteria. That work at the intersection of AI and workforce
-                  development became the foundation for the WARE Framework. In late 2024, I founded
-                  D. E. Williams + Co. to bring it to market.
-                </p>
-              </Reveal>
-            </div>
-          </div>
-        </section>
-
-        {/* Impact */}
-        <section className="section-padding">
-          <div className="container max-w-4xl">
-            <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-8">
-                // IMPACT
-              </h2>
+            <Reveal delay={2}>
+              <p className="t-lead t-muted-new">
+                Engineer → consultant → operator → founder. Each chapter added a layer:
+                code, delivery, P&amp;L, product. The stack is the point.
+              </p>
             </Reveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { metric: '$9M+', desc: 'New business won at Booz Allen Hamilton' },
-                { metric: '$35M', desc: 'Digital portfolio managed for Lexus' },
-                { metric: '$10M', desc: 'Data monetization investment at OMERS' },
-                { metric: '$6M+', desc: 'Annual revenue from nonprofit vertical at Pariveda' },
-                { metric: '$28K → $4M', desc: 'Grew Daylight Transport engagement in 9 months' },
-                { metric: '#1 AWS Partner', desc: 'Revenue driver for Southern California in 2021' },
-              ].map((item, i) => (
-                <Reveal key={i} delay={Math.min(i + 1, 4) as 1 | 2 | 3 | 4}>
-                  <div className="border border-border bg-card p-5 h-full">
-                    <p className="font-mono text-metric-display font-semibold text-foreground mb-1">{item.metric}</p>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
           </div>
-        </section>
 
-        {/* The Company */}
-        <section className="section-padding section-alt">
-          <div className="container max-w-4xl">
-            <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-8">
-                // THE_COMPANY
-              </h2>
-            </Reveal>
-            <div className="space-y-6 text-foreground leading-relaxed">
-              <Reveal delay={1}>
-                <p>
-                  D. E. Williams + Co. is an AI-native services company. We use AI to deliver
-                  workforce intelligence at scale—from individual resilience assessments to
-                  enterprise-wide transformation programs.
-                </p>
-              </Reveal>
-              <Reveal delay={2}>
-                <p className="text-muted-foreground">
-                  Founded in 2024 and based in Virginia. Every time AI models improve, our
-                  assessments get more accurate and our delivery gets faster. That's not a
-                  marketing claim—it's how we built the stack.
-                </p>
-              </Reveal>
-              <Reveal delay={3}>
-                <div className="grid md:grid-cols-2 gap-6 mt-6">
-                  <div className="border border-border bg-card p-6">
-                    <h3 className="font-mono text-base font-semibold mb-3">What We've Built</h3>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex gap-2">
-                        <span className="text-terminal-cyan">→</span>
-                        <a href="https://automationresilience.com" target="_blank" rel="noopener noreferrer" className="hover:text-terminal-cyan transition-colors">
-                          WARE Framework — workforce automation resilience engine
-                        </a>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-terminal-cyan">→</span>
-                        <a href="https://localmemory.co" target="_blank" rel="noopener noreferrer" className="hover:text-terminal-cyan transition-colors">
-                          Local Memory — persistent AI knowledge management (open source)
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="border border-border bg-card p-6">
-                    <h3 className="font-mono text-base font-semibold mb-3">Clients Served</h3>
-                    <p className="text-sm text-muted-foreground">
-                      NFL Digital Media, OMERS, TaxAct, Toyota/Lexus, Daylight Transport,
-                      Stop Soldier Suicide
-                    </p>
+          <div className="tl">
+            {TIMELINE.map((e, i) => (
+              <Reveal key={e.company} className="tl__entry-wrap" delay={Math.min(i + 1, 4) as 1 | 2 | 3 | 4}>
+                <div className="tl__entry">
+                  <div className="tl__year">{e.year}</div>
+                  <div className="tl__card">
+                    <h3 className="tl__company">{e.company}</h3>
+                    <span className="tl__role">{e.role}</span>
+                    <p className="tl__desc">{e.desc}</p>
+                    <div className="tl__tags">
+                      {e.tags.map((t, j) => (
+                        <span key={t} className={`tl__tag${e.accentFirst && j === 0 ? ' is-accent' : ''}`}>{t}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </Reveal>
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Credentials */}
-        <section className="section-padding">
-          <div className="container max-w-4xl">
-            <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-8">
-                // CREDENTIALS
-              </h2>
-            </Reveal>
-            <div className="grid md:grid-cols-3 gap-8">
-              <Reveal delay={1}>
-                <div>
-                  <h3 className="font-mono text-base font-semibold mb-4">Education</h3>
-                  <div className="font-mono text-sm text-muted-foreground space-y-2">
-                    <p>MS, Technology Management — George Mason University</p>
-                    <p>BS, Computer Science Technology — Bowie State University</p>
-                    <p>CIO University Certificate — George Mason University</p>
-                  </div>
-                </div>
-              </Reveal>
-              <Reveal delay={2}>
-                <div>
-                  <h3 className="font-mono text-base font-semibold mb-4">Certifications</h3>
-                  <div className="font-mono text-sm text-muted-foreground space-y-2">
-                    <p>Lean Six Sigma Green Belt — Dartmouth College</p>
-                    <p>Project Management Professional (PMP)</p>
-                    <p>Certified Scrum Master</p>
-                  </div>
-                </div>
-              </Reveal>
-              <Reveal delay={3}>
-                <div>
-                  <h3 className="font-mono text-base font-semibold mb-4">AI Governance</h3>
-                  <div className="font-mono text-sm text-muted-foreground space-y-2">
-                    <p>NIST AI Risk Management Framework</p>
-                    <p>Responsible AI Implementation</p>
-                    <p>Algorithmic Impact Assessment</p>
-                    <p>AI Operating Model Design</p>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </section>
+      {/* Impact */}
+      <section className="about-impact" id="impact">
+        <div className="shell impact__head">
+          <Reveal>
+            <span className="eyebrow">04 · Impact</span>
+            <h2 className="t-display" style={{ marginTop: '1.25rem', maxWidth: '16ch' }}>
+              The work, in <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>numbers.</em>
+            </h2>
+          </Reveal>
+          <Reveal delay={2}>
+            <p className="t-lead t-muted-new">
+              Outcomes shipped, not activities billed. Each number came with a signed-off metric and a successor team trained to keep it going.
+            </p>
+          </Reveal>
+        </div>
+        <div className="shell">
+          <Reveal className="impact__grid">
+            {IMPACT.map((x) => (
+              <div key={x.l} className="impact__cell">
+                <span className="impact__cell__l">{x.l}</span>
+                <div className="impact__cell__n">{x.n}</div>
+                <p className="impact__cell__d">{x.d}</p>
+              </div>
+            ))}
+          </Reveal>
+        </div>
+      </section>
 
-        {/* Advisory */}
-        <section className="section-padding section-alt">
-          <div className="container max-w-4xl">
-            <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-8">
-                // ADVISORY
-              </h2>
-            </Reveal>
-            <div className="space-y-4 text-foreground leading-relaxed">
-              <Reveal delay={1}>
-                <p>
-                  <span className="font-semibold">George Mason University Alumni Association</span>
-                  <span className="text-muted-foreground"> — At-Large Director</span>
-                </p>
-              </Reveal>
-              <Reveal delay={2}>
-                <p>
-                  <span className="font-semibold">George Mason Costello College of Business Alumni Board</span>
-                  <span className="text-muted-foreground"> — Incoming President</span>
-                </p>
-              </Reveal>
-              <Reveal delay={3}>
-                <p>
-                  <span className="font-semibold">JFF Solutions / JFFLabs</span>
-                  <span className="text-muted-foreground"> — Fractional CPO & Digital Product Advisor</span>
-                </p>
-              </Reveal>
-              <Reveal delay={4}>
-                <p>
-                  <span className="font-semibold">Prominent Patriot Award</span>
-                  <span className="text-muted-foreground"> — George Mason University, May 2024</span>
-                </p>
-              </Reveal>
-            </div>
-          </div>
-        </section>
-
-        {/* Published */}
-        <section className="section-padding">
-          <div className="container max-w-4xl">
-            <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-8">
-                // PUBLISHED
-              </h2>
-            </Reveal>
-            <div className="space-y-4">
-              {[
-                { href: 'https://www.techrepublic.com/article/how-cios-can-approach-digital-transformation-investments-to-increase-value/', title: '"How CIOs can approach digital transformation investments to increase value"', source: 'TechRepublic' },
-                { href: 'https://readwrite.com/the-impact-of-ai-as-companies-address-the-skilled-labor-shortage/', title: '"The Impact of AI as Companies Address the Skilled Labor Shortage"', source: 'ReadWrite' },
-                { href: 'https://readwrite.com/create-symbiotic-relationships-with-ai-in-business/', title: '"Create Symbiotic Relationships with AI in Business"', source: 'ReadWrite' },
-                { href: 'https://dewilliamsco.substack.com/', title: 'D. E. Williams + Co. Insights', source: 'Substack' },
-                { href: 'https://claudecodefornoncoders.substack.com/', title: 'Claude Code for Non-Coders', source: 'Substack' },
-              ].map((item, i) => (
-                <Reveal key={i} delay={Math.min(i + 1, 4) as 1 | 2 | 3 | 4}>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-foreground hover:text-terminal-cyan transition-colors"
-                  >
-                    <span className="font-semibold">{item.title}</span>
-                    <span className="text-sm text-muted-foreground ml-2">— {item.source}</span>
-                  </a>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Connect */}
-        <section className="section-padding section-alt">
-          <div className="container max-w-4xl">
-            <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-6">
-                // CONNECT
-              </h2>
-            </Reveal>
+      {/* Credentials */}
+      <section className="about-creds" id="credentials">
+        <div className="shell">
+          <Reveal>
+            <span className="eyebrow">05 · Credentials</span>
+            <h2 className="t-display" style={{ marginTop: '1.25rem', maxWidth: '24ch' }}>
+              Table stakes, on the record.
+            </h2>
+          </Reveal>
+          <div className="creds__grid">
             <Reveal delay={1}>
-              <div className="flex flex-wrap gap-4 mb-8">
-                <a
-                  href="https://www.linkedin.com/in/danieleugenewilliams/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-sm text-terminal-cyan hover:underline"
-                >
-                  [LinkedIn]
-                </a>
-                <a
-                  href="https://twitter.com/dewilliamsco"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-sm text-terminal-cyan hover:underline"
-                >
-                  [Twitter]
-                </a>
-                <a
-                  href="https://github.com/danieleugenewilliams"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-sm text-terminal-cyan hover:underline"
-                >
-                  [GitHub]
-                </a>
-                <a
-                  href="https://dewilliamsco.substack.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-sm text-terminal-cyan hover:underline"
-                >
-                  [Newsletter]
-                </a>
+              <div className="creds__col">
+                <h3>Education</h3>
+                <ul>
+                  <li>M.S. Technology Management<span className="muted">George Mason University</span></li>
+                  <li>B.S. Computer Science Technology<span className="muted">Bowie State University</span></li>
+                  <li>CIO University Certificate<span className="muted">George Mason University</span></li>
+                </ul>
               </div>
             </Reveal>
             <Reveal delay={2}>
-              <Link to="/contact" className="btn-primary inline-block">
-                [Get in Touch]
-              </Link>
+              <div className="creds__col">
+                <h3>Certifications</h3>
+                <ul>
+                  <li>PMP<span className="muted">Project Management Professional</span></li>
+                  <li>Lean Six Sigma Green Belt<span className="muted">Dartmouth College</span></li>
+                  <li>Certified Scrum Master</li>
+                  <li>AWS Solutions Architect</li>
+                </ul>
+              </div>
+            </Reveal>
+            <Reveal delay={3}>
+              <div className="creds__col">
+                <h3>Advisory &amp; Service</h3>
+                <ul>
+                  <li>At-Large Director<span className="muted">George Mason Alumni Association</span></li>
+                  <li>Incoming President<span className="muted">Costello College of Business Alumni Board</span></li>
+                  <li>Fractional CPO<span className="muted">JFF Solutions · JFFLabs</span></li>
+                  <li>Prominent Patriot Award<span className="muted">George Mason, 2024</span></li>
+                </ul>
+              </div>
             </Reveal>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
+      {/* Off the clock */}
+      <section className="about-offhours" id="offhours">
+        <div className="shell offhours__grid">
+          <Reveal>
+            <span className="eyebrow">06 · Off the clock</span>
+            <div className="offhours__prose" style={{ marginTop: '1.5rem' }}>
+              <p>Engineer's mind. <span className="about-accent">Artist's soul.</span></p>
+              <p style={{ marginTop: '1.25rem' }}>
+                Reading, writing, training, and time with my wife and two sons on the
+                <em> beaches of coastal Virginia.</em> Startups, tech investing, and strong
+                opinions about movies and TV.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={2}>
+            <div className="offhours__tiles">
+              <div className="offhours__tile">
+                <span className="k">Family</span>
+                <span className="v">Wife &amp; two sons · VA beach</span>
+              </div>
+              <div className="offhours__tile">
+                <span className="k">Craft</span>
+                <span className="v">Reading, writing, training</span>
+              </div>
+              <div className="offhours__tile">
+                <span className="k">Interests</span>
+                <span className="v">Startups · tech investing</span>
+              </div>
+              <div className="offhours__tile">
+                <span className="k">Guilty pleasure</span>
+                <span className="v">Film &amp; TV commentary</span>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Published */}
+      <section className="about-pub" id="published">
+        <div className="shell">
+          <Reveal>
+            <span className="eyebrow">07 · Published</span>
+            <h2 className="t-display" style={{ marginTop: '1.25rem', maxWidth: '20ch' }}>
+              Written and read. <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>Repeatedly.</em>
+            </h2>
+          </Reveal>
+          <div className="pub__list">
+            {PUBLISHED.map((p) => (
+              <Reveal key={p.title}>
+                <a className="pub__item" href={p.href} target="_blank" rel="noreferrer">
+                  <span className="pub__date">{p.date}</span>
+                  <span className="pub__title">"{p.title}"</span>
+                  <span className="pub__source">→ {p.src}</span>
+                </a>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Close */}
+      <section className="about-cta-close" id="connect">
+        <div className="shell">
+          <Reveal>
+            <span className="eyebrow">Connect</span>
+          </Reveal>
+          <Reveal delay={1}>
+            <h2 className="cta-close__title" style={{ marginTop: '1.5rem' }}>
+              If this <em>sounds</em> like the shape of the<br />
+              problem you're working on,<br />
+              <span className="about-accent">let's talk.</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={2}>
+            <div className="cta-close__ctas">
+              <Link to="/contact" className="btn">Book a discovery call <ArrowRight /></Link>
+              <a href="mailto:DanielEugeneWilliams@gmail.com" className="btn btn--ghost">Email directly</a>
+            </div>
+          </Reveal>
+          <Reveal delay={3}>
+            <div className="cta-close__socials">
+              <a href="https://linkedin.com/in/danieleugenewilliams" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://twitter.com/dewilliamsco" target="_blank" rel="noreferrer">Twitter</a>
+              <a href="https://github.com/danieleugenewilliams" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="https://dewilliamsco.substack.com/" target="_blank" rel="noreferrer">Substack</a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
     </>
   );
 }

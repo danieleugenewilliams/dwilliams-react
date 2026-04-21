@@ -7,15 +7,15 @@ export function WorkWithMe() {
     <section className="section cta-section" id="contact-cta">
       <div className="shell">
         <Reveal>
-          <span className="eyebrow">07 — Work with me</span>
+          <span className="eyebrow">07 · Work with me</span>
           <h2 className="cta-section__title" style={{ marginTop: '1.5rem' }}>
             Serious about AI transformation?
             <br />
             <span className="brand-accent">Let's talk.</span>
           </h2>
           <p className="cta-section__sub">
-            I take 2–3 clients at a time. If your organization needs AI transformation
-            leadership — not just AI tools — tell me what's stuck. I'll reply within
+            If your organization needs AI transformation
+            leadership, not just AI tools, tell me what's stuck. I'll reply within
             two business days.
           </p>
           <div style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>

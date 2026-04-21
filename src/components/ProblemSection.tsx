@@ -5,7 +5,7 @@ export function ProblemSection() {
     <section className="section rule-top" id="problem">
       <div className="shell problem__grid">
         <Reveal>
-          <span className="eyebrow">01 — The problem</span>
+          <span className="eyebrow">01 · The problem</span>
           <h2 className="problem__quote" style={{ marginTop: '1.5rem' }}>
             Most companies are stuck between <em>AI</em> ambition and AI{' '}
             <span className="brand-accent">execution.</span>
@@ -16,7 +16,7 @@ export function ProblemSection() {
           <p>
             MIT research confirms it: despite $30–40 billion in enterprise GenAI investment,
             95% of organizations are getting zero return. Only 5% have crossed from pilot
-            to production. The barrier isn't the technology — it's brittle workflows,
+            to production. The barrier isn't the technology. It's brittle workflows,
             lack of contextual learning, and misalignment with day-to-day operations.
           </p>
           <p>

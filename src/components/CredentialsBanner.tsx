@@ -17,7 +17,7 @@ export function CredentialsBanner() {
     <section className="section bg-section" id="background">
       <div className="shell bg-section__inner">
         <Reveal>
-          <span className="eyebrow">04 — Background</span>
+          <span className="eyebrow">04 · Background</span>
           <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '16ch' }}>
             Two decades. One{' '}
             <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>operating system.</em>
