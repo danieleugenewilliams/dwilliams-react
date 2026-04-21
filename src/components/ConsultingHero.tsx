@@ -24,7 +24,7 @@ export function ConsultingHero() {
         <Reveal className="hero__meta">
           <span className="eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.55rem' }}>
             <span className="dot" aria-hidden="true" />
-            Now accepting clients, 2026
+            Selective engagements · 2026
           </span>
           <span className="eyebrow">Est. 2024 &nbsp;·&nbsp; Coastal VA</span>
         </Reveal>
