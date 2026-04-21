@@ -110,7 +110,7 @@ function Footer() {
         </div>
         <div className="footer-new__bottom">
           <span>© {new Date().getFullYear()} D. E. Williams and Company</span>
-          <span>Designed for shipping, not decks.</span>
+          <span>AI Transformation Leadership, Embedded.</span>
         </div>
       </div>
     </footer>
