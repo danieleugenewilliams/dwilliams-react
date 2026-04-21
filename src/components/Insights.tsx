@@ -2,8 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { SEO } from './SEO';
 import { Reveal } from './Reveal';
 import { ArrowUpRight } from './Icons';
-
-const CC4NC_SUBSCRIBERS = { short: '23k', full: '23,000+' };
+import { CC4NC_SUBSCRIBERS } from '../lib/constants';
 
 interface Post {
   title: string;
