@@ -295,12 +295,12 @@
 
 .contact-form__error {
   padding: 0.75rem 1rem;
-  border: 1px solid rgba(248, 113, 113, 0.4);
+  border: 1px solid hsl(var(--terminal-red) / 0.4);
   border-radius: 8px;
-  background: rgba(248, 113, 113, 0.08);
+  background: hsl(var(--terminal-red) / 0.08);
   font-family: var(--font-sans-new);
   font-size: var(--fs-small);
-  color: #f87171;
+  color: hsl(var(--terminal-red));
   line-height: 1.5;
 }
 
@@ -322,9 +322,9 @@
   align-items: flex-start;
   gap: 1rem;
   padding: 1.5rem;
-  border: 1px solid rgba(74, 222, 128, 0.4);
+  border: 1px solid hsl(var(--terminal-green) / 0.4);
   border-radius: 12px;
-  background: rgba(74, 222, 128, 0.07);
+  background: hsl(var(--terminal-green) / 0.07);
 }
 
 .contact-success__text {
@@ -337,7 +337,7 @@
 
 /* Override brand dot color to green in success context */
 .contact-success .dot {
-  background: #4ade80;
+  background: hsl(var(--terminal-green));
   flex-shrink: 0;
   margin-top: 0.45em;
 }
