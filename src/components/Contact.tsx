@@ -65,7 +65,7 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact — D. E. Williams + Co."
+        title="Contact · D. E. Williams + Co."
         description="Get in touch for workforce intelligence assessments, advisory services, or partnership opportunities."
         url="/contact"
       />
@@ -79,7 +79,7 @@ export default function Contact() {
             <Reveal>
               <div className="contact-hero__meta">
                 <span className="dot" />
-                Contact — D. E. Williams + Co.
+                Contact · D. E. Williams + Co.
               </div>
             </Reveal>
             <Reveal delay={1}>
@@ -90,7 +90,7 @@ export default function Contact() {
             <Reveal delay={2}>
               <p className="contact-hero__lede">
                 Advisory engagements, WARE assessments, partnerships,
-                or just want to connect — <strong>start here.</strong>
+                or just want to connect. <strong>Start here.</strong>
               </p>
             </Reveal>
           </div>
@@ -112,8 +112,14 @@ export default function Contact() {
                   <p className="contact-context__card-body">
                     If your organization is navigating AI adoption, workforce
                     realignment, or needs an embedded fractional advisory
-                    engagement — use the form below to start a conversation.
+                    engagement. Use the form below to start a conversation.
                   </p>
+                  <a
+                    href="#contact-form"
+                    className="btn btn--ghost contact-context__cta"
+                  >
+                    Start a conversation <ArrowUpRight size={14} />
+                  </a>
                 </div>
               </Reveal>
               <Reveal delay={2}>
@@ -142,7 +148,7 @@ export default function Contact() {
         </section>
 
         {/* Form Section */}
-        <section className="contact-form-section">
+        <section id="contact-form" className="contact-form-section">
           <div className="shell">
             <Reveal>
               <p className="eyebrow contact-form-section__eyebrow">Send a message</p>
