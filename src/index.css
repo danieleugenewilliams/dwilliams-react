@@ -4,6 +4,7 @@
 @import "./styles/insights.css";
 @import "./styles/services.css";
 @import "./styles/lab.css";
+@import "./styles/contact.css";
 
 @tailwind base;
 @tailwind components;

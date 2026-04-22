@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { SEO } from "./SEO";
-import { Reveal } from "./Reveal";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { SEO } from './SEO';
+import { Reveal } from './Reveal';
+import { ArrowUpRight } from './Icons';
 
 const HUBSPOT_PORTAL_ID = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
 const HUBSPOT_FORM_ID = import.meta.env.VITE_HUBSPOT_CONTACT_FORM_ID;
 
-const Contact: React.FC = () => {
+export default function Contact() {
   const [form, setForm] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-    phone: "",
-    company: "",
-    message: "",
+    firstname: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: '',
   });
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -31,16 +32,16 @@ const Contact: React.FC = () => {
       const res = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
         {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             fields: [
-              { name: "firstname", value: form.firstname },
-              { name: "lastname", value: form.lastname },
-              { name: "email", value: form.email },
-              { name: "phone", value: form.phone },
-              { name: "company", value: form.company },
-              { name: "message", value: form.message },
+              { name: 'firstname', value: form.firstname },
+              { name: 'lastname', value: form.lastname },
+              { name: 'email', value: form.email },
+              { name: 'phone', value: form.phone },
+              { name: 'company', value: form.company },
+              { name: 'message', value: form.message },
             ],
             context: {
               pageUri: window.location.href,
@@ -52,10 +53,10 @@ const Contact: React.FC = () => {
       if (res.ok) {
         setSubmitted(true);
       } else {
-        setError("Submission failed. Please try again.");
+        setError('Submission failed. Please try again.');
       }
     } catch {
-      setError("Submission failed. Please try again.");
+      setError('Submission failed. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -68,59 +69,72 @@ const Contact: React.FC = () => {
         description="Get in touch for workforce intelligence assessments, advisory services, or partnership opportunities."
         url="/contact"
       />
-      <main className="bg-background text-foreground w-full">
-        {/* Header */}
-        <section className="section-padding bg-grid">
-          <div className="container max-w-4xl">
-            <div className="font-mono text-sm text-muted-foreground mb-6 animate-fade-in-1">
-              <span className="text-terminal-cyan">$</span> ./contact --init
-            </div>
-            <h1 className="text-page-hero font-mono font-bold mb-6 animate-fade-in-2">
-              Get in Touch
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl animate-fade-in-3">
-              Advisory engagements, WARE assessments, partnerships, or just want to connect.
-            </p>
+      <main className="contact-main">
+
+        {/* Hero */}
+        <section className="contact-hero">
+          <div className="contact-hero__bg" aria-hidden="true" />
+          <div className="contact-hero__grid" aria-hidden="true" />
+          <div className="contact-hero__inner shell">
+            <Reveal>
+              <div className="contact-hero__meta">
+                <span className="dot" />
+                Contact — D. E. Williams + Co.
+              </div>
+            </Reveal>
+            <Reveal delay={1}>
+              <h1 className="contact-hero__title">
+                Let's <em>work together.</em>
+              </h1>
+            </Reveal>
+            <Reveal delay={2}>
+              <p className="contact-hero__lede">
+                Advisory engagements, WARE assessments, partnerships,
+                or just want to connect — <strong>start here.</strong>
+              </p>
+            </Reveal>
           </div>
         </section>
 
-        {/* Audience CTAs */}
-        <section className="section-padding">
-          <div className="container max-w-4xl">
+        {/* Audience Context */}
+        <section className="contact-context">
+          <div className="contact-context__inner shell">
             <Reveal>
-              <h2 className="font-mono text-sm text-muted-foreground mb-8">
-                // WHERE_TO_START
-              </h2>
+              <p className="eyebrow contact-context__eyebrow">Who reaches out</p>
             </Reveal>
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="contact-context__grid">
               <Reveal delay={1}>
-                <div className="border border-border bg-card p-6 h-full">
-                  <h3 className="font-mono text-base font-semibold mb-3">
-                    For Individuals
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Curious about your role's automation resilience? Try the free
-                    WARE assessment — it takes 30 seconds and gives you an immediate score.
+                <div className="contact-context__card">
+                  <p className="contact-context__card-label">For organizations</p>
+                  <h2 className="contact-context__card-title">
+                    AI transformation <em>leadership</em>
+                  </h2>
+                  <p className="contact-context__card-body">
+                    If your organization is navigating AI adoption, workforce
+                    realignment, or needs an embedded fractional advisory
+                    engagement — use the form below to start a conversation.
+                  </p>
+                </div>
+              </Reveal>
+              <Reveal delay={2}>
+                <div className="contact-context__card">
+                  <p className="contact-context__card-label">For individuals</p>
+                  <h2 className="contact-context__card-title">
+                    Understand your <em>resilience</em>
+                  </h2>
+                  <p className="contact-context__card-body">
+                    Curious about your role's automation exposure? The free
+                    WARE assessment takes 30 seconds and gives you an
+                    immediate score.
                   </p>
                   <a
                     href="https://automationresilience.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary inline-block text-sm"
+                    className="btn btn--ghost contact-context__cta"
                   >
-                    [Take the Free Assessment]
+                    Take the free assessment <ArrowUpRight size={14} />
                   </a>
-                </div>
-              </Reveal>
-              <Reveal delay={2}>
-                <div className="border border-terminal-cyan/30 bg-terminal-cyan/5 p-6 h-full">
-                  <h3 className="font-mono text-base font-semibold mb-3">
-                    For Organizations
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Need AI transformation leadership? Use the form below to start a
-                    conversation about embedded advisory engagements.
-                  </p>
                 </div>
               </Reveal>
             </div>
@@ -128,32 +142,30 @@ const Contact: React.FC = () => {
         </section>
 
         {/* Form Section */}
-        <section className="section-padding section-alt">
-          <div className="container max-w-4xl">
-            <div className="grid md:grid-cols-5 gap-12">
-              {/* Form */}
-              <div className="md:col-span-3">
-                <Reveal>
-                  <h2 className="font-mono text-sm text-muted-foreground mb-6">
-                    // SEND_MESSAGE
-                  </h2>
-                </Reveal>
+        <section className="contact-form-section">
+          <div className="shell">
+            <Reveal>
+              <p className="eyebrow contact-form-section__eyebrow">Send a message</p>
+            </Reveal>
+            <Reveal delay={1}>
+              <div className="contact-form-card">
 
-                {submitted ? (
-                  <Reveal>
-                    <div className="border border-terminal-green/50 bg-terminal-green/10 p-6">
-                      <p className="font-mono text-terminal-green">
-                        [SUCCESS] Message received. We'll respond within 1-2 business days.
+                {/* Left: Form or Success */}
+                <div className="contact-form-card__main">
+                  {submitted ? (
+                    <div className="contact-success" role="status">
+                      <span className="dot" />
+                      <p className="contact-success__text">
+                        Message received. We'll respond within 1–2 business days.
                       </p>
                     </div>
-                  </Reveal>
-                ) : (
-                  <Reveal delay={1}>
-                    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <label htmlFor="firstname" className="block font-mono text-xs text-muted-foreground mb-2">
-                            FIRST_NAME *
+                  ) : (
+                    <form onSubmit={handleSubmit} className="contact-form">
+
+                      <div className="contact-form__row">
+                        <div className="contact-form__field">
+                          <label htmlFor="firstname" className="contact-form__label">
+                            First name <span aria-hidden="true">*</span>
                           </label>
                           <input
                             type="text"
@@ -161,14 +173,14 @@ const Contact: React.FC = () => {
                             name="firstname"
                             autoComplete="given-name"
                             required
-                            className="w-full bg-card border border-border px-3 py-2 font-mono text-sm text-foreground focus:outline-none focus:border-terminal-cyan transition-colors"
+                            className="contact-form__input"
                             value={form.firstname}
                             onChange={handleChange}
                           />
                         </div>
-                        <div>
-                          <label htmlFor="lastname" className="block font-mono text-xs text-muted-foreground mb-2">
-                            LAST_NAME *
+                        <div className="contact-form__field">
+                          <label htmlFor="lastname" className="contact-form__label">
+                            Last name <span aria-hidden="true">*</span>
                           </label>
                           <input
                             type="text"
@@ -176,16 +188,16 @@ const Contact: React.FC = () => {
                             name="lastname"
                             autoComplete="family-name"
                             required
-                            className="w-full bg-card border border-border px-3 py-2 font-mono text-sm text-foreground focus:outline-none focus:border-terminal-cyan transition-colors"
+                            className="contact-form__input"
                             value={form.lastname}
                             onChange={handleChange}
                           />
                         </div>
                       </div>
 
-                      <div>
-                        <label htmlFor="email" className="block font-mono text-xs text-muted-foreground mb-2">
-                          EMAIL *
+                      <div className="contact-form__field">
+                        <label htmlFor="email" className="contact-form__label">
+                          Email <span aria-hidden="true">*</span>
                         </label>
                         <input
                           type="email"
@@ -193,127 +205,120 @@ const Contact: React.FC = () => {
                           name="email"
                           autoComplete="email"
                           required
-                          className="w-full bg-card border border-border px-3 py-2 font-mono text-sm text-foreground focus:outline-none focus:border-terminal-cyan transition-colors"
+                          className="contact-form__input"
                           value={form.email}
                           onChange={handleChange}
                         />
                       </div>
 
-                      <div>
-                        <label htmlFor="company" className="block font-mono text-xs text-muted-foreground mb-2">
-                          COMPANY
+                      <div className="contact-form__field">
+                        <label htmlFor="company" className="contact-form__label">
+                          Company <span className="contact-form__optional">(optional)</span>
                         </label>
                         <input
                           type="text"
                           id="company"
                           name="company"
                           autoComplete="organization"
-                          className="w-full bg-card border border-border px-3 py-2 font-mono text-sm text-foreground focus:outline-none focus:border-terminal-cyan transition-colors"
+                          className="contact-form__input"
                           value={form.company}
                           onChange={handleChange}
                         />
                       </div>
 
-                      <div>
-                        <label htmlFor="message" className="block font-mono text-xs text-muted-foreground mb-2">
-                          MESSAGE *
+                      <div className="contact-form__field">
+                        <label htmlFor="message" className="contact-form__label">
+                          Message <span aria-hidden="true">*</span>
                         </label>
                         <textarea
                           id="message"
                           name="message"
                           rows={5}
                           required
-                          className="w-full bg-card border border-border px-3 py-2 font-mono text-sm text-foreground focus:outline-none focus:border-terminal-cyan transition-colors resize-none"
+                          className="contact-form__input contact-form__input--textarea"
                           value={form.message}
                           onChange={handleChange}
                         />
                       </div>
 
                       {error && (
-                        <div className="font-mono text-xs text-terminal-red">
-                          [ERROR] {error}
+                        <div className="contact-form__error" role="alert">
+                          {error}
                         </div>
                       )}
 
                       <button
                         type="submit"
-                        className="btn-primary w-full"
+                        className="btn contact-form__submit"
                         disabled={loading}
                       >
-                        {loading ? "[SENDING...]" : "[SUBMIT]"}
+                        {loading ? 'Sending…' : 'Send message'}
                       </button>
+
                     </form>
-                  </Reveal>
-                )}
-              </div>
+                  )}
+                </div>
 
-              {/* Sidebar */}
-              <div className="md:col-span-2">
-                <Reveal>
-                  <h2 className="font-mono text-sm text-muted-foreground mb-6">
-                    // CONNECT
-                  </h2>
-                </Reveal>
+                {/* Right: Sidebar */}
+                <aside className="contact-form-card__sidebar">
+                  <div className="contact-sidebar__response">
+                    <span className="contact-sidebar__response-label">Response time</span>
+                    <span className="contact-sidebar__response-value">1–2 business days</span>
+                  </div>
 
-                <Reveal delay={1}>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="font-mono text-sm font-semibold mb-2">Social</h3>
-                      <div className="space-y-2">
+                  <div className="contact-sidebar__section">
+                    <p className="contact-sidebar__heading">Connect</p>
+                    <ul className="contact-sidebar__links">
+                      <li>
                         <a
                           href="https://www.linkedin.com/in/danieleugenewilliams/"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block font-mono text-sm text-muted-foreground hover:text-terminal-cyan transition-colors"
+                          className="contact-sidebar__link"
                         >
-                          LinkedIn →
+                          LinkedIn <ArrowUpRight size={13} />
                         </a>
+                      </li>
+                      <li>
                         <a
                           href="https://twitter.com/dewilliamsco"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block font-mono text-sm text-muted-foreground hover:text-terminal-cyan transition-colors"
+                          className="contact-sidebar__link"
                         >
-                          Twitter →
+                          Twitter / X <ArrowUpRight size={13} />
                         </a>
+                      </li>
+                      <li>
                         <a
                           href="https://github.com/danieleugenewilliams"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block font-mono text-sm text-muted-foreground hover:text-terminal-cyan transition-colors"
+                          className="contact-sidebar__link"
                         >
-                          GitHub →
+                          GitHub <ArrowUpRight size={13} />
                         </a>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="font-mono text-sm font-semibold mb-2">Newsletter</h3>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Workforce intelligence insights and AI tutorials.
-                      </p>
-                      <Link
-                        to="/insights"
-                        className="btn-primary inline-block text-xs"
-                      >
-                        [Read Insights]
-                      </Link>
-                    </div>
-
-                    <div className="pt-6 border-t border-border">
-                      <p className="font-mono text-xs text-muted-foreground">
-                        Response time: 1-2 business days
-                      </p>
-                    </div>
+                      </li>
+                    </ul>
                   </div>
-                </Reveal>
+
+                  <div className="contact-sidebar__section">
+                    <p className="contact-sidebar__heading">Newsletter</p>
+                    <p className="contact-sidebar__body">
+                      Workforce intelligence insights and AI tutorials.
+                    </p>
+                    <Link to="/insights" className="btn btn--ghost contact-sidebar__insights-btn">
+                      Read Insights <ArrowUpRight size={13} />
+                    </Link>
+                  </div>
+                </aside>
+
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
+
       </main>
     </>
   );
-};
-
-export default Contact;
+}
