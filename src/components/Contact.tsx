@@ -29,6 +29,15 @@ export default function Contact() {
     setLoading(true);
     setError(null);
     try {
+      let ipAddress: string | undefined;
+      try {
+        const ipRes = await fetch('https://api.ipify.org?format=json');
+        const { ip } = await ipRes.json();
+        ipAddress = ip;
+      } catch {
+        // submission proceeds without IP if fetch fails
+      }
+
       const res = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
         {
@@ -46,6 +55,8 @@ export default function Contact() {
             context: {
               pageUri: window.location.href,
               pageName: document.title,
+              hutk: document.cookie.match(/hubspotutk=([^;]*)/)?.[1],
+              ipAddress,
             },
           }),
         }
@@ -213,6 +224,21 @@ export default function Contact() {
                           required
                           className="contact-form__input"
                           value={form.email}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <div className="contact-form__field">
+                        <label htmlFor="phone" className="contact-form__label">
+                          Phone <span className="contact-form__optional">(optional)</span>
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          autoComplete="tel"
+                          className="contact-form__input"
+                          value={form.phone}
                           onChange={handleChange}
                         />
                       </div>
