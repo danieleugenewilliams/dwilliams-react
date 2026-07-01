@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Reveal } from './Reveal';
 import { ArrowUpRight } from './Icons';
 
@@ -20,6 +19,8 @@ interface PostsData {
   fetchedAt: string;
   feeds: Feed[];
 }
+
+const CC4NC_URL = 'https://claudecodefornoncoders.substack.com/';
 
 function formatPostDate(dateStr: string): string {
   try {
@@ -46,24 +47,38 @@ export function WritingSection() {
       });
   }, []);
 
-  if (posts !== null && posts.length === 0) return null;
-
   return (
     <section className="section rule-top" id="writing">
       <div className="shell">
         <div className="what__intro">
           <Reveal>
-            <span className="eyebrow">06 · Writing</span>
-            <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '22ch' }}>
-              Field notes from the <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>build.</em>
+            <span className="eyebrow">// WRITING</span>
+            <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '24ch' }}>
+              The writing is the main thing. Everything else runs{' '}
+              <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>downstream of it.</em>
             </h2>
           </Reveal>
           <Reveal delay={2}>
-            <Link to="/insights" className="btn btn--ghost">
-              See all writing <ArrowUpRight />
-            </Link>
+            <a href={CC4NC_URL} target="_blank" rel="noopener noreferrer" className="btn btn--ghost">
+              Read on Substack <ArrowUpRight />
+            </a>
           </Reveal>
         </div>
+
+        <Reveal delay={1} className="writing__lead">
+          <p>
+            I publish Claude Code for Non-Coders twice a week for senior technical people who
+            built careers on judgment, stopped writing code years ago, and are working out what
+            coding agents change for them. Tuesdays are the practical build. Thursdays are one
+            idea I think is consequential, developed in full. Both are worth reading; only one
+            costs anything.
+          </p>
+          <p>
+            There's an older publication too, D.E. Williams + Co. Insights, where I first worked
+            out the philosophy underneath all of this: using AI to protect your life instead of
+            feeding it to your employer. The archive still holds up.
+          </p>
+        </Reveal>
 
         {posts === null ? (
           <div className="writing__grid writing__grid--skeleton" aria-busy="true" aria-label="Loading recent posts">
@@ -71,7 +86,7 @@ export function WritingSection() {
               <div key={i} className="writing__item writing__item--skeleton" />
             ))}
           </div>
-        ) : (
+        ) : posts.length === 0 ? null : (
           <Reveal className="writing__grid">
             {posts.map((p) => (
               <a

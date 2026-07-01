@@ -33,17 +33,17 @@
   /* Nav height — referenced in Layout main padding and hero offset */
   --nav-h: 3.5rem;
 
-  /* FOUC fallback — dark theme defaults applied before ThemeProvider hydrates */
-  --bg: #0a0a0a;
-  --bg-elev: #111110;
-  --bg-sunken: #070706;
-  --fg: #ece9e2;
-  --fg-muted: #9a968c;
-  --fg-dim: #5e5c56;
-  --rule: rgba(236, 233, 226, 0.09);
-  --rule-strong: rgba(236, 233, 226, 0.18);
-  --surface: #0f0f0e;
-  --surface-hover: #141412;
+  /* FOUC fallback — warm light theme defaults applied before ThemeProvider hydrates */
+  --bg: #f5f1ea;
+  --bg-elev: #efeae1;
+  --bg-sunken: #ece7dc;
+  --fg: #171513;
+  --fg-muted: #6b6760;
+  --fg-dim: #a6a196;
+  --rule: rgba(23, 21, 19, 0.1);
+  --rule-strong: rgba(23, 21, 19, 0.22);
+  --surface: #fbf8f2;
+  --surface-hover: #ffffff;
   --brand: #d45a2b;
   --brand-ink: #fff8f4;
   --brand-soft: rgba(212, 90, 43, 0.1);

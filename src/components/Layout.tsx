@@ -42,11 +42,10 @@ function Nav() {
         </Link>
 
         <div className="nav__links">
-          <Link className="nav__link" to="/services">Services</Link>
-          <Link className="nav__link" to="/about">About</Link>
-          <Link className="nav__link" to="/insights">Insights</Link>
-          <Link className="nav__link" to="/lab">Lab</Link>
-          <Link className="nav__link" to="/contact">Contact</Link>
+          <a className="nav__link" href="/#writing">Writing</a>
+          <a className="nav__link" href="/#proof">Proof</a>
+          <a className="nav__link" href="/#about">About</a>
+          <a className="nav__link" href="/#contact">Contact</a>
         </div>
 
         <div className="nav__actions">
@@ -57,9 +56,9 @@ function Nav() {
           >
             {theme === "dark" ? <SunIcon /> : <MoonIcon />}
           </button>
-          <Link className="btn btn--ghost nav__cta-desktop" to="/contact" style={{ padding: "0.55rem 1rem" }}>
-            Let's talk
-          </Link>
+          <a className="btn nav__cta-desktop" href="/#subscribe" style={{ padding: "0.55rem 1rem" }}>
+            Subscribe
+          </a>
           <div className="nav__mobile-toggle">
             <MobileMenu />
           </div>
@@ -79,25 +78,24 @@ function Footer() {
               D. E. Williams <em>+</em> Co.
             </div>
             <p className="footer-new__tagline">
-              AI transformation leadership, embedded. Strategy, architecture, implementation,
-              and team enablement from a single operator.
+              I build the tools I run my life on, and I write about how you can too.
             </p>
           </div>
           <div className="footer-new__col">
-            <h4>Navigate</h4>
+            <h4>Read</h4>
             <ul>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/insights">Insights</Link></li>
-              <li><Link to="/lab">Lab</Link></li>
+              <li><a href="/#writing">Writing</a></li>
+              <li><a href="/#proof">Proof</a></li>
+              <li><a href="/#about">About</a></li>
+              <li><a href="/#subscribe">Subscribe</a></li>
             </ul>
           </div>
           <div className="footer-new__col">
             <h4>Connect</h4>
             <ul>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><a href="https://claudecodefornoncoders.substack.com" target="_blank" rel="noreferrer">Claude Code for Non-Coders</a></li>
+              <li><a href="https://localmemory.co" target="_blank" rel="noreferrer">localmemory.co</a></li>
               <li><a href="https://linkedin.com/in/danieleugenewilliams" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li><a href="https://claudecodefornoncoders.substack.com" target="_blank" rel="noreferrer">Newsletter</a></li>
               <li><a href="https://github.com/danieleugenewilliams" target="_blank" rel="noreferrer">GitHub</a></li>
             </ul>
           </div>
@@ -109,8 +107,8 @@ function Footer() {
           </div>
         </div>
         <div className="footer-new__bottom">
-          <span>© {new Date().getFullYear()} D. E. Williams and Company</span>
-          <span>AI Transformation Leadership, Embedded.</span>
+          <span>© {new Date().getFullYear()} Daniel E. Williams</span>
+          <span>Shipping &gt; Pitching.</span>
         </div>
       </div>
     </footer>

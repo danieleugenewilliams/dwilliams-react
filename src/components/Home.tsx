@@ -1,9 +1,12 @@
 import { Hero } from './Hero';
 import { Thesis } from './Thesis';
 import { WhatIBelieve } from './WhatIBelieve';
-import { ProofSection } from './ProofSection';
 import { WritingSection } from './WritingSection';
+import { ProofSection } from './ProofSection';
 import { WorkWithMe } from './WorkWithMe';
+import { AboutSection } from './AboutSection';
+import { ContactSection } from './ContactSection';
+import { SubscribeSection } from './SubscribeSection';
 import { SEO } from './SEO';
 
 export default function Home() {
@@ -20,6 +23,9 @@ export default function Home() {
       <WritingSection />
       <ProofSection />
       <WorkWithMe />
+      <AboutSection />
+      <ContactSection />
+      <SubscribeSection />
     </>
   );
 }

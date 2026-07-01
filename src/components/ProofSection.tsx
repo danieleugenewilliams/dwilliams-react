@@ -1,97 +1,90 @@
 import { Reveal } from './Reveal';
-import { CountUp } from './CountUp';
+import { ArrowUpRight } from './Icons';
+
+interface ProofCard {
+  label: string;
+  title: string;
+  body: string;
+  href?: string;
+  hrefLabel?: string;
+  external?: boolean;
+}
+
+const CARDS: ProofCard[] = [
+  {
+    label: 'Product · live',
+    title: 'LocalMemory',
+    body: 'An open-source memory server for AI assistants. It gives Claude and other models memory that persists across conversations, running on your machine instead of a vendor’s. Sixty people pay for it.',
+    href: 'https://localmemory.co',
+    hrefLabel: 'localmemory.co',
+    external: true,
+  },
+  {
+    label: 'Personal · daily',
+    title: 'My home agents',
+    body: 'A Claude Code agent that runs my training, sleep, and health logging over Telegram. The clearest proof I have of the whole thesis: I built it, I own it, and it guards the mornings I care about instead of billing them to someone else.',
+  },
+  {
+    label: 'Open source',
+    title: 'zvec-go · agent-harness · othello-agent',
+    body: 'The smaller pieces, built in the open, that the larger systems stand on.',
+    href: 'https://github.com/danieleugenewilliams',
+    hrefLabel: 'GitHub',
+    external: true,
+  },
+  {
+    label: 'Product · paid',
+    title: 'WARE',
+    body: 'A workforce-automation resilience assessment. A real product with paying customers, built and sold on its own.',
+    href: 'https://automationresilience.com',
+    hrefLabel: 'automationresilience.com',
+    external: true,
+  },
+  {
+    label: 'Before it was mine to own',
+    title: 'Twenty-five years at scale',
+    body: 'I did this for other people first: $2.5M saved at TaxAct, an account grown from $28K to $4M in nine months, $5M in annual savings at NFL Digital Media.',
+    href: '#about',
+    hrefLabel: 'Read the arc',
+  },
+];
 
 export function ProofSection() {
   return (
-    <section className="section rule-top" id="work">
+    <section className="section rule-top" id="proof">
       <div className="shell proof__head">
         <Reveal>
-          <span className="eyebrow">03 · Receipts</span>
-          <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '20ch' }}>
-            Outcomes, not{' '}
-            <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>activities.</em>
+          <span className="eyebrow">// PROOF</span>
+          <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '22ch' }}>
+            I don't just write about this. I{' '}
+            <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>run my life on it.</em>
           </h2>
         </Reveal>
         <Reveal delay={2}>
           <p className="t-lead t-muted-new">
-            These aren't "advised on AI." These are shipped solutions that moved
-            revenue, saved operating cost, and in one case saved lives.
+            The argument only counts if I'm living it, so here is the stack I actually own.
           </p>
         </Reveal>
       </div>
 
       <div className="shell">
-        <Reveal className="proof__grid">
-          <div className="proof__cell">
-            <span className="proof__cell__label">TaxAct</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={2.5} format={(n) => n.toFixed(1)} />M
-              <span className="unit">saved · yr 1</span>
-            </div>
-          </div>
-
-          <div className="proof__cell proof__cell--feature">
-            <span className="proof__cell__label">Daylight Transport</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={28} format={(n) => Math.round(n).toString()} />K →{' '}
-              $<CountUp to={4} format={(n) => Math.round(n).toString()} />M
-              <span className="unit">in 9 months</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">NFL Digital Media</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={5} format={(n) => Math.round(n).toString()} />M
-              <span className="unit">annual opex</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">Booz Allen Hamilton</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={9} format={(n) => Math.round(n).toString()} />M+
-              <span className="unit">new business</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">Stop Soldier Suicide</span>
-            <div className="proof__cell__metric">
-              Zero<span className="unit">loss of life</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">Toyota · Lexus</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={35} format={(n) => Math.round(n).toString()} />M
-              <span className="unit">portfolio managed</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">OMERS</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={10} format={(n) => Math.round(n).toString()} />M
-              <span className="unit">annual revenue enabled</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">Pariveda Solutions</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={6} format={(n) => Math.round(n).toString()} />M+
-              <span className="unit">annual revenue</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">AWS · Pariveda</span>
-            <div className="proof__cell__metric">
-              #1<span className="unit">partner driver · SoCal 2021</span>
-            </div>
-          </div>
+        <Reveal className="sp-proof__grid">
+          {CARDS.map((c) => (
+            <article key={c.title} className="sp-proof__card">
+              <span className="sp-proof__label">{c.label}</span>
+              <h3 className="sp-proof__title">{c.title}</h3>
+              <p className="sp-proof__body">{c.body}</p>
+              {c.href && (
+                <a
+                  className="sp-proof__link"
+                  href={c.href}
+                  {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  {c.hrefLabel} <ArrowUpRight size={13} />
+                </a>
+              )}
+            </article>
+          ))}
         </Reveal>
       </div>
     </section>

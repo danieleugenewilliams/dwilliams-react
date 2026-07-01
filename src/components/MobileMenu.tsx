@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,41 +49,23 @@ export function MobileMenu() {
 
               {/* Navigation */}
               <nav className="space-y-1 bg-background">
-                <Link
-                  to="/"
-                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
-                  onClick={closeMenu}
-                >
-                  [home]
-                </Link>
-                <Link
-                  to="/services"
-                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
-                  onClick={closeMenu}
-                >
-                  [services]
-                </Link>
-                <Link
-                  to="/about"
-                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
-                  onClick={closeMenu}
-                >
-                  [about]
-                </Link>
-                <Link
-                  to="/insights"
-                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
-                  onClick={closeMenu}
-                >
-                  [insights]
-                </Link>
-                <Link
-                  to="/contact"
-                  className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
-                  onClick={closeMenu}
-                >
-                  [contact]
-                </Link>
+                {[
+                  { href: '/#writing', label: 'writing' },
+                  { href: '/#proof', label: 'proof' },
+                  { href: '/#work-with-me', label: 'work with me' },
+                  { href: '/#about', label: 'about' },
+                  { href: '/#contact', label: 'contact' },
+                  { href: '/#subscribe', label: 'subscribe' },
+                ].map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="block font-mono text-sm py-3 text-foreground hover:text-terminal-cyan transition-colors"
+                    onClick={closeMenu}
+                  >
+                    [{item.label}]
+                  </a>
+                ))}
               </nav>
 
               {/* Divider */}
