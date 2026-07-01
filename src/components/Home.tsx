@@ -1,10 +1,7 @@
-import { ConsultingHero } from './ConsultingHero';
-import { MarqueeStrip } from './Marquee';
-import { ProblemSection } from './ProblemSection';
-import { WhatIDo } from './WhatIDo';
+import { Hero } from './Hero';
+import { Thesis } from './Thesis';
+import { WhatIBelieve } from './WhatIBelieve';
 import { ProofSection } from './ProofSection';
-import { CredentialsBanner } from './CredentialsBanner';
-import { HowItWorks } from './HowItWorks';
 import { WritingSection } from './WritingSection';
 import { WorkWithMe } from './WorkWithMe';
 import { SEO } from './SEO';
@@ -13,18 +10,15 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="D. E. Williams + Co. — Fractional CTO & AI Transformation Officer"
-        description="AI transformation leadership, embedded. I help companies move from AI experiments to AI results. Strategy, governance, architecture, and implementation."
+        title="Daniel E. Williams — architect & operator"
+        description="I build the tools I run my life on, and I write about how you can too. Claude Code for Non-Coders, 34,000+ readers."
         url="/"
       />
-      <ConsultingHero />
-      <MarqueeStrip />
-      <ProblemSection />
-      <WhatIDo />
-      <ProofSection />
-      <CredentialsBanner />
-      <HowItWorks />
+      <Hero />
+      <Thesis />
+      <WhatIBelieve />
       <WritingSection />
+      <ProofSection />
       <WorkWithMe />
     </>
   );

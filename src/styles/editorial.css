@@ -5,9 +5,13 @@
 
 /* Font variables */
 :root {
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
   --font-sans-new: "Inter Tight", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono-new: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Secondary accent — forest green (resilience lane, per brand doc) */
+  --brand-2: #3f6b4c;
+  --brand-2-soft: rgba(63, 107, 76, 0.12);
 
   /* New type scale */
   --fs-hero: clamp(3.25rem, 8.5vw, 9rem);

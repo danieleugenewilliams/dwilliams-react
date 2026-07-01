@@ -1,0 +1,233 @@
+/* ============================================================
+   SINGLE-PAGE SECTIONS — Hero / Thesis / What I Believe
+   Builds on editorial.css tokens (--bg, --fg, --brand, fonts).
+   ============================================================ */
+
+/* ---- shared ---- */
+.eyebrow--dim {
+  color: var(--fg-dim);
+}
+.sp-hero__title .brand-accent,
+.sp-thesis__quote .brand-accent {
+  color: var(--brand);
+  font-style: italic;
+}
+
+/* ---- Hero ---- */
+.sp-hero {
+  padding-top: clamp(3rem, 7vw, 6rem);
+  padding-bottom: var(--section-y-sm);
+  border-bottom: 1px solid var(--rule);
+}
+
+.sp-hero__inner {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.sp-hero__eyebrows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.75rem;
+}
+
+.sp-hero__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-hero);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.sp-hero__dek {
+  margin-top: 1.75rem;
+  max-width: 46ch;
+}
+.sp-hero__dek p {
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--fg-muted);
+  margin: 0;
+}
+
+.sp-hero__cta {
+  margin-top: 2rem;
+}
+
+.sp-hero__scroll {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-family: var(--font-mono-new);
+  font-size: var(--fs-small);
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color 0.2s var(--ease-out-quart);
+}
+.sp-hero__scroll:hover {
+  color: var(--brand);
+}
+
+.sp-hero__portrait {
+  position: relative;
+}
+.sp-hero__portrait img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 2px;
+  filter: grayscale(0.15) contrast(1.02);
+  border: 1px solid var(--rule-strong);
+}
+
+/* ---- Subscribe form (shared shape) ---- */
+.sp-subscribe {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 30rem;
+  flex-wrap: wrap;
+}
+.sp-subscribe__input {
+  flex: 1 1 14rem;
+  min-width: 0;
+  padding: 0.7rem 0.9rem;
+  font-family: var(--font-mono-new);
+  font-size: var(--fs-small);
+  color: var(--fg);
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  transition: border-color 0.2s var(--ease-out-quart);
+}
+.sp-subscribe__input:focus {
+  outline: none;
+  border-color: var(--brand);
+}
+.sp-subscribe__input::placeholder {
+  color: var(--fg-dim);
+}
+.sp-subscribe__btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.sp-subscribe__caption {
+  margin-top: 0.75rem;
+  font-family: var(--font-mono-new);
+  font-size: var(--fs-micro);
+  color: var(--fg-dim);
+  letter-spacing: 0.02em;
+}
+
+/* ---- Thesis ---- */
+.sp-thesis {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+  border-bottom: 1px solid var(--rule);
+}
+.sp-thesis__quote {
+  margin: 1.5rem 0 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-display);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  max-width: 24ch;
+}
+.sp-thesis__gloss {
+  margin-top: 2rem;
+  max-width: 54ch;
+  font-size: var(--fs-lead);
+  line-height: 1.65;
+  color: var(--fg-muted);
+}
+
+/* ---- What I Believe ---- */
+.sp-believe {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+  border-bottom: 1px solid var(--rule);
+}
+.sp-believe__head {
+  max-width: 40ch;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.sp-believe__lead {
+  margin-top: 1.25rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-section);
+  line-height: 1.2;
+  color: var(--fg);
+}
+
+.sp-believe__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+.sp-believe__item {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(1.75rem, 3vw, 2.5rem) 0;
+  border-top: 1px solid var(--rule);
+}
+.sp-believe__item:last-of-type {
+  border-bottom: 1px solid var(--rule);
+}
+.sp-believe__num {
+  font-family: var(--font-mono-new);
+  font-size: var(--fs-small);
+  color: var(--brand);
+  padding-top: 0.35rem;
+}
+.sp-believe__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.85rem;
+  max-width: 30ch;
+}
+.sp-believe__body {
+  font-size: 1.05rem;
+  line-height: 1.68;
+  color: var(--fg-muted);
+  max-width: 62ch;
+  margin: 0;
+}
+.sp-believe__bridge {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  max-width: 60ch;
+}
+.sp-believe__bridge p {
+  font-family: var(--font-display);
+  font-size: var(--fs-section);
+  line-height: 1.35;
+  color: var(--fg);
+  margin: 0;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 860px) {
+  .sp-hero__inner {
+    grid-template-columns: 1fr;
+  }
+  .sp-hero__portrait {
+    order: -1;
+    max-width: 18rem;
+  }
+  .sp-believe__item {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  .sp-believe__num {
+    padding-top: 0;
+  }
+}
