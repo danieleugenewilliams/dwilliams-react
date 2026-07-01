@@ -81,16 +81,21 @@
   object-fit: cover;
   object-position: center top;
   filter: grayscale(0.12) contrast(1.02);
-  /* Directional gradient: fade the inner (left) edge toward the text and the
-     bottom edge into the page, so the portrait transitions into the background
-     instead of sitting in a hard box. Theme-agnostic (fades to transparent). */
+  /* Directional gradients on all four edges so the portrait transitions into
+     the page instead of sitting in a hard box. Each edge fades to transparent;
+     they are intersected so only the inner region stays fully opaque. Top is
+     kept gentle so it doesn't eat into the head. Theme-agnostic. */
   -webkit-mask-image:
-    linear-gradient(to right, transparent 0%, #000 30%),
-    linear-gradient(to top, transparent 0%, #000 20%);
+    linear-gradient(to right, transparent 0%, #000 28%),
+    linear-gradient(to left, transparent 0%, #000 18%),
+    linear-gradient(to bottom, transparent 0%, #000 12%),
+    linear-gradient(to top, transparent 0%, #000 18%);
   -webkit-mask-composite: source-in;
   mask-image:
-    linear-gradient(to right, transparent 0%, #000 30%),
-    linear-gradient(to top, transparent 0%, #000 20%);
+    linear-gradient(to right, transparent 0%, #000 28%),
+    linear-gradient(to left, transparent 0%, #000 18%),
+    linear-gradient(to bottom, transparent 0%, #000 12%),
+    linear-gradient(to top, transparent 0%, #000 18%);
   mask-composite: intersect;
 }
 
