@@ -1,4 +1,5 @@
 import { Hero } from './Hero';
+import { MarqueeStrip } from './Marquee';
 import { Thesis } from './Thesis';
 import { WhatIBelieve } from './WhatIBelieve';
 import { WritingSection } from './WritingSection';
@@ -18,6 +19,7 @@ export default function Home() {
         url="/"
       />
       <Hero />
+      <MarqueeStrip />
       <Thesis />
       <WhatIBelieve />
       <WritingSection />

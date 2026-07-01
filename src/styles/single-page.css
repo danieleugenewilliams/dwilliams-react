@@ -22,8 +22,8 @@
 
 .sp-hero__inner {
   display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
-  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
   align-items: center;
 }
 
@@ -79,9 +79,19 @@
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: 2px;
-  filter: grayscale(0.15) contrast(1.02);
-  border: 1px solid var(--rule-strong);
+  object-position: center top;
+  filter: grayscale(0.12) contrast(1.02);
+  /* Directional gradient: fade the inner (left) edge toward the text and the
+     bottom edge into the page, so the portrait transitions into the background
+     instead of sitting in a hard box. Theme-agnostic (fades to transparent). */
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 30%),
+    linear-gradient(to top, transparent 0%, #000 20%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 30%),
+    linear-gradient(to top, transparent 0%, #000 20%);
+  mask-composite: intersect;
 }
 
 /* ---- Subscribe form (shared shape) ---- */
