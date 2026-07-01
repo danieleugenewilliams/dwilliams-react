@@ -1,11 +1,11 @@
 import { Reveal } from './Reveal';
 import { SubscribeForm } from './SubscribeForm';
 import { CC4NC_SUBSCRIBERS } from '../lib/constants';
-import headshot from '../assets/headshot.jpg';
 
 export function Hero() {
   return (
     <section className="sp-hero" id="top">
+      <div className="sp-hero__portrait" aria-hidden="true" />
       <div className="shell sp-hero__inner">
         <div className="sp-hero__text">
           <Reveal className="sp-hero__eyebrows">
@@ -38,10 +38,6 @@ export function Hero() {
             </a>
           </Reveal>
         </div>
-
-        <Reveal delay={2} className="sp-hero__portrait">
-          <img src={headshot} alt="Daniel E. Williams" loading="eager" />
-        </Reveal>
       </div>
     </section>
   );
