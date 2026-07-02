@@ -11,7 +11,7 @@ export function WorkWithMe() {
           <span className="folio__rule" />
         </div>
         <Reveal>
-          <h2 className="believe__lead" style={{ maxWidth: '24ch', marginTop: 0 }}>
+          <h2 className="believe__lead u-mt-0 u-measure-24">
             The writing comes first. This is what happens <em>after you've read enough of it.</em>
           </h2>
         </Reveal>
@@ -42,7 +42,7 @@ export function WorkWithMe() {
           </Reveal>
         </div>
 
-        <Reveal delay={1} style={{ marginTop: 'clamp(2.5rem,5vw,3.5rem)' }}>
+        <Reveal delay={1} className="work__cta">
           <a className="btn" href="#contact">
             One note, for both
             <span className="btn__arrow">

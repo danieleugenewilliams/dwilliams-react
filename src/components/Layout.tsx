@@ -27,7 +27,7 @@ function Nav() {
         </div>
 
         <div className="nav__actions">
-          <a className="btn" href="/#subscribe" style={{ padding: "0.6rem 1.05rem" }}>
+          <a className="btn btn--sm" href="/#subscribe">
             Subscribe
           </a>
         </div>
@@ -52,7 +52,7 @@ function Footer() {
           <a className="footer__link" href="https://claudecodefornoncoders.substack.com/" target="_blank" rel="noreferrer">Claude Code for Non-Coders</a>
           <a className="footer__link" href="https://linkedin.com/in/danieleugenewilliams" target="_blank" rel="noreferrer">LinkedIn</a>
           <a className="footer__link" href="https://github.com/danieleugenewilliams" target="_blank" rel="noreferrer">GitHub</a>
-          <a className="footer__link" href="/#top" style={{ color: "var(--faint-on-dark)", marginLeft: "auto" }}>Back to top ↑</a>
+          <a className="footer__link footer__link--end" href="/#top">Back to top ↑</a>
         </div>
       </div>
     </footer>

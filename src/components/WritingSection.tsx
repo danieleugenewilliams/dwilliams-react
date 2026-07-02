@@ -89,7 +89,7 @@ export function WritingSection() {
         <div className="writing__head">
           <Reveal>
             <span className="mark mark--coral">// Writing</span>
-            <h2 className="writing__title" style={{ marginTop: '1.25rem' }}>
+            <h2 className="writing__title u-mt-lead">
               The writing is the <em>main thing.</em>
             </h2>
           </Reveal>
@@ -123,7 +123,7 @@ export function WritingSection() {
 
           <a className="pub" href={DEWCO_URL} target="_blank" rel="noreferrer">
             <div className="pub__kicker">
-              <span className="pub__badge" style={{ color: 'var(--forest)' }}>Archive</span>
+              <span className="pub__badge pub__badge--forest">Archive</span>
             </div>
             <h3 className="pub__name">
               D.E. Williams <em>+</em> Co. Insights

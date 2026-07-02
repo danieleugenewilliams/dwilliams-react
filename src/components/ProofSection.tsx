@@ -76,10 +76,10 @@ export function ProofSection() {
           <span className="folio__rule" />
         </div>
         <Reveal>
-          <h2 className="believe__lead" style={{ maxWidth: '20ch', marginTop: 0 }}>
+          <h2 className="believe__lead u-mt-0 u-measure-20">
             I don't just write about this. <em>I run my life on it.</em>
           </h2>
-          <p className="serif-lead" style={{ marginTop: '1.25rem' }}>
+          <p className="serif-lead u-mt-lead">
             The argument only counts if I'm living it, so here is the stack I actually own.
           </p>
         </Reveal>

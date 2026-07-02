@@ -66,10 +66,10 @@ export function ContactSection() {
         </div>
         <div className="contact-grid">
           <Reveal>
-            <h2 className="believe__lead" style={{ maxWidth: '18ch', marginTop: 0 }}>
+            <h2 className="believe__lead u-mt-0 u-measure-18">
               Have something <em>specific</em> in mind?
             </h2>
-            <p className="serif-lead" style={{ marginTop: '1.25rem' }}>
+            <p className="serif-lead u-mt-lead">
               One note for advisory or speaking. If I can genuinely move it, you'll hear back within
               two business days.
             </p>
@@ -124,7 +124,7 @@ export function ContactSection() {
               )}
 
               <div className="cform__submit">
-                <span className="subform__caption" style={{ margin: 0 }}>
+                <span className="subform__caption subform__caption--flush">
                   Inbound only · replies in ~2 business days
                 </span>
                 <button type="submit" className="btn" disabled={loading || sent}>

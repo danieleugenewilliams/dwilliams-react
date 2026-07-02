@@ -60,7 +60,7 @@ export function AboutSection() {
           </Reveal>
 
           <Reveal delay={1}>
-            <span className="mark" style={{ display: 'block', marginBottom: '1.25rem' }}>
+            <span className="mark u-block u-mb-lead">
               // The condensed record
             </span>
             <ul className="ledger">

@@ -743,3 +743,22 @@ img { display: block; max-width: 100%; }
   .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------------- inline-style replacements ----------------
+   These live in the stylesheet (not inline `style` attributes) so the
+   prerendered HTML and React's client render produce identical markup —
+   an inline style serializes differently in captured HTML vs React, which
+   trips a hydration attribute mismatch. Declared last so single-class
+   utilities win over the component base rules they adjust. */
+.u-mt-0 { margin-top: 0; }
+.u-mt-lead { margin-top: 1.25rem; }
+.u-mb-lead { margin-bottom: 1.25rem; }
+.u-block { display: block; }
+.u-measure-18 { max-width: 18ch; }
+.u-measure-20 { max-width: 20ch; }
+.u-measure-24 { max-width: 24ch; }
+.btn--sm { padding: 0.6rem 1.05rem; }
+.work__cta { margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+.pub__badge--forest { color: var(--forest); }
+.footer__link--end { margin-left: auto; }
+.subform__caption--flush { margin: 0; }
