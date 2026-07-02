@@ -1,97 +1,115 @@
+import type { ReactNode } from 'react';
 import { Reveal } from './Reveal';
-import { CountUp } from './CountUp';
+import { ArrowUpRight } from './Icons';
+
+interface Spec {
+  no: string;
+  label: string;
+  name: ReactNode;
+  body: string;
+  link?: string;
+  href?: string;
+  bridge?: boolean;
+  metrics?: string[];
+}
+
+const SPECS: Spec[] = [
+  {
+    no: 'SP-01',
+    label: 'Open source · paid',
+    name: <>LocalMemory</>,
+    body: "An open-source memory server for AI assistants. It gives Claude and other models memory that persists across conversations, running on your machine instead of a vendor's. Sixty people pay for it.",
+    link: 'localmemory.co',
+    href: 'https://localmemory.co',
+  },
+  {
+    no: 'SP-02',
+    label: 'Personal agent',
+    name: (
+      <>
+        My home <em>agents</em>
+      </>
+    ),
+    body: "A Claude Code agent that runs my training, sleep, and health logging over Telegram. It's the clearest proof I have of the whole thesis: I built it, I own it, and it guards the mornings I care about instead of billing them to someone else.",
+  },
+  {
+    no: 'SP-03',
+    label: 'Built in the open',
+    name: (
+      <>
+        Open <em>source</em>
+      </>
+    ),
+    body: 'zvec-go, agent-harness, othello-agent. The smaller pieces, built in the open, that the larger systems stand on.',
+    link: 'github.com/danieleugenewilliams',
+    href: 'https://github.com/danieleugenewilliams',
+  },
+  {
+    no: 'SP-04',
+    label: 'Product · paying customers',
+    name: <>WARE</>,
+    body: "A workforce-automation resilience assessment. It's a real product with paying customers, and it lives at automationresilience.com.",
+    link: 'automationresilience.com',
+    href: 'https://automationresilience.com',
+  },
+  {
+    bridge: true,
+    no: 'SP-05',
+    label: 'Before it was mine to own',
+    name: (
+      <>
+        At scale, for <em>others</em> first
+      </>
+    ),
+    body: 'I did this at scale for other people before I did it for myself. That story is below, in About.',
+    metrics: ['$2.5M saved · TaxAct', '$28K → $4M · 9 mo', '$5M/yr · NFL Digital Media'],
+  },
+];
 
 export function ProofSection() {
   return (
-    <section className="section rule-top" id="work">
-      <div className="shell proof__head">
+    <section className="section" id="proof">
+      <div className="shell">
+        <div className="folio">
+          <span className="folio__no">§ 05</span>
+          <span className="folio__name">Proof</span>
+          <span className="folio__rule" />
+        </div>
         <Reveal>
-          <span className="eyebrow">03 · Receipts</span>
-          <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '20ch' }}>
-            Outcomes, not{' '}
-            <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>activities.</em>
+          <h2 className="believe__lead u-mt-0 u-measure-20">
+            I don't just write about this. <em>I run my life on it.</em>
           </h2>
-        </Reveal>
-        <Reveal delay={2}>
-          <p className="t-lead t-muted-new">
-            These aren't "advised on AI." These are shipped solutions that moved
-            revenue, saved operating cost, and in one case saved lives.
+          <p className="serif-lead u-mt-lead">
+            The argument only counts if I'm living it, so here is the stack I actually own.
           </p>
         </Reveal>
-      </div>
 
-      <div className="shell">
         <Reveal className="proof__grid">
-          <div className="proof__cell">
-            <span className="proof__cell__label">TaxAct</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={2.5} format={(n) => n.toFixed(1)} />M
-              <span className="unit">saved · yr 1</span>
+          {SPECS.map((s) => (
+            <div key={s.no} className={'spec' + (s.bridge ? ' spec--bridge' : '')}>
+              <div className="spec__cat">
+                <span className="spec__label">{s.label}</span>
+                <span className="spec__no">{s.no}</span>
+              </div>
+              <h3 className="spec__name">{s.name}</h3>
+              <p className="spec__body">{s.body}</p>
+              {s.link && (
+                <a className="spec__link" href={s.href} target="_blank" rel="noreferrer">
+                  {`${s.link} `}
+                  <ArrowUpRight size={13} />
+                </a>
+              )}
+              {s.metrics && (
+                <div className="spec__metrics">
+                  {s.metrics.map((m) => (
+                    <span key={m} className="chip">
+                      {m}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
-          </div>
-
-          <div className="proof__cell proof__cell--feature">
-            <span className="proof__cell__label">Daylight Transport</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={28} format={(n) => Math.round(n).toString()} />K →{' '}
-              $<CountUp to={4} format={(n) => Math.round(n).toString()} />M
-              <span className="unit">in 9 months</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">NFL Digital Media</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={5} format={(n) => Math.round(n).toString()} />M
-              <span className="unit">annual opex</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">Booz Allen Hamilton</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={9} format={(n) => Math.round(n).toString()} />M+
-              <span className="unit">new business</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">Stop Soldier Suicide</span>
-            <div className="proof__cell__metric">
-              Zero<span className="unit">loss of life</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">Toyota · Lexus</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={35} format={(n) => Math.round(n).toString()} />M
-              <span className="unit">portfolio managed</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">OMERS</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={10} format={(n) => Math.round(n).toString()} />M
-              <span className="unit">annual revenue enabled</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">Pariveda Solutions</span>
-            <div className="proof__cell__metric">
-              $<CountUp to={6} format={(n) => Math.round(n).toString()} />M+
-              <span className="unit">annual revenue</span>
-            </div>
-          </div>
-
-          <div className="proof__cell">
-            <span className="proof__cell__label">AWS · Pariveda</span>
-            <div className="proof__cell__metric">
-              #1<span className="unit">partner driver · SoCal 2021</span>
-            </div>
-          </div>
+          ))}
         </Reveal>
       </div>
     </section>

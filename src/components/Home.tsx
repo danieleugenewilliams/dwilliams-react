@@ -1,31 +1,32 @@
-import { ConsultingHero } from './ConsultingHero';
-import { MarqueeStrip } from './Marquee';
-import { ProblemSection } from './ProblemSection';
-import { WhatIDo } from './WhatIDo';
-import { ProofSection } from './ProofSection';
-import { CredentialsBanner } from './CredentialsBanner';
-import { HowItWorks } from './HowItWorks';
+import { Hero } from './Hero';
+import { Thesis } from './Thesis';
+import { WhatIBelieve } from './WhatIBelieve';
 import { WritingSection } from './WritingSection';
+import { ProofSection } from './ProofSection';
 import { WorkWithMe } from './WorkWithMe';
+import { AboutSection } from './AboutSection';
+import { ContactSection } from './ContactSection';
+import { SubscribeSection } from './SubscribeSection';
 import { SEO } from './SEO';
+import { CC4NC_SUBSCRIBERS } from '../lib/constants';
 
 export default function Home() {
   return (
     <>
       <SEO
-        title="D. E. Williams + Co. — Fractional CTO & AI Transformation Officer"
-        description="AI transformation leadership, embedded. I help companies move from AI experiments to AI results. Strategy, governance, architecture, and implementation."
+        title="Daniel E. Williams — architect & operator"
+        description={`I build the tools I run my life on, and I write about how you can too. Claude Code for Non-Coders, ${CC4NC_SUBSCRIBERS.full} readers.`}
         url="/"
       />
-      <ConsultingHero />
-      <MarqueeStrip />
-      <ProblemSection />
-      <WhatIDo />
-      <ProofSection />
-      <CredentialsBanner />
-      <HowItWorks />
+      <Hero />
+      <Thesis />
+      <WhatIBelieve />
       <WritingSection />
+      <ProofSection />
       <WorkWithMe />
+      <AboutSection />
+      <ContactSection />
+      <SubscribeSection />
     </>
   );
 }
