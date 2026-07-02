@@ -837,7 +837,6 @@ img { display: block; max-width: 100%; }
 @media (max-width: 719px) {
   .d-only { display: none; }
   .m-only { display: inline; }
-  .m-only--block { display: block; }
 }
 /* inline "More / Less" toggle revealed inside condensed mobile copy */
 .more-btn {
@@ -853,7 +852,6 @@ img { display: block; max-width: 100%; }
   transition: color 0.2s;
 }
 .more-btn:hover { color: var(--coral-deep); }
-.thesis .more-btn, .spec--bridge .more-btn { color: #e8a07f; }
 
 /* tighter mobile rhythm — shorter sections, snugger lists */
 @media (max-width: 719px) {
