@@ -11,7 +11,7 @@
 import puppeteer from 'puppeteer';
 import { createServer } from 'http';
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
-import { join, dirname } from 'path';
+import { join, dirname, sep } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -65,8 +65,17 @@ function createStaticServer(pristineHtml) {
     }
 
     // Real asset (.js/.css/.json/img/font) → serve from disk.
+    // Confine the resolved path to DIST_DIR: the request URL is untrusted, and
+    // join() normalizes any `..`, so a traversal like /../../etc/passwd would
+    // otherwise escape the build directory (CodeQL: uncontrolled path).
+    const filePath = join(DIST_DIR, urlPath);
+    if (filePath !== DIST_DIR && !filePath.startsWith(DIST_DIR + sep)) {
+      res.writeHead(403);
+      res.end('Forbidden');
+      return;
+    }
     try {
-      const content = readFileSync(join(DIST_DIR, urlPath));
+      const content = readFileSync(filePath);
       res.writeHead(200, { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' });
       res.end(content);
     } catch {
