@@ -11,7 +11,7 @@
 import puppeteer from 'puppeteer';
 import { createServer } from 'http';
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
-import { join, dirname } from 'path';
+import { join, dirname, relative, isAbsolute } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -34,8 +34,13 @@ const ROUTES = [
   '/privacy',
 ];
 
-// Simple static file server for the dist directory
-function createStaticServer() {
+// Simple static file server for the dist directory.
+// `pristineHtml` is the untouched, empty-#root build shell; every route/SPA
+// request is served THAT (not a file from disk) so each route renders fresh via
+// the app's client render. Serving from disk would leak the '/' capture — which
+// overwrites dist/index.html — into '/privacy' and any route prerendered after
+// it, producing home-page HTML under the wrong route and a hydration mismatch.
+function createStaticServer(pristineHtml) {
   const mimeTypes = {
     '.html': 'text/html',
     '.js': 'application/javascript',
@@ -49,28 +54,33 @@ function createStaticServer() {
   };
 
   return createServer((req, res) => {
-    let filePath = join(DIST_DIR, req.url === '/' ? 'index.html' : req.url);
+    const urlPath = (req.url || '/').split('?')[0];
+    const ext = urlPath.includes('.') ? '.' + urlPath.split('.').pop() : '';
 
-    // SPA fallback — serve index.html for routes without extensions
-    if (!filePath.includes('.')) {
-      filePath = join(DIST_DIR, 'index.html');
+    // Route / SPA request (no extension, or an .html document) → pristine shell.
+    if (!ext || ext === '.html') {
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(pristineHtml);
+      return;
     }
 
+    // Real asset (.js/.css/.json/img/font) → serve from disk.
+    // The request URL is untrusted and join() may resolve `..` outside dist/.
+    // Confine to DIST_DIR via relative()+`..` check (CodeQL js/path-injection).
+    const filePath = join(DIST_DIR, urlPath);
+    const rel = relative(DIST_DIR, filePath);
+    if (rel.startsWith('..') || isAbsolute(rel)) {
+      res.writeHead(403);
+      res.end('Forbidden');
+      return;
+    }
     try {
       const content = readFileSync(filePath);
-      const ext = '.' + filePath.split('.').pop();
       res.writeHead(200, { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' });
       res.end(content);
     } catch {
-      // Fallback to index.html for SPA routes
-      try {
-        const content = readFileSync(join(DIST_DIR, 'index.html'));
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(content);
-      } catch {
-        res.writeHead(404);
-        res.end('Not found');
-      }
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(pristineHtml);
     }
   });
 }
@@ -78,8 +88,12 @@ function createStaticServer() {
 async function prerender() {
   console.log('Starting prerender...');
 
+  // Snapshot the pristine build shell BEFORE any route capture overwrites
+  // dist/index.html, so every route is served an empty #root and renders fresh.
+  const pristineHtml = readFileSync(join(DIST_DIR, 'index.html'), 'utf8');
+
   // Start static server
-  const server = createStaticServer();
+  const server = createStaticServer(pristineHtml);
   await new Promise((resolve) => server.listen(PORT, resolve));
   console.log(`Static server running on http://localhost:${PORT}`);
 

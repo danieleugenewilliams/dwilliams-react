@@ -53,8 +53,8 @@ export function AboutSection() {
                 companies that want the same thing for their teams. I work in a window from early
                 afternoon to evening, on purpose, because the mornings belong to my family, to
                 fitness, to reading, and to being in the room instead of half inside a meeting in my
-                head. I live on the coast of Virginia with my wife and two sons. <b>I would rather
-                ship than pitch.</b>
+                head. I live on the coast of Virginia with my wife and two sons. <b>Building a life 
+                worth living is the point.</b>
               </p>
             </div>
           </Reveal>

@@ -1,6 +1,11 @@
 import React from "react";
 import { SEO } from "./SEO";
 
+// Static so the prerendered HTML and client render match (a live `new Date()`
+// renders the build-time date at prerender and the load-time date on the
+// client → hydration mismatch, React #418). Bump by hand when the policy changes.
+const LAST_UPDATED = "July 2, 2026";
+
 const PrivacyPolicy: React.FC = () => {
   return (
     <>
@@ -20,7 +25,7 @@ const PrivacyPolicy: React.FC = () => {
               Privacy Policy
             </h1>
             <p className="font-mono text-sm text-muted-foreground">
-              Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              {`Last updated: ${LAST_UPDATED}`}
             </p>
           </div>
         </section>
@@ -57,15 +62,15 @@ const PrivacyPolicy: React.FC = () => {
                 <h2 className="font-mono text-lg font-semibold mb-4">// THIRD-PARTY SERVICES</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    <strong className="text-foreground">Google Analytics:</strong> Website traffic analysis.{' '}
+                    <strong className="text-foreground">Google Analytics:</strong> Website traffic analysis.
                     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-terminal-cyan hover:underline">
-                      Privacy policy →
+                      {" Privacy policy →"}
                     </a>
                   </p>
                   <p>
-                    <strong className="text-foreground">HubSpot:</strong> Contact form processing and CRM.{' '}
+                    <strong className="text-foreground">HubSpot:</strong> Contact form processing and CRM.
                     <a href="https://legal.hubspot.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-terminal-cyan hover:underline">
-                      Privacy policy →
+                      {" Privacy policy →"}
                     </a>
                   </p>
                 </div>
@@ -93,9 +98,9 @@ const PrivacyPolicy: React.FC = () => {
                   Depending on location: access, correction, deletion, portability, objection, consent withdrawal.
                 </p>
                 <p className="text-muted-foreground">
-                  Contact:{' '}
+                  Contact:
                   <a href="/contact" className="text-terminal-cyan hover:underline">
-                    Get in touch
+                    {" Get in touch"}
                   </a>
                 </p>
               </div>
