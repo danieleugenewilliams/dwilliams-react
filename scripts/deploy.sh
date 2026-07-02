@@ -75,6 +75,20 @@ aws s3 cp dist/index.html "s3://$S3_BUCKET/index.html" \
   --cache-control "no-cache, no-store, must-revalidate" \
   --content-type "text/html"
 
+# Upload prerendered per-route documents (e.g. privacy/index.html) with no cache.
+# The bulk sync above uploads them with the immutable asset header; re-upload via
+# cp (which always overwrites metadata) so route HTML can update between builds.
+# CloudFront's viewer-request function serves these for clean URLs (/privacy).
+echo "Uploading nested route documents (no cache)..."
+for route_doc in dist/*/index.html; do
+  [ -e "$route_doc" ] || continue
+  key="${route_doc#dist/}"
+  echo "  $key"
+  aws s3 cp "$route_doc" "s3://$S3_BUCKET/$key" \
+    --cache-control "no-cache, no-store, must-revalidate" \
+    --content-type "text/html"
+done
+
 # Upload JSON files (short cache)
 echo "Uploading JSON files (1 hour cache)..."
 aws s3 sync dist/ "s3://$S3_BUCKET" \
@@ -102,7 +116,7 @@ echo ""
 echo "--- Invalidating CloudFront ---"
 INVALIDATION_ID=$(aws cloudfront create-invalidation \
   --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
-  --paths "/index.html" "/" "/data/*" \
+  --paths "/index.html" "/" "/privacy" "/privacy/*" "/data/*" \
   --query "Invalidation.Id" \
   --output text)
 

@@ -130,10 +130,22 @@ SPA_FUNCTION_CODE=$(cat <<'JSEOF'
 function handler(event) {
   var request = event.request;
   var uri = request.uri;
+  // Static assets (they carry a file extension) pass through untouched.
   if (uri.includes('.')) {
     return request;
   }
-  request.uri = '/index.html';
+  // Map a clean URL to its prerendered document:
+  //   /         -> /index.html
+  //   /privacy  -> /privacy/index.html
+  //   /privacy/ -> /privacy/index.html
+  // Routes with no prerendered file (e.g. legacy /services) resolve to a
+  // missing S3 key; the distribution's 403/404 custom error response rewrites
+  // that to /index.html (200), so React Router's <Navigate> still handles them.
+  if (uri.endsWith('/')) {
+    request.uri = uri + 'index.html';
+  } else {
+    request.uri = uri + '/index.html';
+  }
   return request;
 }
 JSEOF
@@ -144,11 +156,38 @@ EXISTING_SPA_FN=$(aws cloudfront list-functions \
   --output text 2>/dev/null || true)
 
 if [ -n "$EXISTING_SPA_FN" ] && [ "$EXISTING_SPA_FN" != "None" ]; then
-  echo "CloudFront function $SPA_FUNCTION_NAME already exists"
+  echo "CloudFront function $SPA_FUNCTION_NAME already exists — updating code..."
+
+  # Write the current function code to a temp file.
+  TMPFILE=$(mktemp)
+  echo "$SPA_FUNCTION_CODE" > "$TMPFILE"
+
+  # The current ETag is required to update an existing function.
+  SPA_FN_ETAG=$(aws cloudfront describe-function \
+    --name "$SPA_FUNCTION_NAME" \
+    --query "ETag" \
+    --output text)
+
+  SPA_FN_ETAG=$(aws cloudfront update-function \
+    --name "$SPA_FUNCTION_NAME" \
+    --function-config '{"Comment":"Clean-URL routing - map paths to their prerendered index.html","Runtime":"cloudfront-js-2.0"}' \
+    --function-code "fileb://$TMPFILE" \
+    --if-match "$SPA_FN_ETAG" \
+    --query "ETag" \
+    --output text)
+
+  rm -f "$TMPFILE"
+
+  echo "Publishing updated function to LIVE stage..."
+  aws cloudfront publish-function \
+    --name "$SPA_FUNCTION_NAME" \
+    --if-match "$SPA_FN_ETAG" > /dev/null
+
   SPA_FN_ARN=$(aws cloudfront describe-function \
     --name "$SPA_FUNCTION_NAME" \
     --query "FunctionSummary.FunctionMetadata.FunctionARN" \
     --output text)
+  echo "Function updated and published: $SPA_FN_ARN"
 else
   echo "Creating CloudFront function: $SPA_FUNCTION_NAME..."
 
@@ -158,7 +197,7 @@ else
 
   SPA_FN_ETAG=$(aws cloudfront create-function \
     --name "$SPA_FUNCTION_NAME" \
-    --function-config '{"Comment":"SPA routing - rewrite non-file paths to /index.html","Runtime":"cloudfront-js-2.0"}' \
+    --function-config '{"Comment":"Clean-URL routing - map paths to their prerendered index.html","Runtime":"cloudfront-js-2.0"}' \
     --function-code "fileb://$TMPFILE" \
     --query "ETag" \
     --output text)
