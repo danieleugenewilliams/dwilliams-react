@@ -44,7 +44,7 @@ export function WorkWithMe() {
 
         <Reveal delay={1} style={{ marginTop: 'clamp(2.5rem,5vw,3.5rem)' }}>
           <a className="btn" href="#contact">
-            One note, for both{' '}
+            One note, for both
             <span className="btn__arrow">
               <ArrowRight />
             </span>

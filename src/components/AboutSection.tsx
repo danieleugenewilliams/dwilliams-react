@@ -30,8 +30,8 @@ export function AboutSection() {
         <div className="about__grid">
           <Reveal>
             <p className="about__lede">
-              Twenty-five years building things for other people. Now I build them{' '}
-              <em>for myself, in the open.</em>
+              Twenty-five years building things for other people. Now I build them
+              <em> for myself, in the open.</em>
             </p>
             <div className="about__body">
               <p>

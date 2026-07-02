@@ -18,6 +18,17 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST_DIR = join(__dirname, '..', 'dist');
 const PORT = 4173;
 
+// Build-time posts snapshot. Serialized into each prerendered page as
+// window.__POSTS__ so the client's first render matches the prerendered DOM
+// (WritingSection seeds its initial state from it), avoiding a hydration
+// mismatch + stale-content flicker. See src/components/WritingSection.tsx.
+let POSTS_SNAPSHOT = null;
+try {
+  POSTS_SNAPSHOT = readFileSync(join(DIST_DIR, 'data', 'posts.json'), 'utf8');
+} catch {
+  // posts.json absent — the client falls back to fetch + inline seed.
+}
+
 const ROUTES = [
   '/',
   '/privacy',
@@ -82,6 +93,20 @@ async function prerender() {
     console.log(`  Prerendering ${route}...`);
     const page = await browser.newPage();
 
+    // Block third-party marketing/analytics scripts during prerender. They run under
+    // networkidle0 and mutate the DOM inside #root (e.g. HubSpot collectedforms adds
+    // data-hs-cf-bound to <form>), which bakes into the static HTML and then fails
+    // hydration against React's clean client render. Real users still load them at runtime.
+    const BLOCKED_HOSTS = [
+      'hs-scripts.com', 'hs-analytics.net', 'hscollectedforms.net', 'hs-banner.com',
+      'googletagmanager.com', 'google-analytics.com', 'static.hotjar.com', 'contentsquare.net',
+    ];
+    await page.setRequestInterception(true);
+    page.on('request', (req) => {
+      if (BLOCKED_HOSTS.some((h) => req.url().includes(h))) req.abort();
+      else req.continue();
+    });
+
     await page.goto(`http://localhost:${PORT}${route}`, {
       waitUntil: 'networkidle0',
       timeout: 30000,
@@ -90,7 +115,21 @@ async function prerender() {
     // Wait for React to render
     await page.waitForSelector('#root > *', { timeout: 10000 });
 
-    const html = await page.content();
+    let html = await page.content();
+
+    // Seed the client with the same posts the prerender rendered from, so
+    // hydration doesn't patch fresh rows down to a stale inline fallback.
+    if (POSTS_SNAPSHOT) {
+      const safe = POSTS_SNAPSHOT.replace(/</g, '\\u003c');
+      html = html.replace('</head>', `<script>window.__POSTS__=${safe}</script></head>`);
+    }
+
+    // Reveal elements gain the `in` class via a client effect, which puppeteer runs and
+    // bakes into the captured HTML. React's first client render doesn't have it yet, so
+    // strip it here to keep the static HTML in sync (avoids a hydration className mismatch).
+    // The `in` class is always appended last by classList.add. A <noscript> style in
+    // index.html keeps the stripped-hidden content visible when JS is off.
+    html = html.replace(/(class="reveal[^"]*) in"/g, '$1"');
 
     // Write the rendered HTML to the appropriate file
     const outputDir = route === '/'

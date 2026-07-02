@@ -62,8 +62,8 @@ export function WhatIBelieve() {
           <p>
             None of this is the point on its own. Owning the tools only matters for what you can
             finally aim them at: your health, your family, the problems that money and access used
-            to put out of reach. Keeping your judgment valuable is the foundation.{' '}
-            <span className="coral">Building a life worth living is the point.</span>
+            to put out of reach. Keeping your judgment valuable is the foundation.
+            <span className="coral"> Building a life worth living is the point.</span>
           </p>
         </Reveal>
       </div>

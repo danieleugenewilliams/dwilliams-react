@@ -52,10 +52,7 @@ function Footer() {
           <a className="footer__link" href="https://claudecodefornoncoders.substack.com/" target="_blank" rel="noreferrer">Claude Code for Non-Coders</a>
           <a className="footer__link" href="https://linkedin.com/in/danieleugenewilliams" target="_blank" rel="noreferrer">LinkedIn</a>
           <a className="footer__link" href="https://github.com/danieleugenewilliams" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
-        <div className="footer__legal">
-          <span>Shipping &gt; Pitching. — Daniel</span>
-          <a className="footer__link" href="/#top" style={{ color: "var(--faint-on-dark)" }}>Back to top ↑</a>
+          <a className="footer__link" href="/#top" style={{ color: "var(--faint-on-dark)", marginLeft: "auto" }}>Back to top ↑</a>
         </div>
       </div>
     </footer>

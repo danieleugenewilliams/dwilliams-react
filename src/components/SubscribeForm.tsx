@@ -35,7 +35,7 @@ export function SubscribeForm({
           onChange={(e) => setEmail(e.target.value)}
         />
         <button type="submit" className={`btn${variant === 'coral' ? ' btn--coral' : ''}`}>
-          Subscribe{' '}
+          Subscribe
           <span className="btn__arrow">
             <ArrowRight />
           </span>

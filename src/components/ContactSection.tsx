@@ -127,14 +127,14 @@ export function ContactSection() {
                 <span className="subform__caption" style={{ margin: 0 }}>
                   Inbound only · replies in ~2 business days
                 </span>
-                <button type="submit" className="btn" disabled={loading}>
+                <button type="submit" className="btn" disabled={loading || sent}>
                   {loading ? (
                     'Sending…'
                   ) : sent ? (
                     'Received — thank you'
                   ) : (
                     <>
-                      Send{' '}
+                      Send
                       <span className="btn__arrow">
                         <ArrowRight />
                       </span>

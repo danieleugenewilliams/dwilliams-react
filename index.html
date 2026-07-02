@@ -23,6 +23,13 @@
     <meta property="twitter:image" content="/og-image.svg" />
 
     <title>Daniel E. Williams — architect & operator</title>
+
+    <!-- Reveal-on-scroll starts hidden and animates in via JS. Prerender strips the
+         `in` class so the static HTML matches React's first client render (no hydration
+         mismatch); this keeps content visible when JavaScript is disabled. -->
+    <noscript>
+      <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+    </noscript>
   </head>
   <body>
     <div id="root"></div>

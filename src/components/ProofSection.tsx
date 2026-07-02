@@ -95,7 +95,8 @@ export function ProofSection() {
               <p className="spec__body">{s.body}</p>
               {s.link && (
                 <a className="spec__link" href={s.href} target="_blank" rel="noreferrer">
-                  {s.link} <ArrowUpRight size={13} />
+                  {`${s.link} `}
+                  <ArrowUpRight size={13} />
                 </a>
               )}
               {s.metrics && (

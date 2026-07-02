@@ -17,7 +17,7 @@ export function Hero() {
           <div>
             <Reveal className="cover__eyebrows">
               <span className="mark mark--coral">Architect / Operator · Coastal Virginia</span>
-              <span className="mark">Claude Code for Non-Coders · {CC4NC_SUBSCRIBERS.full} readers</span>
+              <span className="mark">{`Claude Code for Non-Coders · ${CC4NC_SUBSCRIBERS.full} readers`}</span>
             </Reveal>
 
             <Reveal delay={1}>

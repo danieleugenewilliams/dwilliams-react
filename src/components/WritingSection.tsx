@@ -20,6 +20,13 @@ interface PostsData {
   feeds: Feed[];
 }
 
+declare global {
+  interface Window {
+    // Prerender seeds this with the build-time posts snapshot (see scripts/prerender.mjs).
+    __POSTS__?: PostsData;
+  }
+}
+
 const CC4NC_URL = 'https://claudecodefornoncoders.substack.com/';
 const DEWCO_URL = 'https://dewilliamsco.substack.com/';
 
@@ -55,7 +62,11 @@ function formatPostDate(dateStr: string): string {
 }
 
 export function WritingSection() {
-  const [data, setData] = useState<PostsData>(INLINE_POSTS);
+  // Seed from the prerender-injected snapshot so the first client render
+  // matches the prerendered DOM; fall back to the inline list in dev / no-JS builds.
+  const [data, setData] = useState<PostsData>(
+    () => (typeof window !== 'undefined' && window.__POSTS__) || INLINE_POSTS
+  );
 
   useEffect(() => {
     fetch('/data/posts.json')
@@ -96,7 +107,7 @@ export function WritingSection() {
           <a className="pub pub--primary" href={CC4NC_URL} target="_blank" rel="noreferrer">
             <div className="pub__kicker">
               <span className="pub__badge">Primary · Weekly</span>
-              <span className="pub__count">{CC4NC_SUBSCRIBERS.full} readers</span>
+              <span className="pub__count">{`${CC4NC_SUBSCRIBERS.full} readers`}</span>
             </div>
             <h3 className="pub__name">
               Claude Code <em>for</em> Non-Coders
