@@ -1,29 +1,30 @@
 import { useState } from 'react';
 import { Reveal } from './Reveal';
+import { ArrowRight } from './Icons';
 
 const HUBSPOT_PORTAL_ID = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
 const HUBSPOT_FORM_ID = import.meta.env.VITE_HUBSPOT_CONTACT_FORM_ID;
 
 export function ContactSection() {
-  const [form, setForm] = useState({
-    firstname: '',
-    lastname: '',
-    email: '',
-    company: '',
-    message: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({ name: '', email: '', company: '', kind: 'Advisory', note: '' });
+  const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const update = (key: keyof typeof form) => (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => setForm({ ...form, [key]: e.target.value });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
+
+    const trimmed = form.name.trim();
+    const firstSpace = trimmed.indexOf(' ');
+    const firstname = firstSpace === -1 ? trimmed : trimmed.slice(0, firstSpace);
+    const lastname = firstSpace === -1 ? '' : trimmed.slice(firstSpace + 1);
+
     try {
       const res = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
@@ -32,11 +33,11 @@ export function ContactSection() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             fields: [
-              { name: 'firstname', value: form.firstname },
-              { name: 'lastname', value: form.lastname },
+              { name: 'firstname', value: firstname },
+              { name: 'lastname', value: lastname },
               { name: 'email', value: form.email },
               { name: 'company', value: form.company },
-              { name: 'message', value: form.message },
+              { name: 'message', value: `Interested in: ${form.kind}\n\n${form.note}` },
             ],
             context: {
               pageUri: window.location.href,
@@ -46,7 +47,7 @@ export function ContactSection() {
           }),
         }
       );
-      if (res.ok) setSubmitted(true);
+      if (res.ok) setSent(true);
       else setError('Submission failed. Please try again.');
     } catch {
       setError('Submission failed. Please try again.');
@@ -56,78 +57,100 @@ export function ContactSection() {
   };
 
   return (
-    <section className="section rule-top" id="contact">
-      <div className="shell sp-contact">
-        <div className="sp-contact__intro">
-          <Reveal>
-            <span className="eyebrow">// CONTACT</span>
-            <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '16ch' }}>
-              Let's{' '}
-              <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>talk.</em>
-            </h2>
-            <p className="t-lead t-muted-new" style={{ marginTop: '1.25rem', maxWidth: '38ch' }}>
-              Advisory, speaking, or a collaboration worth building. Tell me what's on your
-              mind. I reply within one to two business days.
-            </p>
-          </Reveal>
+    <section className="section" id="contact">
+      <div className="shell">
+        <div className="folio">
+          <span className="folio__no">§ 08</span>
+          <span className="folio__name">Contact</span>
+          <span className="folio__rule" />
         </div>
-
-        <Reveal delay={1} className="sp-contact__form">
-          {submitted ? (
-            <div className="contact-success" role="status">
-              <span className="dot" />
-              <p className="contact-success__text">
-                Message received. I'll respond within one to two business days.
-              </p>
+        <div className="contact-grid">
+          <Reveal>
+            <h2 className="believe__lead" style={{ maxWidth: '18ch', marginTop: 0 }}>
+              Have something <em>specific</em> in mind?
+            </h2>
+            <p className="serif-lead" style={{ marginTop: '1.25rem' }}>
+              One note for advisory or speaking. If I can genuinely move it, you'll hear back within
+              two business days.
+            </p>
+            <div className="contact-links">
+              <a className="txt-link" href="https://linkedin.com/in/danieleugenewilliams" target="_blank" rel="noreferrer">
+                linkedin.com/in/danieleugenewilliams
+              </a>
+              <a className="txt-link" href="https://substack.com/@dewilliamsco" target="_blank" rel="noreferrer">
+                substack.com/@dewilliamsco
+              </a>
+              <a className="txt-link" href="https://x.com/dewilliamsco" target="_blank" rel="noreferrer">
+                x.com/dewilliamsco
+              </a>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="contact-form__row">
-                <div className="contact-form__field">
-                  <label htmlFor="firstname" className="contact-form__label">
-                    First name <span aria-hidden="true">*</span>
-                  </label>
-                  <input type="text" id="firstname" name="firstname" autoComplete="given-name" required className="contact-form__input" value={form.firstname} onChange={handleChange} />
-                </div>
-                <div className="contact-form__field">
-                  <label htmlFor="lastname" className="contact-form__label">
-                    Last name <span aria-hidden="true">*</span>
-                  </label>
-                  <input type="text" id="lastname" name="lastname" autoComplete="family-name" required className="contact-form__input" value={form.lastname} onChange={handleChange} />
-                </div>
-              </div>
+          </Reveal>
 
-              <div className="contact-form__field">
-                <label htmlFor="email" className="contact-form__label">
-                  Email <span aria-hidden="true">*</span>
+          <Reveal delay={1}>
+            <form className="cform" onSubmit={handleSubmit}>
+              <div className="cform__row">
+                <label className="cform__field">
+                  <span className="cform__label">Name</span>
+                  <input className="cform__input" required autoComplete="name" value={form.name} onChange={update('name')} />
                 </label>
-                <input type="email" id="email" name="email" autoComplete="email" required className="contact-form__input" value={form.email} onChange={handleChange} />
-              </div>
-
-              <div className="contact-form__field">
-                <label htmlFor="company" className="contact-form__label">
-                  Company <span className="contact-form__optional">(optional)</span>
+                <label className="cform__field">
+                  <span className="cform__label">Email</span>
+                  <input className="cform__input" type="email" required autoComplete="email" value={form.email} onChange={update('email')} />
                 </label>
-                <input type="text" id="company" name="company" autoComplete="organization" className="contact-form__input" value={form.company} onChange={handleChange} />
               </div>
-
-              <div className="contact-form__field">
-                <label htmlFor="message" className="contact-form__label">
-                  Message <span aria-hidden="true">*</span>
+              <div className="cform__row">
+                <label className="cform__field">
+                  <span className="cform__label">Company</span>
+                  <input className="cform__input" autoComplete="organization" value={form.company} onChange={update('company')} />
                 </label>
-                <textarea id="message" name="message" rows={5} required className="contact-form__input contact-form__input--textarea" value={form.message} onChange={handleChange} />
+                <label className="cform__field">
+                  <span className="cform__label">About</span>
+                  <select className="cform__input" value={form.kind} onChange={update('kind')}>
+                    <option>Advisory</option>
+                    <option>Speaking</option>
+                    <option>Both</option>
+                  </select>
+                </label>
               </div>
+              <label className="cform__field">
+                <span className="cform__label">What's the problem?</span>
+                <textarea className="cform__input cform__input--area" value={form.note} onChange={update('note')} />
+              </label>
 
               {error && (
-                <div className="contact-form__error" role="alert">{error}</div>
+                <div className="cform__error" role="alert">
+                  {error}
+                </div>
               )}
 
-              <button type="submit" className="btn contact-form__submit" disabled={loading}>
-                {loading ? 'Sending…' : 'Send message'}
-              </button>
+              <div className="cform__submit">
+                <span className="subform__caption" style={{ margin: 0 }}>
+                  Inbound only · replies in ~2 business days
+                </span>
+                <button type="submit" className="btn" disabled={loading}>
+                  {loading ? (
+                    'Sending…'
+                  ) : sent ? (
+                    'Received — thank you'
+                  ) : (
+                    <>
+                      Send{' '}
+                      <span className="btn__arrow">
+                        <ArrowRight />
+                      </span>
+                    </>
+                  )}
+                </button>
+              </div>
+
+              {sent && (
+                <div className="cform__success" role="status">
+                  ✓ Got it, {form.name || 'there'}. I'll be in touch within two business days.
+                </div>
+              )}
             </form>
-          )}
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

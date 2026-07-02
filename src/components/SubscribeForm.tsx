@@ -1,9 +1,15 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { ArrowRight } from './Icons';
 
 const CC4NC_SUBSCRIBE = 'https://claudecodefornoncoders.substack.com/subscribe';
 
-export function SubscribeForm({ caption }: { caption?: string }) {
+export function SubscribeForm({
+  caption,
+  variant = 'ink',
+}: {
+  caption?: ReactNode;
+  variant?: 'ink' | 'coral';
+}) {
   const [email, setEmail] = useState('');
 
   const handleSubscribe = (e: React.FormEvent) => {
@@ -15,10 +21,10 @@ export function SubscribeForm({ caption }: { caption?: string }) {
   };
 
   return (
-    <>
-      <form className="sp-subscribe" onSubmit={handleSubscribe}>
+    <div>
+      <form className="subform" onSubmit={handleSubscribe}>
         <input
-          className="sp-subscribe__input"
+          className="subform__input"
           type="email"
           name="email"
           inputMode="email"
@@ -28,11 +34,14 @@ export function SubscribeForm({ caption }: { caption?: string }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button type="submit" className="btn sp-subscribe__btn">
-          Subscribe <ArrowRight />
+        <button type="submit" className={`btn${variant === 'coral' ? ' btn--coral' : ''}`}>
+          Subscribe{' '}
+          <span className="btn__arrow">
+            <ArrowRight />
+          </span>
         </button>
       </form>
-      {caption && <p className="sp-subscribe__caption">{caption}</p>}
-    </>
+      {caption && <p className="subform__caption">{caption}</p>}
+    </div>
   );
 }

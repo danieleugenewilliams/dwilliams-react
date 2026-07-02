@@ -1,89 +1,113 @@
+import type { ReactNode } from 'react';
 import { Reveal } from './Reveal';
 import { ArrowUpRight } from './Icons';
 
-interface ProofCard {
+interface Spec {
+  no: string;
   label: string;
-  title: string;
+  name: ReactNode;
   body: string;
+  link?: string;
   href?: string;
-  hrefLabel?: string;
-  external?: boolean;
+  bridge?: boolean;
+  metrics?: string[];
 }
 
-const CARDS: ProofCard[] = [
+const SPECS: Spec[] = [
   {
-    label: 'Product · live',
-    title: 'LocalMemory',
-    body: 'An open-source memory server for AI assistants. It gives Claude and other models memory that persists across conversations, running on your machine instead of a vendor’s. Sixty people pay for it.',
+    no: 'SP-01',
+    label: 'Open source · paid',
+    name: <>LocalMemory</>,
+    body: "An open-source memory server for AI assistants. It gives Claude and other models memory that persists across conversations, running on your machine instead of a vendor's. Sixty people pay for it.",
+    link: 'localmemory.co',
     href: 'https://localmemory.co',
-    hrefLabel: 'localmemory.co',
-    external: true,
   },
   {
-    label: 'Personal · daily',
-    title: 'My home agents',
-    body: 'A Claude Code agent that runs my training, sleep, and health logging over Telegram. The clearest proof I have of the whole thesis: I built it, I own it, and it guards the mornings I care about instead of billing them to someone else.',
+    no: 'SP-02',
+    label: 'Personal agent',
+    name: (
+      <>
+        My home <em>agents</em>
+      </>
+    ),
+    body: "A Claude Code agent that runs my training, sleep, and health logging over Telegram. It's the clearest proof I have of the whole thesis: I built it, I own it, and it guards the mornings I care about instead of billing them to someone else.",
   },
   {
-    label: 'Open source',
-    title: 'zvec-go · agent-harness · othello-agent',
-    body: 'The smaller pieces, built in the open, that the larger systems stand on.',
+    no: 'SP-03',
+    label: 'Built in the open',
+    name: (
+      <>
+        Open <em>source</em>
+      </>
+    ),
+    body: 'zvec-go, agent-harness, othello-agent. The smaller pieces, built in the open, that the larger systems stand on.',
+    link: 'github.com/danieleugenewilliams',
     href: 'https://github.com/danieleugenewilliams',
-    hrefLabel: 'GitHub',
-    external: true,
   },
   {
-    label: 'Product · paid',
-    title: 'WARE',
-    body: 'A workforce-automation resilience assessment. A real product with paying customers, built and sold on its own.',
+    no: 'SP-04',
+    label: 'Product · paying customers',
+    name: <>WARE</>,
+    body: "A workforce-automation resilience assessment. It's a real product with paying customers, and it lives at automationresilience.com.",
+    link: 'automationresilience.com',
     href: 'https://automationresilience.com',
-    hrefLabel: 'automationresilience.com',
-    external: true,
   },
   {
+    bridge: true,
+    no: 'SP-05',
     label: 'Before it was mine to own',
-    title: 'Twenty-five years at scale',
-    body: 'I did this for other people first: $2.5M saved at TaxAct, an account grown from $28K to $4M in nine months, $5M in annual savings at NFL Digital Media.',
-    href: '#about',
-    hrefLabel: 'Read the arc',
+    name: (
+      <>
+        At scale, for <em>others</em> first
+      </>
+    ),
+    body: 'I did this at scale for other people before I did it for myself. That story is below, in About.',
+    metrics: ['$2.5M saved · TaxAct', '$28K → $4M · 9 mo', '$5M/yr · NFL Digital Media'],
   },
 ];
 
 export function ProofSection() {
   return (
-    <section className="section rule-top" id="proof">
-      <div className="shell proof__head">
+    <section className="section" id="proof">
+      <div className="shell">
+        <div className="folio">
+          <span className="folio__no">§ 05</span>
+          <span className="folio__name">Proof</span>
+          <span className="folio__rule" />
+        </div>
         <Reveal>
-          <span className="eyebrow">// PROOF</span>
-          <h2 className="t-display" style={{ marginTop: '1.5rem', maxWidth: '22ch' }}>
-            I don't just write about this. I{' '}
-            <em style={{ fontStyle: 'italic', color: 'var(--fg-muted)' }}>run my life on it.</em>
+          <h2 className="believe__lead" style={{ maxWidth: '20ch', marginTop: 0 }}>
+            I don't just write about this. <em>I run my life on it.</em>
           </h2>
-        </Reveal>
-        <Reveal delay={2}>
-          <p className="t-lead t-muted-new">
+          <p className="serif-lead" style={{ marginTop: '1.25rem' }}>
             The argument only counts if I'm living it, so here is the stack I actually own.
           </p>
         </Reveal>
-      </div>
 
-      <div className="shell">
-        <Reveal className="sp-proof__grid">
-          {CARDS.map((c) => (
-            <article key={c.title} className="sp-proof__card">
-              <span className="sp-proof__label">{c.label}</span>
-              <h3 className="sp-proof__title">{c.title}</h3>
-              <p className="sp-proof__body">{c.body}</p>
-              {c.href && (
-                <a
-                  className="sp-proof__link"
-                  href={c.href}
-                  {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                >
-                  {c.hrefLabel} <ArrowUpRight size={13} />
+        <Reveal className="proof__grid">
+          {SPECS.map((s) => (
+            <div key={s.no} className={'spec' + (s.bridge ? ' spec--bridge' : '')}>
+              <div className="spec__cat">
+                <span className="spec__label">{s.label}</span>
+                <span className="spec__no">{s.no}</span>
+              </div>
+              <h3 className="spec__name">{s.name}</h3>
+              <p className="spec__body">{s.body}</p>
+              {s.link && (
+                <a className="spec__link" href={s.href} target="_blank" rel="noreferrer">
+                  {s.link} <ArrowUpRight size={13} />
                 </a>
               )}
-            </article>
+              {s.metrics && (
+                <div className="spec__metrics">
+                  {s.metrics.map((m) => (
+                    <span key={m} className="chip">
+                      {m}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </Reveal>
       </div>

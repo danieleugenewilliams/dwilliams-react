@@ -1,44 +1,70 @@
 import { Reveal } from './Reveal';
 import { SubscribeForm } from './SubscribeForm';
+import { ArrowDown } from './Icons';
 import { CC4NC_SUBSCRIBERS } from '../lib/constants';
+import headshot from '../assets/headshot.jpg';
 
 export function Hero() {
   return (
-    <section className="sp-hero" id="top">
-      <div className="sp-hero__portrait" aria-hidden="true" />
-      <div className="shell sp-hero__inner">
-        <div className="sp-hero__text">
-          <Reveal className="sp-hero__eyebrows">
-            <span className="eyebrow">
-              <span className="dot" aria-hidden="true" /> Architect / Operator · Coastal Virginia
-            </span>
-            <span className="eyebrow eyebrow--dim">
-              Claude Code for Non-Coders · {CC4NC_SUBSCRIBERS.full} readers
-            </span>
-          </Reveal>
+    <header className="cover" id="top">
+      <div className="shell">
+        <Reveal className="cover__folio">
+          <span className="mark">Daniel E. Williams</span>
+          <span className="mark">Vol. I · Coastal Virginia · Est. MMXXV</span>
+        </Reveal>
 
-          <Reveal delay={1} as="h1" className="sp-hero__title">
-            Point it at <span className="brand-accent">what matters.</span>
-          </Reveal>
+        <div className="cover__grid">
+          <div>
+            <Reveal className="cover__eyebrows">
+              <span className="mark mark--coral">Architect / Operator · Coastal Virginia</span>
+              <span className="mark">Claude Code for Non-Coders · {CC4NC_SUBSCRIBERS.full} readers</span>
+            </Reveal>
 
-          <Reveal delay={2} className="sp-hero__dek">
-            <p>
-              For twenty-five years I built software and led consulting teams. Now I build
-              my own agents: the one that runs my training and sleep over Telegram, the
-              memory layer behind my writing, the systems that hand me back my mornings.
-              AI collapsed the cost of expertise. What's left is the question of what you
-              point it at, and I write about that every week.
-            </p>
-          </Reveal>
+            <Reveal delay={1}>
+              <h1 className="cover__title">
+                Point it<br />
+                at what<br />
+                <span className="coral">matters.</span>
+              </h1>
+            </Reveal>
 
-          <Reveal delay={3} className="sp-hero__cta">
-            <SubscribeForm caption="Claude Code for Non-Coders. Free, Tuesdays and Thursdays." />
-            <a href="#believe" className="sp-hero__scroll">
-              Read what I believe ↓
-            </a>
+            <Reveal delay={2}>
+              <p className="cover__dek">
+                For twenty-five years I built software and led consulting teams. Now I build my
+                own agents: the one that runs my training and sleep over Telegram, the memory
+                layer behind my writing, the systems that hand me back my mornings. <b>AI collapsed
+                the cost of expertise.</b> What's left is the question of what you point it at, and
+                I write about that every week.
+              </p>
+            </Reveal>
+
+            <Reveal delay={2} className="cover__cta">
+              <SubscribeForm
+                caption={
+                  <>
+                    Claude Code for Non-Coders. <em>Tuesdays and Thursdays.</em>
+                  </>
+                }
+              />
+              <a className="cover__scroll" href="#believe">
+                Read what I believe <ArrowDown />
+              </a>
+            </Reveal>
+          </div>
+
+          <Reveal delay={1} className="plate">
+            <div className="plate__frame">
+              <div className="plate__img">
+                <img src={headshot} alt="Daniel E. Williams" />
+              </div>
+            </div>
+            <div className="plate__cut">
+              <span>Daniel E. Williams</span>
+              <span className="coral">Fig. 1</span>
+            </div>
           </Reveal>
         </div>
       </div>
-    </section>
+    </header>
   );
 }

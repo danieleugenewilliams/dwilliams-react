@@ -1,67 +1,69 @@
 import { Reveal } from './Reveal';
 
 interface Belief {
+  no: string;
   title: string;
   body: string;
 }
 
 const BELIEFS: Belief[] = [
   {
+    no: '01',
     title: 'Value should accrue to the person, not the platform.',
-    body: "The leverage is real. The only fight that matters is over who keeps it. Build so the upside lands on you and the people you serve, not on whoever rents you the model. The platforms earn their cut by making hard things easy, and I pay it gladly. It stops being a fair trade the day the rent runs higher than the value and you have no way out.",
+    body: "When the work gets faster, it hands time back. A deck that took an analyst three days now takes an afternoon, and those saved days come loose and sit on the table. The fight everyone mislabels as AI versus jobs is really an older one, over who picks that time up. By default it rolls to whoever owns the business, quietly, without anyone in the building calling it a fight. It does not have to. Build so the freed value lands on you and the people you serve, not on whoever rents you the model.",
   },
   {
+    no: '02',
     title: 'Stay the operator, not the assistant.',
-    body: "The risk isn't that AI replaces you. It's that it quietly demotes you: you feed the machine, it decides, you rubber-stamp what it returns. Anthropic's own research has a name for that pattern, the reverse-centaur, and I've watched sharp people slide into it without noticing. Keep your hands on the decisions that carry consequences and hand off the rest on purpose. Sometimes the model really is better at a task than you are, and pretending otherwise is just ego; the discipline is knowing which times those are.",
+    body: "The real risk is not that AI replaces you. It is that it quietly demotes you. You feed the machine, it makes the call, and you sign off on whatever it hands back. The writer Cory Doctorow named that pattern the reverse-centaur, and I have watched capable people drift into it without noticing. Keep your hands on the decisions that carry weight, and pass off the rest on purpose. Sometimes the model really is better at a task than you are. The skill is being honest about which times those are.",
   },
   {
+    no: '03',
     title: 'Own the architecture.',
-    body: "Sovereignty isn't self-hosting purism. Run the frontier model if it's the best tool for the job; I do. What keeps you sovereign is owning the architecture around it and building the knowledge to move, so when a vendor changes the price or the terms you swap the model underneath and keep working. The labs are genuinely ahead, and rolling your own from scratch is slower and worse. So use them. Just don't build a house you can never move out of.",
+    body: "Owning your setup does not mean running everything yourself. Use the frontier model when it is the best tool for the job; I do. What keeps you independent is understanding how your system fits together and being able to move. When a vendor changes its price or its terms, you swap the model underneath and keep working. The labs are far ahead, and building your own from scratch is slower and worse. So use them. Just do not build on a foundation you can never leave.",
   },
   {
+    no: '04',
     title: 'The gate is effort, not permission.',
-    body: "Nobody is coming to authorize you. The barrier here was never a credential or a title; it's whether you'll put in the reps to learn. That gate you control, which is the good news and the uncomfortable news at once. Access and capital still tilt the field hard, and an afternoon of practice doesn't erase that. But the part that's genuinely yours to take has never been this large.",
+    body: "No one is coming to authorize you. The barrier was never a credential or a title. It is whether you will put in the hours to learn, and that part is yours to control. That is the good news and the hard news at once. Money and access still tilt the field, and an afternoon of practice will not change that. But the part that is genuinely yours to take has never been this large.",
   },
   {
+    no: '05',
     title: 'This is the first tool an individual can own outright.',
-    body: 'The printing press, the factory, the mainframe, the cloud: an institution captured every earlier jump in productivity, because every one of them needed an institution’s capital to run. A capable model on hardware you already own is the first that doesn’t. The frontier still belongs to a handful of labs, and it will for a while. That’s fine. Good enough and yours beats best and rented more often than the frontier wants you to believe.',
+    body: "The printing press, the factory, the mainframe, the cloud. An institution captured every earlier jump in productivity, because every one of them needed an institution's money to run. A capable model on hardware you already own is the first that does not. The frontier still belongs to a few labs, and it will for a while. That is fine. Good enough and yours beats best and rented more often than the frontier wants you to believe.",
   },
 ];
 
 export function WhatIBelieve() {
   return (
-    <section className="sp-believe" id="believe">
+    <section className="section" id="believe">
       <div className="shell">
-        <div className="sp-believe__head">
-          <Reveal>
-            <span className="eyebrow">// WHAT_I_BELIEVE</span>
-          </Reveal>
-          <Reveal delay={1}>
-            <p className="sp-believe__lead">
-              A handful of things I'm convinced of. The rest of this page is me trying to
-              prove them.
-            </p>
-          </Reveal>
-        </div>
+        <Reveal className="believe__head">
+          <span className="mark mark--coral">// What I Believe</span>
+          <p className="believe__lead">
+            A handful of things I'm <em>convinced of.</em> The rest of this page is me trying to
+            prove them.
+          </p>
+        </Reveal>
 
-        <ol className="sp-believe__list">
-          {BELIEFS.map((b, i) => (
-            <Reveal key={b.title} as="li" className="sp-believe__item" delay={Math.min(i + 1, 4) as 1 | 2 | 3 | 4}>
-              <span className="sp-believe__num">{String(i + 1).padStart(2, '0')}</span>
-              <div className="sp-believe__copy">
-                <h3 className="sp-believe__title">{b.title}</h3>
-                <p className="sp-believe__body">{b.body}</p>
+        <div>
+          {BELIEFS.map((b) => (
+            <Reveal key={b.no} className="believe__item">
+              <div className="believe__no">{b.no}</div>
+              <div>
+                <h3 className="believe__title">{b.title}</h3>
+                <p className="believe__body">{b.body}</p>
               </div>
             </Reveal>
           ))}
-        </ol>
+        </div>
 
-        <Reveal className="sp-believe__bridge">
+        <Reveal className="believe__bridge">
           <p>
-            None of this is the point on its own. Owning the tools only matters because of
-            what you can finally aim them at: your health, your family, the problems money
-            and access used to gate. Keeping your judgment valuable is the foundation.
-            Building a life worth living is the point.
+            None of this is the point on its own. Owning the tools only matters for what you can
+            finally aim them at: your health, your family, the problems that money and access used
+            to put out of reach. Keeping your judgment valuable is the foundation.{' '}
+            <span className="coral">Building a life worth living is the point.</span>
           </p>
         </Reveal>
       </div>

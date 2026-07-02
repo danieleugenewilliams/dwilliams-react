@@ -2,17 +2,14 @@ import { render, screen, waitFor } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { describe, it, expect } from 'vitest'
-import { ThemeProvider } from '../components/ThemeProvider'
 import Home from '../components/Home'
 
 const renderWithProviders = (component: React.ReactNode) => {
   return render(
     <HelmetProvider>
-      <ThemeProvider>
-        <BrowserRouter>
-          {component}
-        </BrowserRouter>
-      </ThemeProvider>
+      <BrowserRouter>
+        {component}
+      </BrowserRouter>
     </HelmetProvider>
   )
 }
@@ -21,13 +18,19 @@ describe('Home Component', () => {
   it('renders the home page', async () => {
     renderWithProviders(<Home />)
 
-    // Wait for the component to render and check for the hero headline (h1)
+    // Hero headline (h1)
     await waitFor(() => {
-      expect(screen.getByRole('heading', { level: 1, name: /AI Transformation Leadership, Embedded/i })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 1, name: /point it at what\s*matters/i })
+      ).toBeInTheDocument()
     })
 
-    // Check for other content that should be present
-    expect(screen.getByText(/I serve as Fractional CTO & AI Transformation Officer/i)).toBeInTheDocument()
-    expect(screen.getByText(/THE_PROBLEM/)).toBeInTheDocument()
+    // Thesis manifesto is present
+    expect(
+      screen.getByText(/We automate tasks that enhance human/i)
+    ).toBeInTheDocument()
+
+    // Proof section header is present
+    expect(screen.getByText(/I run my life on it/i)).toBeInTheDocument()
   })
 })
