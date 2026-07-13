@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { CC4NC_SUBSCRIBERS } from '../lib/constants';
 
 interface SEOProps {
   title?: string;
@@ -10,14 +11,17 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = 'D. E. Williams + Co. — Fractional CTO & AI Advisory',
-  description = 'Fractional CTO & AI Transformation Officer. I help companies move from AI experiments to AI results. Strategy, governance, architecture, and implementation.',
-  keywords = 'fractional CTO, AI transformation officer, AI consulting, AI advisory, AI implementation, technology executive, AI strategy',
+  title = 'Daniel E. Williams — architect & operator',
+  description = `I build the tools I run my life on, and I write about how you can too. Claude Code for Non-Coders, ${CC4NC_SUBSCRIBERS.full} readers.`,
+  keywords = 'Daniel E. Williams, Claude Code for Non-Coders, AI agents, Claude Code, building your own AI tools, AI and judgment, senior technical professionals, AI newsletter',
   image = '/og-image.svg',
   url = 'https://dewilliams.co',
   type = 'website'
 }: SEOProps) {
-  const fullTitle = title.includes('D. E. Williams') ? title : `${title} — D. E. Williams + Co.`;
+  // Only append the house suffix when the title isn't already a Williams lockup.
+  // (The old check looked for "D. E. Williams", which "Daniel E. Williams" does not
+  // contain, so the homepage title was rendering double-suffixed.)
+  const fullTitle = /Williams/.test(title) ? title : `${title} — D. E. Williams + Co.`;
   const fullUrl = url.startsWith('http') ? url : `https://dewilliams.co${url}`;
   const fullImage = image.startsWith('http') ? image : `https://dewilliams.co${image}`;
 
@@ -68,7 +72,7 @@ export function SEO({
                 "https://dewilliamsco.substack.com/",
                 "https://github.com/danieleugenewilliams"
               ],
-              "description": "Fractional CTO and AI advisory practice helping companies move from AI experiments to AI results.",
+              "description": "The writing, agents, and open-source tools of Daniel E. Williams. Home of Claude Code for Non-Coders, a twice-weekly newsletter for senior technical people working out what coding agents change for them.",
               "foundingDate": "2024",
               "founder": {
                 "@type": "Person",
@@ -78,7 +82,7 @@ export function SEO({
             {
               "@type": "Person",
               "name": "Daniel E. Williams",
-              "jobTitle": "Fractional CTO & AI Transformation Officer",
+              "jobTitle": "Architect & Operator",
               "url": "https://dewilliams.co/about",
               "worksFor": {
                 "@type": "Organization",

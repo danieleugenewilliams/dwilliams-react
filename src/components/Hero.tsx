@@ -45,7 +45,7 @@ export function Hero() {
             </span>
             <span className="m-only">
               Twenty-five years building software for other people. Now I build my own
-              agents. <b>AI collapsed the cost of expertise</b> — what's left is what you
+              agents. <b>AI collapsed the cost of expertise.</b> What's left is what you
               point it at. I write about that every week.
             </span>
           </p>

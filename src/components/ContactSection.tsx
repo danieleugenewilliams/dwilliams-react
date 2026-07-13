@@ -131,7 +131,7 @@ export function ContactSection() {
                   {loading ? (
                     'Sending…'
                   ) : sent ? (
-                    'Received — thank you'
+                    'Received. Thank you.'
                   ) : (
                     <>
                       Send
