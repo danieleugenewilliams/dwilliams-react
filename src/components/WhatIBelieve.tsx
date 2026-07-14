@@ -11,26 +11,26 @@ interface Belief {
 const BELIEFS: Belief[] = [
   {
     no: '01',
-    title: 'Value should accrue to the person, not the platform.',
-    short: 'When AI frees up days of work, someone picks that time up — by default, whoever owns the business. Build so it lands on you and the people you serve.',
-    body: "When the work gets faster, it hands time back. A deck that took an analyst three days now takes an afternoon, and those saved days come loose and sit on the table. The fight everyone mislabels as AI versus jobs is really an older one, over who picks that time up. By default it rolls to whoever owns the business, quietly, without anyone in the building calling it a fight. It does not have to. Build so the freed value lands on you and the people you serve, not on whoever rents you the model.",
+    title: "The value should be yours, not the platform's.",
+    short: "When AI saves hours, someone keeps them, and by default it is the firm, not the person who did the work. The fight isn't AI versus jobs. It's who keeps what the machine saves. Build so it's you.",
+    body: "When the work gets faster, someone gets that time back. A deck that took an analyst three days now takes an afternoon, and those two days are real. By default the analyst does not keep them: the firm bills the same fee, staffs her on another deck, and the gain shows up on its margin instead of in her week. No one in the building ever calls that a fight. What gets argued about as “AI versus jobs” is not really about whether the machine can do the work. It is about who gets to keep what the machine saves. It does not have to be the firm. Build so that it is you: keep the setup and the skill in your own hands, and spend the hours you get back on your own work and the people you serve, rather than handing them to your employer or to the lab you rent the model from.",
   },
   {
     no: '02',
     title: 'Stay the operator, not the assistant.',
-    short: "The risk isn't that AI replaces you — it's that it quietly demotes you to sign-off. Keep your hands on the decisions that carry weight.",
+    short: "The risk isn't that AI replaces you. It's that it quietly demotes you to sign-off. Keep your hands on the decisions that carry weight.",
     body: "The real risk is not that AI replaces you. It is that it quietly demotes you. You feed the machine, it makes the call, and you sign off on whatever it hands back. The writer Cory Doctorow named that pattern the reverse-centaur, and I have watched capable people drift into it without noticing. Keep your hands on the decisions that carry weight, and pass off the rest on purpose. Sometimes the model really is better at a task than you are. The skill is being honest about which times those are.",
   },
   {
     no: '03',
     title: 'Own the architecture.',
-    short: "Use the frontier models — I do. Just understand how your system fits together so you can always move, and never build on a foundation you can't leave.",
+    short: "Use the frontier models. I do. Just understand how your system fits together so you can always move, and never build on a foundation you can't leave.",
     body: "Owning your setup does not mean running everything yourself. Use the frontier model when it is the best tool for the job; I do. What keeps you independent is understanding how your system fits together and being able to move. When a vendor changes its price or its terms, you swap the model underneath and keep working. The labs are far ahead, and building your own from scratch is slower and worse. So use them. Just do not build on a foundation you can never leave.",
   },
   {
     no: '04',
     title: 'The gate is effort, not permission.',
-    short: "No one is coming to authorize you. The barrier was never a credential — it's the hours, and those are yours to control.",
+    short: "No one is coming to authorize you. The barrier was never a credential. It's the hours, and those are yours to control.",
     body: "No one is coming to authorize you. The barrier was never a credential or a title. It is whether you will put in the hours to learn, and that part is yours to control. That is the good news and the hard news at once. Money and access still tilt the field, and an afternoon of practice will not change that. But the part that is genuinely yours to take has never been this large.",
   },
   {

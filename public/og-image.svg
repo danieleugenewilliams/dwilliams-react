@@ -1,33 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(34,30,24,0.045)" stroke-width="1"/>
     </pattern>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="630" fill="#0a0a0a"/>
-
-  <!-- Grid overlay -->
+  <!-- Warm paper ground -->
+  <rect width="1200" height="630" fill="#f2ebdd"/>
   <rect width="1200" height="630" fill="url(#grid)"/>
 
-  <!-- Main title -->
-  <text x="80" y="220" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="64" fill="#e0e0e0">D. E. Williams</text>
-  <text x="80" y="300" font-family="'JetBrains Mono', monospace" font-size="64">
-    <tspan font-weight="700" fill="#22d3ee">+ </tspan>
-    <tspan font-weight="400" fill="#e0e0e0">Company</tspan>
-  </text>
+  <!-- Folio rule -->
+  <rect x="80" y="88" width="1040" height="1" fill="rgba(34,30,24,0.14)"/>
 
-  <!-- Tagline -->
-  <text x="80" y="380" font-family="'JetBrains Mono', monospace" font-weight="400" font-size="32" fill="#6b7280">Fractional CTO &amp; AI Transformation Officer</text>
+  <!-- Eyebrow -->
+  <text x="80" y="72" font-family="'JetBrains Mono', ui-monospace, monospace" font-weight="500" font-size="19" letter-spacing="3.4" fill="#8b8271">DANIEL E. WILLIAMS</text>
+  <text x="1120" y="72" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, monospace" font-weight="500" font-size="19" letter-spacing="3.4" fill="#c05532">ARCHITECT / OPERATOR</text>
 
-  <!-- URL -->
-  <text x="80" y="440" font-family="'JetBrains Mono', monospace" font-weight="400" font-size="24" fill="#22d3ee">dewilliams.co</text>
+  <!-- Display line: the site's own headline -->
+  <text x="80" y="250" font-family="Newsreader, ui-serif, Georgia, serif" font-weight="400" font-size="104" fill="#221e18">Point it at what</text>
+  <text x="80" y="352" font-family="Newsreader, ui-serif, Georgia, serif" font-weight="400" font-size="104" font-style="italic" fill="#c05532">matters.</text>
 
-  <!-- Decorative box in corner -->
-  <text x="1000" y="480" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.08)">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</text>
-  <text x="1000" y="500" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.08)">&#x2502; EST. 2024    &#x2502;</text>
-  <text x="1000" y="520" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.08)">&#x2502; FRACTIONAL   &#x2502;</text>
-  <text x="1000" y="540" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.08)">&#x2502; CTO          &#x2502;</text>
-  <text x="1000" y="560" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.08)">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</text>
+  <!-- Gloss: the thesis, one sentence -->
+  <text x="80" y="426" font-family="Newsreader, ui-serif, Georgia, serif" font-weight="400" font-size="30" fill="#574f43">Keep the judgment that makes you valuable, and point everything</text>
+  <text x="80" y="464" font-family="Newsreader, ui-serif, Georgia, serif" font-weight="400" font-size="30" fill="#574f43">it frees at a life worth living.</text>
+
+  <!-- Footer rule -->
+  <rect x="80" y="516" width="1040" height="1" fill="rgba(34,30,24,0.14)"/>
+
+  <!-- Footer -->
+  <text x="80" y="556" font-family="'JetBrains Mono', ui-monospace, monospace" font-weight="500" font-size="20" letter-spacing="2.6" fill="#8b8271">CLAUDE CODE FOR NON-CODERS &#183; 34,000+ READERS</text>
+  <text x="1120" y="556" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, monospace" font-weight="500" font-size="20" letter-spacing="2.6" fill="#c05532">DEWILLIAMS.CO</text>
+
+  <!-- Register mark -->
+  <text x="1120" y="588" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, monospace" font-weight="400" font-size="15" letter-spacing="2.2" fill="rgba(34,30,24,0.28)">VOL. I &#183; COASTAL VIRGINIA &#183; EST. MMXXV</text>
 </svg>
