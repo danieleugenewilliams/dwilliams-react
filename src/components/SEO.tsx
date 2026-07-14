@@ -14,7 +14,7 @@ export function SEO({
   title = 'Daniel E. Williams — architect & operator',
   description = `I build the tools I run my life on, and I write about how you can too. Claude Code for Non-Coders, ${CC4NC_SUBSCRIBERS.full} readers.`,
   keywords = 'Daniel E. Williams, Claude Code for Non-Coders, AI agents, Claude Code, building your own AI tools, AI and judgment, senior technical professionals, AI newsletter',
-  image = '/og-image.svg',
+  image = '/og-image.png',
   url = 'https://dewilliams.co',
   type = 'website'
 }: SEOProps) {
