@@ -34,7 +34,7 @@ const SPECS: Spec[] = [
   },
   {
     no: 'SP-03',
-    label: 'New · built in the open',
+    label: 'New · personal infrastructure',
     name: (
       <>
         agent-<em>switchboard</em>
