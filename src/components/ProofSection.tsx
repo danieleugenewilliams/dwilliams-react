@@ -34,6 +34,16 @@ const SPECS: Spec[] = [
   },
   {
     no: 'SP-03',
+    label: 'New · built in the open',
+    name: (
+      <>
+        agent-<em>switchboard</em>
+      </>
+    ),
+    body: "One Telegram bot out front, several Claude Code sessions behind it — one for health, one for the family trust, one for homeschool — each a real terminal I can sit down at and take over. Started this week: my home agent grown into a switchboard I own end to end.",
+  },
+  {
+    no: 'SP-04',
     label: 'Built in the open',
     name: (
       <>
@@ -45,7 +55,7 @@ const SPECS: Spec[] = [
     href: 'https://github.com/danieleugenewilliams',
   },
   {
-    no: 'SP-04',
+    no: 'SP-05',
     label: 'Product · paying customers',
     name: <>WARE</>,
     body: "A workforce-automation resilience assessment. It's a real product with paying customers, and it lives at automationresilience.com.",
@@ -54,7 +64,7 @@ const SPECS: Spec[] = [
   },
   {
     bridge: true,
-    no: 'SP-05',
+    no: 'SP-06',
     label: 'Before it was mine to own',
     name: (
       <>
