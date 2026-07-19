@@ -40,7 +40,7 @@ const SPECS: Spec[] = [
         agent-<em>switchboard</em>
       </>
     ),
-    body: "One Telegram bot out front, several Claude Code sessions behind it — one for health, one for the family trust, one for homeschool — each a real terminal I can sit down at and take over. Started this week: my home agent grown into a switchboard I own end to end.",
+    body: "One Telegram bot out front, several Claude Code sessions behind it, one each for health, the family trust, and homeschool. Every one is a real terminal I can sit down at and take over. Started this week: my home agent grown into a switchboard I own end to end.",
   },
   {
     no: 'SP-04',
